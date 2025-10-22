@@ -169,12 +169,12 @@ body {
     background: linear-gradient(145deg, #e8e8e8, #c4c4c4);
     border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    /* Placeholder for Zeus statue image */
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Bust_Zeus_Otricoli_Pio-Clementino_Inv257.jpg/440px-Bust_Zeus_Otricoli_Pio-Clementino_Inv257.jpg');
-    background-size: cover;
-    background-position: center;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.1),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.3);
     animation: zeusShake 0.5s ease 1s;
+    /* Add your Zeus statue image: background-image: url('images/zeus.jpg'); */
 }
 
 /* Crack Line Animation */
@@ -200,12 +200,12 @@ body {
     height: 350px;
     background: linear-gradient(145deg, #f5f5f5, #d4d4d4);
     border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    /* Placeholder for Athena statue image */
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Athena_Varvakeion_-_head.jpg/440px-Athena_Varvakeion_-_head.jpg');
-    background-size: cover;
-    background-position: center;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset -8px -8px 16px rgba(0, 0, 0, 0.1),
+        inset 8px 8px 16px rgba(255, 255, 255, 0.3);
     animation: athenaEmerge 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards;
+    /* Add your Athena statue image: background-image: url('images/athena.jpg'); */
 }
 
 /* Lightning Strikes */
@@ -271,6 +271,39 @@ body {
     opacity: 0;
     z-index: 5;
     animation: flashEffect 0.4s ease 1.7s;
+}
+
+/* Sound Toggle Button */
+.sound-toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--text-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sound-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.sound-toggle:active {
+    transform: scale(0.95);
+}
+
+.sound-toggle.muted {
+    opacity: 0.5;
 }
 
 /* Animations */
