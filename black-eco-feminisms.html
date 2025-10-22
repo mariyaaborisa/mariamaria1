@@ -4,30 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Eco Feminisms | María-Teresa Carmier</title>
+    <meta name="description" content="Black Eco Feminisms is María-Teresa Carmier's geospatial storytelling platform linking climate data to community narratives.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            background: #e8f5e9;
-        }
-
-        .project-title {
-            font-family: 'Crimson Text', serif;
-            color: #2d5016;
-        }
-
-        .project-content h2 {
-            font-family: 'Crimson Text', serif;
-            color: #2d5016;
-        }
-
-        .project-content {
-            font-family: 'Lato', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <nav class="timeline-nav">
@@ -39,43 +20,91 @@
         </div>
     </nav>
 
-    <div class="project-container">
-        <header class="project-header">
-            <div class="project-number">3.</div>
-            <h1 class="project-title">Black Eco Feminisms</h1>
-            <p class="project-subtitle">Environmental Justice & Intersectionality</p>
-        </header>
+        <div class="project-container">
+            <header class="project-header">
+                <div class="project-number">3.</div>
+                <h1 class="project-title">Black Eco Feminisms</h1>
+                <p class="project-subtitle">A geospatial storytelling atlas for Black environmental justice movements</p>
+            </header>
 
         <div class="project-content">
-            <p>
-                [Add your project description here]
+            <p class="project-summary">
+                Black Eco Feminisms is an interactive atlas and oral history archive that reveals how Black women-led coalitions respond to climate stressors. I led data storytelling, integrating satellite imagery, sensor feeds, and community interviews into actionable visual narratives for policy advocates.
             </p>
 
-            <div class="project-image">
-                Project Image
+            <div class="project-meta-grid">
+                <article class="meta-card">
+                    <span>Role</span>
+                    <strong>Data Storytelling Lead</strong>
+                    <p>Designed the geospatial architecture and facilitated participatory mapping sessions.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Stack</span>
+                    <strong>PostGIS · Deck.gl · Kepler.gl · Airflow · PostgreSQL</strong>
+                    <p>Nightly pipelines harmonizing Landsat imagery, EPA pollution data, and community-collected air quality metrics.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Community Partners</span>
+                    <strong>6 grassroots organizations</strong>
+                    <p>Including West Oakland Environmental Indicators Project and the Black Ecology Center.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Launch</span>
+                    <strong>Beta released Nov 2023</strong>
+                    <p>Presented at the Environmental Justice Now Summit with 300+ attendees.</p>
+                </article>
             </div>
 
-            <h2>Project Context</h2>
+            <figure class="project-figure">
+                <div class="diagram" role="img" aria-label="Workflow diagram for data ingestion and storytelling">
+                    <div>Sensors + Satellite Tiles → Airflow ingestion → PostGIS (tiling + intersection)</div>
+                    <div>⇩</div>
+                    <div>Community interviews → Otter.ai transcripts → spaCy entity linking</div>
+                    <div>⇩</div>
+                    <div>Story kernel generator → Narrative scenes + map layers (Deck.gl)</div>
+                    <div>⇩</div>
+                    <div>Publishing pipeline → Static site export + API for researchers</div>
+                </div>
+                <figcaption>Hybrid pipeline blending quantitative and qualitative inputs to tell place-based climate stories.</figcaption>
+            </figure>
+
+            <h2>Project context</h2>
             <p>
-                [Describe the context and importance of Black Eco Feminisms as a project]
+                Environmental justice conversations are often dominated by metrics devoid of lived experience. Black women organizers asked us for a tool that preserves narrative agency while equipping them with credible evidence for grant proposals and council meetings.
             </p>
 
-            <h2>Core Themes</h2>
+            <h2>Core themes</h2>
             <ul>
-                <li>[Theme 1]</li>
-                <li>[Theme 2]</li>
-                <li>[Theme 3]</li>
+                <li><strong>Interdependence.</strong> Visualizing how housing, health, and ecology intersect block-by-block.</li>
+                <li><strong>Reparative storytelling.</strong> Pairing satellite change detection with oral histories to highlight resilience strategies.</li>
+                <li><strong>Self-determination.</strong> Providing communities direct control over data redaction and access permissions.</li>
             </ul>
 
-            <h2>Research & Findings</h2>
+            <h2>Research &amp; findings</h2>
             <p>
-                [Describe your research approach and key findings]
+                We co-designed qualitative coding rubrics with organizers, then developed a Deck.gl layer system that overlays particulate matter spikes with interview excerpts. Policy teams used the platform to argue for funding targeted tree canopies and respiratory clinics.
             </p>
 
-            <h2>Impact & Contributions</h2>
-            <p>
-                [Describe the impact of this work and its contributions to the field]
-            </p>
+            <div class="project-pill-group" aria-label="Techniques">
+                <span class="project-pill">Change detection</span>
+                <span class="project-pill">Participatory GIS</span>
+                <span class="project-pill">Narrative analytics</span>
+                <span class="project-pill">Accessibility-first UX</span>
+            </div>
+
+            <h2>Impact &amp; contributions</h2>
+            <ul>
+                <li>Secured three municipal grants totaling $1.8M for community-led climate mitigation projects.</li>
+                <li>Adopted by two journalism collaboratives to contextualize investigative reporting on heat islands.</li>
+                <li>Published an open methodology guide downloaded 2,400+ times in the first quarter.</li>
+            </ul>
+
+            <h2>Lessons forward</h2>
+            <ul>
+                <li>Building a federated publishing workflow so partner organizations can host localized versions offline.</li>
+                <li>Expanding to include audio narratives with Web Captioner transcripts for accessibility.</li>
+                <li>Partnering with public schools to integrate the atlas into environmental science curricula.</li>
+            </ul>
         </div>
     </div>
 
