@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define the navigation structure
     const pages = [
         'about.html',
-        'junipers-compass.html',
+        'junipers-clompass.html',
         'responsible-ai.html',
         'black-eco-feminisms.html',
         'show-me-your-colors.html'
