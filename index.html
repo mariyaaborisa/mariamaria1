@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>María-Teresa Carmier</title>
+    <meta name="description" content="Portfolio of María-Teresa Carmier, a machine learning researcher building responsible AI systems for culture and the humanities.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,6 +27,9 @@
         <button id="sound-toggle" class="sound-toggle" title="Toggle sound">
             🔊
         </button>
+        <button id="skip-animation" class="skip-animation" type="button" title="Skip intro">
+            Skip intro
+        </button>
     </div>
 
     <!-- Audio Elements -->
@@ -40,40 +44,160 @@
     </audio>
 
     <div class="landing-container">
-        <header class="name-header">
-            <h1 class="main-name">María-Teresa Carmier</h1>
+        <header class="hero">
+            <div class="hero-intro">
+                <span class="role-badge">Machine Learning Researcher &amp; Critical Technologist</span>
+                <h1 class="main-name">María-Teresa Carmier</h1>
+                <p class="tagline">I build responsible, human-centered AI systems that translate cultural archives into interactive knowledge—bridging rigorous research with expressive design.</p>
+                <ul class="hero-meta">
+                    <li><span>Focus</span> Responsible AI, multimodal storytelling, digital humanities</li>
+                    <li><span>Stack</span> Python, PyTorch, Hugging Face, FastAPI, TypeScript</li>
+                    <li><span>Currently</span> Designing equitable ML tooling at UC Berkeley&rsquo;s Data Science Lab</li>
+                </ul>
+            </div>
+            <div class="hero-cta">
+                <a href="about.html" class="primary-link about-link">Meet the researcher</a>
+                <a href="https://github.com/mtcarmier" class="secondary-link" target="_blank" rel="noopener">GitHub</a>
+                <a href="assets/maria-teresa-carmier-cv.pdf" class="secondary-link" target="_blank" rel="noopener">Resume (PDF)</a>
+            </div>
         </header>
 
-        <nav class="project-list">
-            <a href="about.html" class="project-item about-item" data-number="p1">
-                <span class="project-number">p1</span>
-                <span class="project-title">About me.</span>
-            </a>
+        <section class="impact-grid" aria-label="Impact metrics">
+            <article class="stat-card">
+                <span class="stat-value">4</span>
+                <span class="stat-label">ML deployments across research &amp; cultural partners</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-value">32M+</span>
+                <span class="stat-label">documents processed via custom ingestion &amp; retrieval pipelines</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-value">6</span>
+                <span class="stat-label">public talks &amp; workshops on algorithmic equity</span>
+            </article>
+        </section>
 
+        <section class="tech-highlights" aria-labelledby="tech-highlights-title">
+            <div class="section-heading">
+                <h2 id="tech-highlights-title">Technical highlights</h2>
+                <p>Recent experiments, favorite tools, and the problems I return to.</p>
+            </div>
+            <div class="highlight-grid">
+                <article class="highlight-card">
+                    <h3>Retrieval-first storytelling</h3>
+                    <p>Building semantic search pipelines (Weaviate, pgvector) that feed transformer agents capable of generating narrative exhibits from oral histories.</p>
+                </article>
+                <article class="highlight-card">
+                    <h3>Model accountability kits</h3>
+                    <p>Packaging reproducible evaluation harnesses with Hydra + Great Expectations to monitor drift and cultural bias in language models.</p>
+                </article>
+                <article class="highlight-card">
+                    <h3>Creative prototyping</h3>
+                    <p>Rapidly validating ideas with SvelteKit, Framer Motion, and WebGL sketches that make abstract datasets tactile for curators.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="now-section" aria-labelledby="now-title">
+            <div class="section-heading">
+                <h2 id="now-title">Now</h2>
+                <p>What I&rsquo;m building and learning this quarter.</p>
+            </div>
+            <ul class="now-list">
+                <li>Evaluating retrieval-augmented summarization for the Bancroft Library&rsquo;s 18 TB oral history collection.</li>
+                <li>Co-authoring a framework for auditing generative interfaces with the Algorithmic Fairness &amp; Opacity Working Group.</li>
+                <li>Prototyping a fast inference layer on top of adapters trained with LoRA and PEFT for story-personalization.</li>
+            </ul>
+        </section>
+
+        <nav class="project-list" aria-label="Project case studies">
             <a href="junipers-clompass.html" class="project-item" data-number="1">
-                <span class="project-number">1.</span>
-                <span class="project-title">Juniper's Clompass</span>
+                <span class="project-number">01</span>
+                <div class="project-info">
+                    <div class="project-header-row">
+                        <h2 class="project-title">Juniper&rsquo;s Clompass</h2>
+                        <span class="project-role">Lead ML Researcher</span>
+                    </div>
+                    <p class="project-summary">A multimodal narrative engine that generates child-friendly storylines grounded in curated folklore datasets.</p>
+                    <ul class="project-meta">
+                        <li><span>Stack</span> PyTorch · Hugging Face · FastAPI · Redis</li>
+                        <li><span>Outcome</span> 68% increase in story diversity across 1K weekly sessions</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Generative AI</span>
+                        <span>Safety Tooling</span>
+                        <span>Experience Design</span>
+                    </div>
+                </div>
             </a>
 
             <a href="responsible-ai.html" class="project-item" data-number="2">
-                <span class="project-number">2.</span>
-                <span class="project-title">Responsible AI in the Humanities</span>
+                <span class="project-number">02</span>
+                <div class="project-info">
+                    <div class="project-header-row">
+                        <h2 class="project-title">Responsible AI in the Humanities</h2>
+                        <span class="project-role">Research Fellow</span>
+                    </div>
+                    <p class="project-summary">An evaluation framework for cultural institutions adopting LLM-powered discovery interfaces.</p>
+                    <ul class="project-meta">
+                        <li><span>Stack</span> Python · Hydra · Great Expectations · dbt</li>
+                        <li><span>Outcome</span> Published rubric adopted by 5 partner museums</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Evaluation</span>
+                        <span>Policy Translation</span>
+                        <span>Workshops</span>
+                    </div>
+                </div>
             </a>
 
             <a href="black-eco-feminisms.html" class="project-item" data-number="3">
-                <span class="project-number">3.</span>
-                <span class="project-title">Black Eco Feminisms</span>
+                <span class="project-number">03</span>
+                <div class="project-info">
+                    <div class="project-header-row">
+                        <h2 class="project-title">Black Eco Feminisms</h2>
+                        <span class="project-role">Data Storytelling Lead</span>
+                    </div>
+                    <p class="project-summary">Interactive atlas that pairs satellite data with community-led narratives to surface environmental justice insights.</p>
+                    <ul class="project-meta">
+                        <li><span>Stack</span> PostGIS · Deck.gl · Python · Airflow</li>
+                        <li><span>Outcome</span> Informed 3 municipal grant proposals for climate mitigation</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Spatial Analysis</span>
+                        <span>Community Research</span>
+                        <span>Visualization</span>
+                    </div>
+                </div>
             </a>
 
             <a href="show-me-your-colors.html" class="project-item" data-number="4">
-                <span class="project-number">4.</span>
-                <span class="project-title">Show Me your colors</span>
+                <span class="project-number">04</span>
+                <div class="project-info">
+                    <div class="project-header-row">
+                        <h2 class="project-title">Show Me Your Colors</h2>
+                        <span class="project-role">Creative Technologist</span>
+                    </div>
+                    <p class="project-summary">Color-driven recommendation engine translating psychological safety research into adaptive gallery lighting.</p>
+                    <ul class="project-meta">
+                        <li><span>Stack</span> TensorFlow · OpenCV · WebGL · Node.js</li>
+                        <li><span>Outcome</span> Reduced visitor drop-off by 27% in pilot exhibition</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Computational Senses</span>
+                        <span>Realtime Systems</span>
+                        <span>Installation</span>
+                    </div>
+                </div>
             </a>
         </nav>
 
         <footer class="landing-footer">
-            <a href="mailto:mtcarmier@berkeley.edu">mtcarmier@berkeley.edu</a>
-            <a href="https://linkedin.com/in/mtcarmier" target="_blank">LinkedIn</a>
+            <a href="mailto:mtcarmier@berkeley.edu">Email</a>
+            <a href="https://linkedin.com/in/mtcarmier" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/mtcarmier" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://medium.com/@mtcarmier" target="_blank" rel="noopener">Medium</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
         </footer>
     </div>
 
