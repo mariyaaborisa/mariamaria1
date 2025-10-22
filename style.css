@@ -36,7 +36,12 @@ body {
 
 .name-header {
     margin-bottom: 4rem;
-    text-align: center;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+    flex-wrap: wrap;
 }
 
 .main-name {
@@ -45,6 +50,19 @@ body {
     color: var(--text-dark);
     line-height: 1.2;
     animation: slideDown 1s ease;
+}
+
+.about-link {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-link:hover,
+.about-link:focus {
+    color: var(--text-medium);
+    text-decoration: underline;
 }
 
 /* Project List */
