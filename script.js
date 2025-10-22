@@ -55,6 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Athena animation for About page
     const aboutLink = document.querySelector('.about-item');
     const animationOverlay = document.getElementById('athena-animation');
+    const soundToggle = document.getElementById('sound-toggle');
+
+    // Audio elements
+    const crackSound = document.getElementById('crack-sound');
+    const thunderSound = document.getElementById('thunder-sound');
+    const whooshSound = document.getElementById('whoosh-sound');
+
+    // Check if sound is enabled (default: true)
+    let soundEnabled = localStorage.getItem('athena-sound') !== 'false';
+
+    // Update sound toggle button
+    if (soundToggle) {
+        soundToggle.textContent = soundEnabled ? '🔊' : '🔇';
+        soundToggle.classList.toggle('muted', !soundEnabled);
+
+        soundToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('athena-sound', soundEnabled);
+            soundToggle.textContent = soundEnabled ? '🔊' : '🔇';
+            soundToggle.classList.toggle('muted', !soundEnabled);
+        });
+    }
+
+    // Play sound helper function
+    function playSound(audioElement) {
+        if (soundEnabled && audioElement) {
+            audioElement.currentTime = 0;
+            audioElement.play().catch(err => console.log('Audio play failed:', err));
+        }
+    }
 
     if (aboutLink && animationOverlay) {
         aboutLink.addEventListener('click', function(e) {
@@ -62,6 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Show animation overlay
             animationOverlay.classList.add('active');
+
+            // Sound timeline:
+            // 0.5s - Crack sound when crack starts
+            setTimeout(() => playSound(crackSound), 500);
+
+            // 1.0s - Whoosh sound when Zeus shakes
+            setTimeout(() => playSound(whooshSound), 1000);
+
+            // 1.7s - Thunder sound with lightning
+            setTimeout(() => playSound(thunderSound), 1700);
 
             // Navigate to about page after animation completes (3.5 seconds total)
             setTimeout(() => {
