@@ -6,14 +6,19 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
+    --cream-bg: #fff8dc;
+    --pastel-pink: #ffc4d6;
+    --pastel-lavender: #d4a5ff;
+    --pastel-mint: #a8e6cf;
+    --pastel-peach: #ffd4b5;
+    --pastel-blue: #b5d4ff;
+    --pastel-coral: #ffb3ba;
+    --text-dark: #4a3f35;
+    --text-medium: #7a6f65;
+    --text-light: #9a8f85;
     --white: #ffffff;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(74, 63, 53, 0.1), 0 2px 4px -1px rgba(74, 63, 53, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(74, 63, 53, 0.15), 0 4px 6px -2px rgba(74, 63, 53, 0.08);
 }
 
 html {
@@ -21,10 +26,10 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--white);
+    background: var(--cream-bg);
 }
 
 .container {
@@ -39,7 +44,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 220, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
@@ -76,7 +81,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--pastel-lavender);
 }
 
 .nav-link::after {
@@ -86,7 +91,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--pastel-lavender);
     transition: width 0.3s ease;
 }
 
@@ -103,8 +108,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 8rem 2rem 4rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-pink) 50%, var(--pastel-peach) 100%);
+    color: var(--text-dark);
     position: relative;
 }
 
@@ -121,7 +126,7 @@ body {
 }
 
 .highlight {
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background: linear-gradient(120deg, var(--pastel-mint) 0%, var(--pastel-blue) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -161,23 +166,24 @@ body {
 
 .btn-primary {
     background: var(--white);
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    background: var(--pastel-mint);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border-color: var(--white);
+    color: var(--text-dark);
+    border-color: var(--text-dark);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--text-dark);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
@@ -203,15 +209,15 @@ body {
 .arrow {
     width: 24px;
     height: 24px;
-    border-left: 2px solid var(--white);
-    border-bottom: 2px solid var(--white);
+    border-left: 2px solid var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
     transform: rotate(-45deg);
 }
 
 /* About Section */
 .about {
     padding: 6rem 2rem;
-    background: var(--white);
+    background: var(--cream-bg);
 }
 
 .section-title {
@@ -245,19 +251,19 @@ body {
 
 .skill-tag {
     padding: 0.5rem 1rem;
-    background: var(--bg-light);
+    background: var(--white);
     border-radius: 50px;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-dark);
-    border: 1px solid #e5e7eb;
+    border: 2px solid var(--pastel-lavender);
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    border-color: var(--primary-color);
+    background: var(--pastel-lavender);
+    color: var(--text-dark);
+    border-color: var(--pastel-lavender);
     transform: translateY(-2px);
 }
 
@@ -270,12 +276,12 @@ body {
     width: 100%;
     max-width: 400px;
     aspect-ratio: 1;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-lavender) 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--text-dark);
     font-size: 1.25rem;
     font-weight: 600;
     box-shadow: var(--shadow-lg);
@@ -284,7 +290,7 @@ body {
 /* Work Section */
 .work {
     padding: 6rem 2rem;
-    background: var(--bg-light);
+    background: var(--white);
 }
 
 .work-grid {
@@ -294,12 +300,13 @@ body {
 }
 
 .work-item {
-    background: var(--white);
+    background: var(--cream-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 2px solid var(--pastel-peach);
 }
 
 .work-item:hover {
@@ -310,11 +317,11 @@ body {
 .work-image .image-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-mint) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--text-dark);
     font-size: 1.125rem;
     font-weight: 600;
 }
@@ -337,7 +344,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 6rem 2rem;
-    background: var(--white);
+    background: var(--cream-bg);
     text-align: center;
 }
 
@@ -362,18 +369,18 @@ body {
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background: var(--bg-light);
+    background: var(--white);
     border-radius: 50px;
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid var(--pastel-pink);
 }
 
 .contact-link:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--pastel-pink);
+    color: var(--text-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
@@ -386,8 +393,8 @@ body {
 /* Footer */
 .footer {
     padding: 2rem;
-    background: var(--text-dark);
-    color: var(--white);
+    background: var(--pastel-lavender);
+    color: var(--text-dark);
     text-align: center;
 }
 
