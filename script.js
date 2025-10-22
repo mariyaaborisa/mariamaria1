@@ -51,4 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.head.appendChild(style);
     }
+
+    // Athena animation for About page
+    const aboutLink = document.querySelector('.about-item');
+    const animationOverlay = document.getElementById('athena-animation');
+
+    if (aboutLink && animationOverlay) {
+        aboutLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default navigation
+
+            // Show animation overlay
+            animationOverlay.classList.add('active');
+
+            // Navigate to about page after animation completes (3.5 seconds total)
+            setTimeout(() => {
+                window.location.href = 'about.html';
+            }, 3500);
+        });
+    }
 });
