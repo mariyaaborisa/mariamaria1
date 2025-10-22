@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Athena Animation Overlay -->
+    <div id="athena-animation" class="animation-overlay">
+        <div class="animation-container">
+            <div class="zeus-statue">
+                <div class="zeus-head"></div>
+                <div class="crack-line"></div>
+            </div>
+            <div class="athena-statue"></div>
+            <div class="lightning-strike lightning-1"></div>
+            <div class="lightning-strike lightning-2"></div>
+            <div class="lightning-strike lightning-3"></div>
+            <div class="lightning-flash"></div>
+        </div>
+        <button id="sound-toggle" class="sound-toggle" title="Toggle sound">
+            🔊
+        </button>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="crack-sound" preload="auto">
+        <source src="sounds/crack.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="thunder-sound" preload="auto">
+        <source src="sounds/thunder.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="whoosh-sound" preload="auto">
+        <source src="sounds/whoosh.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="landing-container">
         <header class="name-header">
             <h1 class="main-name">María-Teresa Carmier</h1>
@@ -21,9 +50,9 @@
                 <span class="project-title">About me.</span>
             </a>
 
-            <a href="junipers-compass.html" class="project-item" data-number="1">
+            <a href="junipers-clompass.html" class="project-item" data-number="1">
                 <span class="project-number">1.</span>
-                <span class="project-title">Juniper's Compass</span>
+                <span class="project-title">Juniper's Clompass</span>
             </a>
 
             <a href="responsible-ai.html" class="project-item" data-number="2">
