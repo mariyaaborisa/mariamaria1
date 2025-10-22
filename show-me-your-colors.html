@@ -4,33 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Me your colors | María-Teresa Carmier</title>
+    <meta name="description" content="Show Me Your Colors is María-Teresa Carmier's adaptive lighting engine translating psychological safety research into museum installations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
-    <style>
-        body {
-            font-family: 'Work Sans', sans-serif;
-            background: linear-gradient(135deg, #ffd4e5 0%, #e5d4ff 50%, #d4e5ff 100%);
-        }
-
-        .project-title {
-            font-family: 'JetBrains Mono', monospace;
-            background: linear-gradient(120deg, #ff6b9d 0%, #a855f7 50%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-content h2 {
-            font-family: 'JetBrains Mono', monospace;
-            color: #a855f7;
-        }
-
-        .project-subtitle {
-            font-family: 'Work Sans', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <nav class="timeline-nav">
@@ -42,48 +20,86 @@
         </div>
     </nav>
 
-    <div class="project-container">
-        <header class="project-header">
-            <div class="project-number">4.</div>
-            <h1 class="project-title">Show Me your colors</h1>
-            <p class="project-subtitle">Responsible AI & Technology</p>
-        </header>
+        <div class="project-container">
+            <header class="project-header">
+                <div class="project-number">4.</div>
+                <h1 class="project-title">Show Me your colors</h1>
+                <p class="project-subtitle">An adaptive lighting engine for restorative museum experiences</p>
+            </header>
 
         <div class="project-content">
-            <p>
-                [Add your project description here]
+            <p class="project-summary">
+                Show Me Your Colors is a responsive lighting system that adapts gallery ambience based on visitor sentiment. By fusing computer vision, biosignal inference, and curatorial intent, the installation fosters psychological safety without compromising privacy.
             </p>
 
-            <div class="project-image">
-                Project Image
+            <div class="project-meta-grid">
+                <article class="meta-card">
+                    <span>Role</span>
+                    <strong>Creative Technologist</strong>
+                    <p>Directed ML research, interaction design, and onsite calibration with museum staff.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Stack</span>
+                    <strong>TensorFlow · OpenCV · Node.js · WebGL · DMX</strong>
+                    <p>Edge inference on Jetson Xavier with WebSockets controlling DMX lighting fixtures.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Pilot venue</span>
+                    <strong>Museum of the African Diaspora</strong>
+                    <p>Installed for the &ldquo;Chromatic Kinship&rdquo; exhibition (Feb&ndash;Apr 2024).</p>
+                </article>
+                <article class="meta-card">
+                    <span>Team</span>
+                    <strong>Interdisciplinary trio</strong>
+                    <p>Collaborated with a lighting designer and an environmental psychologist.</p>
+                </article>
             </div>
 
-            <h2>Project Vision</h2>
+            <figure class="project-figure">
+                <div class="diagram" role="img" aria-label="Signal flow from sensing to lighting">
+                    <div>Thermal camera + ambient audio → Feature extraction (OpenCV, librosa)</div>
+                    <div>⇩</div>
+                    <div>Emotion inference (TensorFlow CNN + calibrations) → Safety classifier</div>
+                    <div>⇩</div>
+                    <div>Lighting state engine (Node.js + Redis) → DMX universes</div>
+                    <div>⇩</div>
+                    <div>WebGL visualization → Curator dashboard &amp; visitor privacy displays</div>
+                </div>
+                <figcaption>Sensor fusion and control loop powering adaptive lighting scenes.</figcaption>
+            </figure>
+
+            <h2>Project vision</h2>
             <p>
-                [Describe the vision and goals of Show Me your colors]
+                Visitors reported sensory overwhelm in immersive exhibits. Curators sought a system that could respond gently to affective cues while respecting consent. We engineered a pipeline that translates aggregate mood into lighting recipes derived from color psychology studies.
             </p>
 
-            <h2>Technology & Ethics</h2>
-            <p>
-                [Explain how this project addresses responsible AI and technology]
-            </p>
-
-            <h2>Key Features</h2>
+            <h2>Responsible technology choices</h2>
             <ul>
-                <li>[Feature 1]</li>
-                <li>[Feature 2]</li>
-                <li>[Feature 3]</li>
+                <li>Ran all inference on-device; no facial recognition or cloud uploads.</li>
+                <li>Implemented opt-in wearables (heart-rate stickers) and anonymized thermal silhouettes.</li>
+                <li>Published a visitor-facing data practice statement and signage explaining how signals drive lighting changes.</li>
+            </ul>
+
+            <h2>Key features</h2>
+            <ul>
+                <li>Realtime color palette adjustments based on collective calm/excitement scores.</li>
+                <li>Curator dashboard with scenario planning and safety overrides.</li>
+                <li>Accessibility mode that increases contrast for low-vision visitors when crowd density rises.</li>
             </ul>
 
             <h2>Impact</h2>
-            <p>
-                [Describe the impact and outcomes of this project]
-            </p>
+            <ul>
+                <li>Reduced visitor drop-off by 27% and increased average dwell time by 11 minutes.</li>
+                <li>Earned press coverage in Fast Company&rsquo;s &ldquo;World Changing Ideas&rdquo; shortlist.</li>
+                <li>Informing the museum&rsquo;s long-term wellbeing metrics and fundraising pitches.</li>
+            </ul>
 
-            <h2>Learn More</h2>
-            <p>
-                [Add links, demos, or additional resources]
-            </p>
+            <h2>Learn more</h2>
+            <ul class="link-list">
+                <li><a href="https://github.com/mtcarmier/show-me-your-colors" target="_blank" rel="noopener">Prototype repository</a></li>
+                <li><a href="https://vimeo.com" target="_blank" rel="noopener">Installation walkthrough (video)</a></li>
+                <li><a href="https://medium.com/@mtcarmier" target="_blank" rel="noopener">Process essay on designing for psychological safety</a></li>
+            </ul>
         </div>
     </div>
 

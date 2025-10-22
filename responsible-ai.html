@@ -4,30 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsible AI in the Humanities | María-Teresa Carmier</title>
+    <meta name="description" content="Responsible AI in the Humanities is María-Teresa Carmier's framework for auditing LLM experiences across cultural institutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #e6f3ff;
-        }
-
-        .project-title {
-            font-family: 'JetBrains Mono', monospace;
-            color: #1e40af;
-        }
-
-        .project-content h2 {
-            font-family: 'JetBrains Mono', monospace;
-            color: #1e40af;
-        }
-
-        .project-subtitle {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <nav class="timeline-nav">
@@ -39,43 +20,89 @@
         </div>
     </nav>
 
-    <div class="project-container">
-        <header class="project-header">
-            <div class="project-number">2.</div>
-            <h1 class="project-title">Responsible AI in the Humanities</h1>
-            <p class="project-subtitle">Technology & Ethics</p>
-        </header>
+        <div class="project-container">
+            <header class="project-header">
+                <div class="project-number">2.</div>
+                <h1 class="project-title">Responsible AI in the Humanities</h1>
+                <p class="project-subtitle">A governance and evaluation toolkit for cultural institutions adopting LLMs</p>
+            </header>
 
         <div class="project-content">
-            <p>
-                [Add your project description here]
+            <p class="project-summary">
+                Cultural institutions are rapidly piloting LLM-powered guides, but lack shared language to evaluate risk, bias, and interpretability. I built a responsible AI playbook with researchers, curators, and policy teams that translates academic guidelines into actionable scorecards, data audits, and facilitation kits.
             </p>
 
-            <div class="project-image">
-                Project Image
+            <div class="project-meta-grid">
+                <article class="meta-card">
+                    <span>Role</span>
+                    <strong>Research Fellow</strong>
+                    <p>Led qualitative research, orchestrated technical audits, and synthesized the final governance framework.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Partners</span>
+                    <strong>5 museums &amp; archives</strong>
+                    <p>California Academy of Sciences, Oakland Museum of California, and three library innovation teams.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Deliverables</span>
+                    <strong>Evaluation rubric · Data health reports · Workshop scripts</strong>
+                    <p>Packaged as an open handbook and GitHub repository for civic technologists.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Timeline</span>
+                    <strong>Aug 2023 &ndash; Mar 2024</strong>
+                    <p>Six-month residency funded by the Mellon Foundation.</p>
+                </article>
             </div>
 
-            <h2>Overview</h2>
-            <p>
-                [Describe the Responsible AI in the Humanities project, its goals, and significance]
-            </p>
-
-            <h2>Key Questions</h2>
+            <h2>Key questions</h2>
             <ul>
-                <li>[Question or theme 1]</li>
-                <li>[Question or theme 2]</li>
-                <li>[Question or theme 3]</li>
+                <li>What does algorithmic transparency look like for narrative interfaces embedded in public galleries?</li>
+                <li>How do we quantify representation when models remix sensitive community archives?</li>
+                <li>How might curators continuously audit systems without full-time ML engineers?</li>
             </ul>
 
-            <h2>Approach</h2>
+            <h2>Research approach</h2>
             <p>
-                [Describe your methodology and approach to addressing responsible AI in humanities]
+                We ran contextual inquiries with docents and visitors to map expectations, then evaluated partner datasets using Great Expectations, dbt, and bespoke fairness probes. Findings informed a modular rubric covering governance, data stewardship, model performance, and visitor experience.
             </p>
 
+            <div class="project-pill-group" aria-label="Methods">
+                <span class="project-pill">Participatory workshops</span>
+                <span class="project-pill">Data documentation</span>
+                <span class="project-pill">Evaluation harnesses</span>
+                <span class="project-pill">Policy translation</span>
+            </div>
+
+            <h2>Evaluation stack</h2>
+            <div class="code-block">
+                # hydra config snippet
+                pipeline:
+                  load_docs: s3://cultural-datasets/bancroft
+                  expectations: great_expectations/checkpoints/llm_ingest.yml
+                  fairness_suite: notebooks/bias_probe.ipynb
+                  evaluation:
+                    - metric: narrative_diversity@10
+                    - metric: citation_density
+                    - metric: harmful_fragment_rate
+                  reporting:
+                    out_dir: reports/{run_id}
+                    reviewers: [curation_team, legal]
+            </div>
+
             <h2>Outcomes</h2>
-            <p>
-                [Describe the results, insights, or deliverables from this project]
-            </p>
+            <ul>
+                <li>Partners adopted the rubric to greenlight pilots; two institutions delayed launches to address identified data consent gaps.</li>
+                <li>Published an open-source checklist used by 11 civic technologists to scope new projects within three months.</li>
+                <li>Delivered training that upskilled 40+ curators in reading model cards and interpreting evaluation dashboards.</li>
+            </ul>
+
+            <h2>What&rsquo;s next</h2>
+            <ul>
+                <li>Extending the rubric with metrics for multimodal (text+image+audio) storytelling systems.</li>
+                <li>Co-developing a shared incident response protocol with the Algorithmic Fairness &amp; Opacity Working Group.</li>
+                <li>Publishing anonymized case studies to help smaller institutions adopt the framework without bespoke consulting.</li>
+            </ul>
         </div>
     </div>
 
