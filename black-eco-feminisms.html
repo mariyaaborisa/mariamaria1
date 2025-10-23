@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Eco Feminisms | María-Teresa Carmier</title>
-    <meta name="description" content="Black Eco Feminisms is María-Teresa Carmier's geospatial storytelling platform linking climate data to community narratives.">
+    <meta name="description" content="Land Back with Conditions documents María-Teresa Carmier's Ninth Root urban planning internship focused on Black ecofeminist land stewardship.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,87 +24,42 @@
             <header class="project-header">
                 <div class="project-number">3.</div>
                 <h1 class="project-title">Black Eco Feminisms</h1>
-                <p class="project-subtitle">A geospatial storytelling atlas for Black environmental justice movements</p>
+                <p class="project-subtitle">Land Back with Conditions: Ninth Root Internship</p>
             </header>
 
         <div class="project-content">
             <p class="project-summary">
-                Black Eco Feminisms is an interactive atlas and oral history archive that reveals how Black women-led coalitions respond to climate stressors. I led data storytelling, integrating satellite imagery, sensor feeds, and community interviews into actionable visual narratives for policy advocates.
+                Land Back with Conditions is my UC Berkeley summer fieldwork with Ninth Root, an Oakland-based environmental justice nonprofit. The internship asked how civic design tools could protect Black land stewardship when development pressures and ecological harm collide.
             </p>
 
-            <div class="project-meta-grid">
-                <article class="meta-card">
-                    <span>Role</span>
-                    <strong>Data Storytelling Lead</strong>
-                    <p>Designed the geospatial architecture and facilitated participatory mapping sessions.</p>
-                </article>
-                <article class="meta-card">
-                    <span>Stack</span>
-                    <strong>PostGIS · Deck.gl · Kepler.gl · Airflow · PostgreSQL</strong>
-                    <p>Nightly pipelines harmonizing Landsat imagery, EPA pollution data, and community-collected air quality metrics.</p>
-                </article>
-                <article class="meta-card">
-                    <span>Community Partners</span>
-                    <strong>6 grassroots organizations</strong>
-                    <p>Including West Oakland Environmental Indicators Project and the Black Ecology Center.</p>
-                </article>
-                <article class="meta-card">
-                    <span>Launch</span>
-                    <strong>Beta released Nov 2023</strong>
-                    <p>Presented at the Environmental Justice Now Summit with 300+ attendees.</p>
-                </article>
+            <div class="project-pill-group" aria-label="Domains">
+                <span class="project-pill">Environmental Justice</span>
+                <span class="project-pill">Urban Planning</span>
+                <span class="project-pill">Civic Design</span>
             </div>
 
-            <figure class="project-figure">
-                <div class="diagram" role="img" aria-label="Workflow diagram for data ingestion and storytelling">
-                    <div>Sensors + Satellite Tiles → Airflow ingestion → PostGIS (tiling + intersection)</div>
-                    <div>⇩</div>
-                    <div>Community interviews → Otter.ai transcripts → spaCy entity linking</div>
-                    <div>⇩</div>
-                    <div>Story kernel generator → Narrative scenes + map layers (Deck.gl)</div>
-                    <div>⇩</div>
-                    <div>Publishing pipeline → Static site export + API for researchers</div>
-                </div>
-                <figcaption>Hybrid pipeline blending quantitative and qualitative inputs to tell place-based climate stories.</figcaption>
-            </figure>
-
-            <h2>Project context</h2>
+            <h2>Project overview</h2>
             <p>
-                Environmental justice conversations are often dominated by metrics devoid of lived experience. Black women organizers asked us for a tool that preserves narrative agency while equipping them with credible evidence for grant proposals and council meetings.
+                As part of my UC Berkeley summer fieldwork and Arcus Social Justice Fellowship, I completed an Urban Planning Internship with Ninth Root, an Oakland-based environmental justice nonprofit. I worked alongside community organizers and residents to design listening sessions that addressed land use, displacement, and ecological care. This project investigated how civic design tools—such as systems mapping, co-creation workshops, and storytelling—could strengthen community agency in environmental planning and stewardship.
             </p>
 
-            <h2>Core themes</h2>
+            <h2>Key contributions</h2>
             <ul>
-                <li><strong>Interdependence.</strong> Visualizing how housing, health, and ecology intersect block-by-block.</li>
-                <li><strong>Reparative storytelling.</strong> Pairing satellite change detection with oral histories to highlight resilience strategies.</li>
-                <li><strong>Self-determination.</strong> Providing communities direct control over data redaction and access permissions.</li>
+                <li><strong>Community listening sessions:</strong> Designed and facilitated gatherings centering intergenerational narratives around environmental harm, healing, and land justice.</li>
+                <li><strong>Civic design strategy:</strong> Mapped relationships between community assets, governance structures, and environmental inequities to inform participatory planning.</li>
+                <li><strong>Workshop design:</strong> Co-created creative engagements that merged art, policy dialogue, and local activism to translate residents’ stories into actionable frameworks.</li>
+                <li><strong>Training &amp; visual tools:</strong> Produced volunteer recruitment materials, facilitation guides, and visual systems maps to support Ninth Root’s ongoing initiatives.</li>
             </ul>
 
-            <h2>Research &amp; findings</h2>
+            <h2>Ongoing scholarship</h2>
             <p>
-                We co-designed qualitative coding rubrics with organizers, then developed a Deck.gl layer system that overlays particulate matter spikes with interview excerpts. Policy teams used the platform to argue for funding targeted tree canopies and respiratory clinics.
+                This fieldwork informs my forthcoming chapter on Black Ecofeminisms and Land Stewardship in <em>Indigenous Sovereignty in Environmental Research: Decolonizing Ethics and Methodologies</em> (Routledge, forthcoming). The chapter extends this applied design work, positioning stewardship as both a civic design practice and a framework of care within environmental and technological systems.
             </p>
 
-            <div class="project-pill-group" aria-label="Techniques">
-                <span class="project-pill">Change detection</span>
-                <span class="project-pill">Participatory GIS</span>
-                <span class="project-pill">Narrative analytics</span>
-                <span class="project-pill">Accessibility-first UX</span>
-            </div>
-
-            <h2>Impact &amp; contributions</h2>
-            <ul>
-                <li>Secured three municipal grants totaling $1.8M for community-led climate mitigation projects.</li>
-                <li>Adopted by two journalism collaboratives to contextualize investigative reporting on heat islands.</li>
-                <li>Published an open methodology guide downloaded 2,400+ times in the first quarter.</li>
-            </ul>
-
-            <h2>Lessons forward</h2>
-            <ul>
-                <li>Building a federated publishing workflow so partner organizations can host localized versions offline.</li>
-                <li>Expanding to include audio narratives with Web Captioner transcripts for accessibility.</li>
-                <li>Partnering with public schools to integrate the atlas into environmental science curricula.</li>
-            </ul>
+            <h2>Impact</h2>
+            <p>
+                Turned community listening into civic intelligence—translating lived experiences into design artifacts that guide equitable environmental planning and future coalition-building.
+            </p>
         </div>
     </div>
 
