@@ -23,6 +23,27 @@
     --panel-border: rgba(173, 141, 235, 0.25);
     --panel-shadow: 0 28px 60px rgba(6, 4, 20, 0.65);
     --code-font: 'IBM Plex Mono', monospace;
+
+    /* Card Color Variants for Visual Variance */
+    --card-blue-bg: rgba(30, 60, 120, 0.25);
+    --card-blue-border: rgba(100, 170, 255, 0.35);
+    --card-blue-accent: #64aaff;
+
+    --card-cyan-bg: rgba(15, 80, 100, 0.28);
+    --card-cyan-border: rgba(100, 220, 255, 0.38);
+    --card-cyan-accent: #64dcff;
+
+    --card-purple-bg: rgba(80, 30, 120, 0.28);
+    --card-purple-border: rgba(180, 100, 255, 0.35);
+    --card-purple-accent: #b464ff;
+
+    --card-pink-bg: rgba(100, 20, 80, 0.28);
+    --card-pink-border: rgba(255, 100, 200, 0.35);
+    --card-pink-accent: #ff64c8;
+
+    --card-green-bg: rgba(20, 80, 60, 0.28);
+    --card-green-border: rgba(80, 220, 180, 0.35);
+    --card-green-accent: #50dcb4;
 }
 
 html {
@@ -307,6 +328,57 @@ body::after {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
+}
+
+/* Card Color Variants */
+.meta-card.card-blue {
+    background: var(--card-blue-bg);
+    border-color: var(--card-blue-border);
+}
+
+.meta-card.card-blue:hover {
+    border-color: var(--card-blue-accent);
+    box-shadow: 0 0 20px rgba(100, 170, 255, 0.15);
+}
+
+.meta-card.card-cyan {
+    background: var(--card-cyan-bg);
+    border-color: var(--card-cyan-border);
+}
+
+.meta-card.card-cyan:hover {
+    border-color: var(--card-cyan-accent);
+    box-shadow: 0 0 20px rgba(100, 220, 255, 0.15);
+}
+
+.meta-card.card-purple {
+    background: var(--card-purple-bg);
+    border-color: var(--card-purple-border);
+}
+
+.meta-card.card-purple:hover {
+    border-color: var(--card-purple-accent);
+    box-shadow: 0 0 20px rgba(180, 100, 255, 0.15);
+}
+
+.meta-card.card-pink {
+    background: var(--card-pink-bg);
+    border-color: var(--card-pink-border);
+}
+
+.meta-card.card-pink:hover {
+    border-color: var(--card-pink-accent);
+    box-shadow: 0 0 20px rgba(255, 100, 200, 0.15);
+}
+
+.meta-card.card-green {
+    background: var(--card-green-bg);
+    border-color: var(--card-green-border);
+}
+
+.meta-card.card-green:hover {
+    border-color: var(--card-green-accent);
+    box-shadow: 0 0 20px rgba(80, 220, 180, 0.15);
 }
 
 .project-pill-group {
