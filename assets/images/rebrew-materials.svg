@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Rebrew wetware materials illustration</title>
+  <desc id="desc">Abstract composition of herb-infused paper sheets, a tea vessel, and botanical motifs.</desc>
+  <defs>
+    <linearGradient id="paperGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff8e8" />
+      <stop offset="100%" stop-color="#fde2bf" />
+    </linearGradient>
+    <linearGradient id="steamGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4d7ff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#d6f4ff" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="cupGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c86b57" />
+      <stop offset="100%" stop-color="#8e3f28" />
+    </linearGradient>
+    <pattern id="herbPattern" patternUnits="userSpaceOnUse" width="26" height="26">
+      <path d="M13 0v26" stroke="#78a26a" stroke-width="3" stroke-linecap="round" />
+      <path d="M0 13h26" stroke="#b7d1a5" stroke-width="3" stroke-linecap="round" />
+      <circle cx="13" cy="13" r="5" fill="#6b8759" />
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#fbf5f0" rx="40" />
+  <g transform="translate(70,60)">
+    <rect x="60" y="20" width="220" height="320" rx="18" fill="url(#paperGradient)" stroke="#edcaa1" stroke-width="4" />
+    <rect x="100" y="50" width="160" height="260" rx="14" fill="url(#herbPattern)" opacity="0.35" />
+    <rect x="260" y="80" width="220" height="320" rx="18" fill="url(#paperGradient)" stroke="#edcaa1" stroke-width="4" transform="rotate(-7 370 240)" />
+    <rect x="320" y="120" width="160" height="220" rx="14" fill="url(#herbPattern)" opacity="0.28" transform="rotate(-7 400 230)" />
+  </g>
+  <g transform="translate(460,180)">
+    <ellipse cx="80" cy="110" rx="120" ry="50" fill="#ead6c1" opacity="0.6" />
+    <path d="M-10 0h180l-12 110c-4 37-30 60-78 60s-74-23-78-60z" fill="url(#cupGradient)" />
+    <ellipse cx="80" cy="0" rx="90" ry="24" fill="#f0c9bb" />
+    <ellipse cx="80" cy="0" rx="70" ry="18" fill="#fdf0e6" opacity="0.75" />
+  </g>
+  <g transform="translate(470,60)" fill="url(#steamGradient)">
+    <path d="M20 160c-20-40 12-80-8-120s40-60 52-20-30 60-10 110-14 70-34 30z" />
+    <path d="M110 150c-18-34 6-68-12-100s36-48 46-16-26 52-8 92-8 58-26 24z" />
+  </g>
+  <g transform="translate(120,360)" fill="#a9827a">
+    <rect x="0" y="0" width="300" height="12" rx="6" />
+    <rect x="40" y="28" width="220" height="12" rx="6" opacity="0.7" />
+  </g>
+  <g transform="translate(530,320)" fill="#a9827a" opacity="0.5">
+    <rect x="0" y="0" width="140" height="10" rx="5" />
+    <rect x="18" y="20" width="90" height="10" rx="5" />
+  </g>
+  <g transform="translate(620,80)" fill="#7aa676" opacity="0.5">
+    <circle cx="0" cy="0" r="16" />
+    <circle cx="34" cy="10" r="10" />
+    <circle cx="18" cy="36" r="12" />
+  </g>
+</svg>

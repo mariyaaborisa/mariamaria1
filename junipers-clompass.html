@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juniper's Clompass | María-Teresa Carmier</title>
-    <meta name="description" content="Juniper's Clompass is a multimodal story engine led by María-Teresa Carmier that helps kids explore folklore responsibly.">
+    <meta name="description" content="Juniper’s Clompass is an analog-digital learning companion that turns a vintage clock into a compass and storytelling tool for kids.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,83 +21,56 @@
     </nav>
 
         <div class="project-container">
-            <header class="project-header">
-                <div class="project-number">1.</div>
-                <h1 class="project-title">Juniper's Clompass</h1>
-                <p class="project-subtitle">A responsible story-generation companion for young readers</p>
-            </header>
+        <header class="project-header">
+            <div class="project-number">1.</div>
+            <h1 class="project-title">Juniper's Clompass</h1>
+            <p class="project-subtitle">Re-enchanting learning through analog-digital hybridity</p>
+        </header>
+
+        <figure class="project-figure">
+            <img src="assets/images/junipers-clompass-prototype.svg" alt="Juniper's Clompass prototype showing a retro digital display mounted atop a wooden jewelry box">
+            <figcaption>Final prototype of Juniper’s Clompass: a retrofitted analog clock enclosure with Arduino-powered compass display for storytelling prompts.</figcaption>
+        </figure>
 
         <div class="project-content">
             <p class="project-summary">
-                Juniper&rsquo;s Clompass is a multimodal narrative engine that helps 8&ndash;12 year-olds explore folklore responsibly. I led the ML system design, building a pipeline that pairs curated cultural datasets with safety guardrails and playful voice interfaces.
+                How might we re-enchant learning through analog-digital hybridity? Juniper’s Clompass turns a 1970s analog clock into a digital compass and storytelling device for children. Blending circuitry with imagination, the Clompass invites learners to navigate by stars and narrative rather than GPS alone.
             </p>
 
             <div class="project-meta-grid">
                 <article class="meta-card">
-                    <span>Role</span>
-                    <strong>Lead ML Researcher &amp; Product Strategist</strong>
-                    <p>Directed data strategy, model tuning, and facilitated co-design workshops with educators.</p>
+                    <span>Domain</span>
+                    <strong>Curriculum &amp; Physical Prototyping · STEAM Education · Storytelling</strong>
+                    <p>Designing tangible interfaces that merge scientific literacy with narrative play.</p>
                 </article>
                 <article class="meta-card">
-                    <span>Timeline</span>
-                    <strong>Jan &ndash; Jun 2024</strong>
-                    <p>Three sprint cycles across discovery, prototyping, and pilot deployment.</p>
+                    <span>Experience</span>
+                    <strong>Analog clock → digital compass</strong>
+                    <p>Hands-on exploration that encourages learners to orient themselves through story and sky.</p>
                 </article>
                 <article class="meta-card">
-                    <span>Stack</span>
-                    <strong>PyTorch · Hugging Face · FastAPI · Redis · ElevenLabs</strong>
-                    <p>Fine-tuned instruction models, streaming inference via FastAPI, and real-time caching for parent dashboards.</p>
+                    <span>Toolkit</span>
+                    <strong>Arduino · Magnetometer · LCD</strong>
+                    <p>Modular electronics coupled with narrative prompts for classroom tinkering.</p>
                 </article>
                 <article class="meta-card">
-                    <span>Scale</span>
-                    <strong>1K weekly story sessions</strong>
-                    <p>Deployed across two after-school programs with multilingual support (EN/ES).</p>
+                    <span>Curriculum</span>
+                    <strong>Co-designed lesson plans</strong>
+                    <p>Tested with K–5 learners to strengthen spatial reasoning and creative writing.</p>
                 </article>
             </div>
 
-            <figure class="project-figure">
-                <div class="diagram" role="img" aria-label="Pipeline diagram showing ingestion, filtering, retrieval, and generation stages">
-                    <div>Data Lake → Curated folklore, librarian annotations, educator prompts</div>
-                    <div>⇩ Ingestion (Airflow) &nbsp;→&nbsp; Text normalization · toxicity + stereotype heuristics</div>
-                    <div>⇩ Vector Store (Weaviate) &nbsp;→&nbsp; Hybrid dense + keyword retrieval</div>
-                    <div>⇩ Policy Layer (OpenAI Moderation + custom lexical filters)</div>
-                    <div>⇩ Story Engine (LoRA-tuned Mistral-7B) &nbsp;→&nbsp; Structured narrative beats</div>
-                    <div>⇩ Voice Studio (ElevenLabs) &nbsp;→&nbsp; Character voices + caption stream</div>
-                </div>
-                <figcaption>Architecture sketch: ingestion, retrieval, and generation components that keep stories contextual, diverse, and safe.</figcaption>
-            </figure>
-
-            <h2>Design challenge</h2>
-            <p>
-                Children&rsquo;s literature discovery tools often flatten cultural nuance and replicate harmful stereotypes. Our partner schools wanted an AI companion that could surface underrepresented folklore while offering caregivers transparent controls. We needed a system that balanced imagination with rigorous guardrails.
-            </p>
-
-            <h2>What we built</h2>
+            <h2>Technical framework</h2>
             <ul>
-                <li>Curated a bilingual corpus of 12k folklore narratives with metadata capturing region, protagonist identity, and teachable themes.</li>
-                <li>Fine-tuned Mistral-7B using LoRA adapters to output structured story beats (setup, conflict, resolution) constrained by educator-approved tropes.</li>
-                <li>Layered a narrative safety harness that evaluates generated content for bias, reading level, and emotional intensity before release.</li>
-                <li>Designed a caregiver dashboard showing the provenance of each story and explaining why specific guardrails were triggered.</li>
+                <li>Arduino-based microcontroller paired with a magnetometer and LCD interface.</li>
+                <li>Integrated STEAM curriculum on magnetism, directionality, and creative writing.</li>
+                <li>Co-designed lesson plans piloted with K–5 learners to strengthen spatial reasoning.</li>
             </ul>
-
-            <h2>Safety instrumentation</h2>
-            <div class="callout">
-                Safety is a multi-model conversation. We chained OpenAI moderation, a BERT-based stereotype classifier we trained on 48k annotations, and a custom lexicon for cultural slurs. Stories failing any check are automatically revised with transparent rationale shared to caregivers.
-            </div>
 
             <h2>Impact</h2>
-            <ul>
-                <li>Story diversity scores increased by 68% compared to the district&rsquo;s legacy e-book platform.</li>
-                <li>Educators reported a 42% uptick in student-led discussions about cultural values during storytelling hour.</li>
-                <li>Zero high-severity safety incidents occurred across the first 9 weeks of deployment.</li>
-            </ul>
-
-            <h2>What I&rsquo;d explore next</h2>
-            <ul>
-                <li>Introduce retrieval-based citations so every generated beat links back to the source tales and annotations.</li>
-                <li>Release an open benchmarking suite for cultural narrative quality to help other youth storytelling tools measure impact.</li>
-                <li>Prototype tablet-native creation tools for students to author their own folklore and feed the corpus.</li>
-            </ul>
+            <p>
+                The Clompass bridges technical literacy and emotional curiosity—transforming STEM education into story-driven exploration.
+            </p>
         </div>
     </div>
 
