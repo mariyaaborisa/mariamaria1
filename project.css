@@ -31,9 +31,9 @@ html {
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background: radial-gradient(circle at 18% 12%, rgba(255, 77, 157, 0.12), transparent 55%),
-        radial-gradient(circle at 76% -6%, rgba(141, 211, 255, 0.1), transparent 52%),
-        linear-gradient(145deg, #040214 0%, var(--bg) 48%, #1a0f33 100%);
+    background: radial-gradient(circle at 20% 15%, rgba(255, 0, 110, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 0%, rgba(0, 212, 255, 0.12), transparent 50%),
+        linear-gradient(140deg, #040112 0%, var(--bg) 45%, #1f0b3c 100%);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -53,22 +53,22 @@ body::after {
 }
 
 body::before {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
-        radial-gradient(rgba(147, 197, 255, 0.22) 1px, transparent 1px),
-        radial-gradient(rgba(255, 180, 255, 0.14) 2px, transparent 2px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(rgba(147, 197, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(rgba(255, 180, 255, 0.2) 2px, transparent 2px);
     background-size: 120px 120px, 210px 210px, 320px 320px;
     background-position: 0 0, 80px 60px, 160px 120px;
     animation: driftStars 70s linear infinite;
-    opacity: 0.28;
+    opacity: 0.55;
 }
 
 body::after {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.42) 1px, transparent 1px),
-        radial-gradient(rgba(255, 255, 255, 0.26) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px),
+        radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
     background-size: 95px 95px, 160px 160px;
     background-position: 40px 90px, 100px 30px;
     animation: twinkle 9s ease-in-out infinite alternate;
-    opacity: 0.22;
+    opacity: 0.45;
 }
 
 /* Timeline Navigation */
@@ -142,18 +142,6 @@ body::after {
     animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
-}
-
-.project-panel {
-    background: var(--panel-bg);
-    border: 1px solid var(--panel-border);
-    border-radius: 28px;
-    padding: clamp(2.25rem, 4vw, 3.25rem);
-    box-shadow: var(--panel-shadow);
-    backdrop-filter: blur(22px);
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
 }
 
 .project-header {
