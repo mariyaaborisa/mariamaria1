@@ -62,7 +62,8 @@ body {
 
 .nav-home:hover {
     color: var(--accent);
-    text-shadow: 0 0 15px var(--glow-pink);
+    /* Minimal glow effect */
+    text-shadow: 0 0 8px var(--glow-pink);
 }
 
 .nav-arrows {
@@ -80,9 +81,10 @@ body {
 }
 
 .nav-arrow:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     color: var(--accent-strong);
-    text-shadow: 0 0 20px var(--glow-pink);
+    /* Reduced glow */
+    text-shadow: 0 0 10px var(--glow-pink);
 }
 
 .nav-arrow.disabled {
@@ -186,7 +188,8 @@ body {
 
 .project-content a:hover {
     color: var(--accent-strong);
-    text-shadow: 0 0 10px var(--glow-pink);
+    /* Subtle glow only */
+    text-shadow: 0 0 5px var(--glow-pink);
     text-decoration: underline;
 }
 
@@ -240,12 +243,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .meta-card:hover {
     border-color: var(--accent-strong);
-    box-shadow: 0 0 20px var(--glow-pink);
+    /* Reduced glow effect to minimize visual weight */
 }
 
 .meta-card span {
@@ -275,18 +278,12 @@ body {
 
 .project-pill {
     border-radius: 999px;
-    border: 1px solid rgba(255, 0, 110, 0.3);
+    border: 1px solid rgba(255, 0, 110, 0.25);
     padding: 0.45rem 0.85rem;
     font-size: 0.8rem;
     color: var(--text-secondary);
-    background: rgba(26, 11, 46, 0.6);
-    transition: all 0.3s ease;
-}
-
-.project-pill:hover {
-    border-color: var(--accent);
-    background: rgba(255, 0, 110, 0.1);
-    color: var(--accent-strong);
+    background: rgba(26, 11, 46, 0.5);
+    /* Static, no hover effects to reduce visual weight */
 }
 
 .callout {
@@ -316,7 +313,8 @@ body {
 
 .link-list a:hover {
     color: var(--accent-strong);
-    text-shadow: 0 0 10px var(--glow-pink);
+    /* Minimal glow */
+    text-shadow: 0 0 5px var(--glow-pink);
     text-decoration: underline;
 }
 
