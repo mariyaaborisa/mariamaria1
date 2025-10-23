@@ -116,9 +116,24 @@ body {
     opacity: 0.7;
 }
 
+.project-info-landing {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
 .project-title {
     font-weight: 400;
-    flex: 1;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.project-category {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-light);
+    opacity: 0.8;
 }
 
 /* Footer */
@@ -169,8 +184,12 @@ body {
         font-size: 3rem;
     }
 
-    .project-item {
+    .project-title {
         font-size: 1.5rem;
+    }
+
+    .project-category {
+        font-size: 0.75rem;
     }
 
     .landing-footer {
@@ -196,8 +215,12 @@ body {
         font-size: 2.5rem;
     }
 
-    .project-item {
+    .project-title {
         font-size: 1.25rem;
+    }
+
+    .project-category {
+        font-size: 0.7rem;
     }
 
     .project-number {
