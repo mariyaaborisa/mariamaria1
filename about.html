@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | María-Teresa Carmier</title>
+    <meta name="description" content="Get to know María-Teresa Carmier&mdash;a machine learning researcher crafting responsible AI for cultural institutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
-    <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <nav class="timeline-nav">
@@ -27,38 +23,84 @@
         <header class="project-header">
             <div class="project-number">p1</div>
             <h1 class="project-title">About me.</h1>
+            <p class="project-subtitle">I pair critical theory with machine learning to design equitable knowledge tools for communities and cultural stewards.</p>
         </header>
 
         <div class="project-content">
-            <p>
-                [Add your bio and background here]
-            </p>
-            <p>
-                I'm María-Teresa Carmier, a [your role/description]. My work focuses on
-                [your areas of interest and expertise].
-            </p>
-            <p>
-                I'm passionate about [your passions], and I believe in [your values/mission].
+            <p class="project-summary">
+                I am María-Teresa Carmier&mdash;a machine learning researcher, designer, and storyteller. My practice lives at the intersection of responsible AI and cultural heritage: I prototype systems that make archives searchable, legible, and just for the communities they document.
             </p>
 
-            <h2>Background</h2>
+            <div class="project-meta-grid">
+                <article class="meta-card">
+                    <span>Currently</span>
+                    <strong>Data Science Lab, UC Berkeley</strong>
+                    <p>Architecting retrieval and evaluation pipelines that power humanities-facing AI pilots across the university.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Research Interests</span>
+                    <strong>Algorithmic accountability &amp; multimodal storytelling</strong>
+                    <p>How do we audit narrative AI experiences, and how can we encode community governance inside creative tooling?</p>
+                </article>
+                <article class="meta-card">
+                    <span>Collaborators</span>
+                    <strong>Museums, libraries &amp; civic technologists</strong>
+                    <p>Recent partners include the Bancroft Library, Oakland Public Library, and the Algorithmic Fairness &amp; Opacity Working Group.</p>
+                </article>
+            </div>
+
+            <h2>Biography</h2>
             <p>
-                [Add information about your education, experience, etc.]
+                Trained in computational linguistics and media theory, I translate scholarship into deployable software. Prior to the Data Science Lab, I led research sprints at an Oakland civic-tech nonprofit, where we produced open-source datasets for local journalists and community organizers. Earlier, I studied comparative literature and computer science at UC Berkeley, which sharpened my obsession with how language, archives, and power collide in machine learning.
+            </p>
+            <p>
+                Across every project, I obsess over the full lifecycle: mapping messy ingestion pipelines, aligning models with stakeholder values, and crafting interfaces that invite curiosity rather than extract attention. I am equally comfortable pair programming ETL jobs as I am facilitating participatory design workshops with librarians and curators.
             </p>
 
-            <h2>Skills & Interests</h2>
+            <h2>Principles I work by</h2>
             <ul>
-                <li>[Skill or interest 1]</li>
-                <li>[Skill or interest 2]</li>
-                <li>[Skill or interest 3]</li>
-                <li>[Skill or interest 4]</li>
+                <li><strong>Context over convenience.</strong> Data inherits politics; my tooling foregrounds provenance, consent, and community ownership.</li>
+                <li><strong>Prototypes as arguments.</strong> I prototype quickly to test ethics, usability, and feasibility in parallel&mdash;allowing stakeholders to interrogate tradeoffs early.</li>
+                <li><strong>Measure what matters.</strong> Beyond latency and accuracy, my scorecards track narrative diversity, representation, and long-term stewardship capacity.</li>
             </ul>
 
-            <h2>Contact</h2>
-            <p>
-                Email: <a href="mailto:mtcarmier@berkeley.edu">mtcarmier@berkeley.edu</a><br>
-                LinkedIn: <a href="https://linkedin.com/in/mtcarmier" target="_blank">linkedin.com/in/mtcarmier</a>
-            </p>
+            <h2>Technical toolkit</h2>
+            <div class="project-pill-group" aria-label="Preferred tools and frameworks">
+                <span class="project-pill">PyTorch</span>
+                <span class="project-pill">TensorFlow</span>
+                <span class="project-pill">Transformers / PEFT</span>
+                <span class="project-pill">LangChain</span>
+                <span class="project-pill">Hydra</span>
+                <span class="project-pill">Weights &amp; Biases</span>
+                <span class="project-pill">Airflow</span>
+                <span class="project-pill">dbt</span>
+                <span class="project-pill">PostGIS</span>
+                <span class="project-pill">Weaviate</span>
+                <span class="project-pill">FastAPI</span>
+                <span class="project-pill">SvelteKit</span>
+                <span class="project-pill">Three.js</span>
+                <span class="project-pill">Figma</span>
+            </div>
+
+            <h2>Selected collaborations</h2>
+            <ul>
+                <li>Designed a retrieval-augmented storytelling service for the Bancroft Library that indexes 18 TB of oral histories and surfaces related artifacts in under 1.2 seconds.</li>
+                <li>Co-created an AI accountability playbook for regional museums; the rubric now informs procurement decisions across five partner institutions.</li>
+                <li>Led speculative prototyping workshops with Oakland youth to imagine sensor-driven climate data murals, feeding requirements into the Black Eco Feminisms atlas.</li>
+            </ul>
+
+            <div class="callout">
+                I&rsquo;m actively exploring collaborations that center cultural memory, civic technology, and humane AI. Let&rsquo;s build tooling that is rigorous, joyful, and accountable.
+            </div>
+
+            <h2>Contact &amp; media</h2>
+            <ul class="link-list">
+                <li><a href="mailto:mtcarmier@berkeley.edu">Email: mtcarmier@berkeley.edu</a></li>
+                <li><a href="https://linkedin.com/in/mtcarmier" target="_blank" rel="noopener">LinkedIn: /in/mtcarmier</a></li>
+                <li><a href="https://github.com/mtcarmier" target="_blank" rel="noopener">GitHub: github.com/mtcarmier</a></li>
+                <li><a href="https://medium.com/@mtcarmier" target="_blank" rel="noopener">Writing: medium.com/@mtcarmier</a></li>
+                <li><a href="assets/maria-teresa-carmier-cv.pdf" target="_blank" rel="noopener">Resume: PDF snapshot</a></li>
+            </ul>
         </div>
     </div>
 

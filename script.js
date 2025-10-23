@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: 10px;
                 height: 10px;
-                background: rgba(74, 63, 53, 0.3);
+                background: rgba(34, 211, 238, 0.35);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s ease-out;
@@ -53,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Athena animation for About page
-    const aboutLink = document.querySelector('.about-item');
+    const aboutLink = document.querySelector('.about-link');
     const animationOverlay = document.getElementById('athena-animation');
     const soundToggle = document.getElementById('sound-toggle');
+    const skipButton = document.getElementById('skip-animation');
 
     // Audio elements
     const crackSound = document.getElementById('crack-sound');
@@ -87,27 +88,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (aboutLink && animationOverlay) {
-        aboutLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default navigation
+    let animationTimers = [];
+    let animationArmed = false;
 
-            // Show animation overlay
-            animationOverlay.classList.add('active');
+    function clearAnimationTimers() {
+        animationTimers.forEach(clearTimeout);
+        animationTimers = [];
+    }
 
-            // Sound timeline:
-            // 0.5s - Crack sound when crack starts
-            setTimeout(() => playSound(crackSound), 500);
-
-            // 1.0s - Whoosh sound when Zeus shakes
-            setTimeout(() => playSound(whooshSound), 1000);
-
-            // 1.7s - Thunder sound with lightning
-            setTimeout(() => playSound(thunderSound), 1700);
-
-            // Navigate to about page after animation completes (3.5 seconds total)
-            setTimeout(() => {
-                window.location.href = 'about.html';
-            }, 3500);
+    function stopAllAudio() {
+        [crackSound, thunderSound, whooshSound].forEach(audio => {
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
         });
     }
+
+    function queueTimeout(callback, delay) {
+        const timer = setTimeout(callback, delay);
+        animationTimers.push(timer);
+    }
+
+    function navigateToAbout() {
+        if (!animationArmed) return;
+        animationArmed = false;
+        stopAllAudio();
+        window.location.href = 'about.html';
+    }
+
+    function skipAnimation() {
+        clearAnimationTimers();
+        if (animationOverlay) {
+            animationOverlay.classList.remove('active');
+        }
+        navigateToAbout();
+    }
+
+    if (aboutLink && animationOverlay) {
+        aboutLink.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            animationOverlay.classList.add('active');
+            animationArmed = true;
+            clearAnimationTimers();
+
+            queueTimeout(() => playSound(crackSound), 500);
+            queueTimeout(() => playSound(whooshSound), 1000);
+            queueTimeout(() => playSound(thunderSound), 1700);
+            queueTimeout(() => navigateToAbout(), 3500);
+        });
+    }
+
+    if (skipButton) {
+        skipButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            skipAnimation();
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && animationOverlay && animationOverlay.classList.contains('active')) {
+            skipAnimation();
+        }
+    });
 });
