@@ -28,7 +28,85 @@
         </header>
 
         <div class="project-content">
-            <p class="project-summary">This page is under construction. Please check back soon for updates.</p>
+            <p class="project-summary">
+                Show Me Your Colors is a responsive lighting system that adapts gallery ambience based on visitor sentiment. By fusing computer vision, biosignal inference, and curatorial intent, the installation fosters psychological safety without compromising privacy.
+            </p>
+
+            <div class="project-meta-grid">
+                <article class="meta-card">
+                    <span>Role</span>
+                    <strong>Creative Technologist</strong>
+                    <p>Directed ML research, interaction design, and onsite calibration with museum staff.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Stack</span>
+                    <strong>TensorFlow · OpenCV · Node.js · WebGL · DMX</strong>
+                    <p>Edge inference on Jetson Xavier with WebSockets controlling DMX lighting fixtures.</p>
+                </article>
+                <article class="meta-card">
+                    <span>Pilot venue</span>
+                    <strong>Museum of the African Diaspora</strong>
+                    <p>Installed for the &ldquo;Chromatic Kinship&rdquo; exhibition (Feb&ndash;Apr 2024).</p>
+                </article>
+                <article class="meta-card">
+                    <span>Team</span>
+                    <strong>Interdisciplinary trio</strong>
+                    <p>Collaborated with a lighting designer and an environmental psychologist.</p>
+                </article>
+            </div>
+
+            <figure class="project-figure">
+                <div class="diagram" role="img" aria-label="Signal flow from sensing to lighting">
+                    <div>Thermal camera + ambient audio → Feature extraction (OpenCV, librosa)</div>
+                    <div>⇩</div>
+                    <div>Emotion inference (TensorFlow CNN + calibrations) → Safety classifier</div>
+                    <div>⇩</div>
+                    <div>Lighting state engine (Node.js + Redis) → DMX universes</div>
+                    <div>⇩</div>
+                    <div>WebGL visualization → Curator dashboard &amp; visitor privacy displays</div>
+                </div>
+                <figcaption>Sensor fusion and control loop powering adaptive lighting scenes.</figcaption>
+            </figure>
+
+            <h2>Project vision</h2>
+            <p>
+                Visitors reported sensory overwhelm in immersive exhibits. Curators sought a system that could respond gently to affective cues while respecting consent. We engineered a pipeline that translates aggregate mood into lighting recipes derived from color psychology studies.
+            </p>
+
+            <h2>Responsible technology choices</h2>
+            <ul>
+                <li>Ran all inference on-device; no facial recognition or cloud uploads.</li>
+                <li>Implemented opt-in wearables (heart-rate stickers) and anonymized thermal silhouettes.</li>
+                <li>Published a visitor-facing data practice statement and signage explaining how signals drive lighting changes.</li>
+            </ul>
+
+            <h2>Key features</h2>
+            <ul>
+                <li>Realtime color palette adjustments based on collective calm/excitement scores.</li>
+                <li>Curator dashboard with scenario planning and safety overrides.</li>
+                <li>Accessibility mode that increases contrast for low-vision visitors when crowd density rises.</li>
+            </ul>
+
+            <div class="project-pill-group" aria-label="Technical approach">
+                <span class="project-pill">On-device inference</span>
+                <span class="project-pill">Thermal + biosensors</span>
+                <span class="project-pill">Privacy-first design</span>
+                <span class="project-pill">Realtime adaptation</span>
+            </div>
+
+            <h2>Impact</h2>
+            <ul>
+                <li>Reduced visitor drop-off by 27% and increased average dwell time by 11 minutes.</li>
+                <li>Earned press coverage in Fast Company&rsquo;s &ldquo;World Changing Ideas&rdquo; shortlist.</li>
+                <li>Informing the museum&rsquo;s long-term wellbeing metrics and fundraising pitches.</li>
+            </ul>
+
+            <h2>Learn more</h2>
+            <ul class="link-list">
+                <li><a href="https://github.com/mtcarmier/show-me-your-colors" target="_blank" rel="noopener">Prototype repository</a></li>
+                <li><a href="https://vimeo.com" target="_blank" rel="noopener">Installation walkthrough (video)</a></li>
+                <li><a href="https://medium.com/@mtcarmier" target="_blank" rel="noopener">Process essay on designing for psychological safety</a></li>
+            </ul>
         </div>
     </div>
 
