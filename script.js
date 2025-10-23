@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: 10px;
                 height: 10px;
-                background: rgba(34, 211, 238, 0.35);
+                background: rgba(74, 63, 53, 0.3);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s ease-out;
@@ -51,105 +51,4 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.head.appendChild(style);
     }
-
-    // Athena animation for About page
-    const aboutLink = document.querySelector('.about-link');
-    const animationOverlay = document.getElementById('athena-animation');
-    const soundToggle = document.getElementById('sound-toggle');
-    const skipButton = document.getElementById('skip-animation');
-
-    // Audio elements
-    const crackSound = document.getElementById('crack-sound');
-    const thunderSound = document.getElementById('thunder-sound');
-    const whooshSound = document.getElementById('whoosh-sound');
-
-    // Check if sound is enabled (default: true)
-    let soundEnabled = localStorage.getItem('athena-sound') !== 'false';
-
-    // Update sound toggle button
-    if (soundToggle) {
-        soundToggle.textContent = soundEnabled ? '🔊' : '🔇';
-        soundToggle.classList.toggle('muted', !soundEnabled);
-
-        soundToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            soundEnabled = !soundEnabled;
-            localStorage.setItem('athena-sound', soundEnabled);
-            soundToggle.textContent = soundEnabled ? '🔊' : '🔇';
-            soundToggle.classList.toggle('muted', !soundEnabled);
-        });
-    }
-
-    // Play sound helper function
-    function playSound(audioElement) {
-        if (soundEnabled && audioElement) {
-            audioElement.currentTime = 0;
-            audioElement.play().catch(err => console.log('Audio play failed:', err));
-        }
-    }
-
-    let animationTimers = [];
-    let animationArmed = false;
-
-    function clearAnimationTimers() {
-        animationTimers.forEach(clearTimeout);
-        animationTimers = [];
-    }
-
-    function stopAllAudio() {
-        [crackSound, thunderSound, whooshSound].forEach(audio => {
-            if (audio) {
-                audio.pause();
-                audio.currentTime = 0;
-            }
-        });
-    }
-
-    function queueTimeout(callback, delay) {
-        const timer = setTimeout(callback, delay);
-        animationTimers.push(timer);
-    }
-
-    function navigateToAbout() {
-        if (!animationArmed) return;
-        animationArmed = false;
-        stopAllAudio();
-        window.location.href = 'about.html';
-    }
-
-    function skipAnimation() {
-        clearAnimationTimers();
-        if (animationOverlay) {
-            animationOverlay.classList.remove('active');
-        }
-        navigateToAbout();
-    }
-
-    if (aboutLink && animationOverlay) {
-        aboutLink.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            animationOverlay.classList.add('active');
-            animationArmed = true;
-            clearAnimationTimers();
-
-            queueTimeout(() => playSound(crackSound), 500);
-            queueTimeout(() => playSound(whooshSound), 1000);
-            queueTimeout(() => playSound(thunderSound), 1700);
-            queueTimeout(() => navigateToAbout(), 3500);
-        });
-    }
-
-    if (skipButton) {
-        skipButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            skipAnimation();
-        });
-    }
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && animationOverlay && animationOverlay.classList.contains('active')) {
-            skipAnimation();
-        }
-    });
 });
