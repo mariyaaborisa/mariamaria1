@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Athena animation for About page
-    const aboutLink = document.querySelector('.about-item');
+    const aboutLink = document.querySelector('.about-link');
     const animationOverlay = document.getElementById('athena-animation');
     const soundToggle = document.getElementById('sound-toggle');
 

@@ -6,7 +6,7 @@
     <title>María-Teresa Carmier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,13 +39,13 @@
         <source src="sounds/whoosh.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="landing-container">
-        <header class="name-header">
-            <h1 class="main-name">María-Teresa Carmier</h1>
-            <a href="about.html" class="about-link">About me</a>
-        </header>
+    <header class="top-bar" role="banner">
+        <h1 class="brand-name"><a href="index.html">María-Teresa Carmier</a></h1>
+        <a href="about.html" class="about-link">About</a>
+    </header>
 
-        <nav class="project-list">
+    <main class="landing-container">
+        <nav class="project-list" aria-label="Project list">
 
             <a href="junipers-clompass.html" class="project-item" data-number="1">
                 <span class="project-number">1.</span>
@@ -68,11 +68,34 @@
             </a>
         </nav>
 
+        <section class="recommendations" aria-labelledby="recommendations-heading">
+            <h2 id="recommendations-heading">Smarter starting points</h2>
+            <p class="recommendations-intro">Choose a project based on the perspective you want to explore first.</p>
+            <div class="recommendation-grid">
+                <article class="recommendation-card">
+                    <h3>Children's storytelling &amp; play</h3>
+                    <p>Start with <a href="junipers-clompass.html">Juniper's Clompass</a>, a children's project from this portfolio.</p>
+                </article>
+                <article class="recommendation-card">
+                    <h3>Responsible technology &amp; ethics</h3>
+                    <p>Head to <a href="responsible-ai.html">Responsible AI in the Humanities</a> for work grounded in conversations about technology and ethics.</p>
+                </article>
+                <article class="recommendation-card">
+                    <h3>Intersectional environmental justice</h3>
+                    <p>Visit <a href="black-eco-feminisms.html">Black Eco Feminisms</a> to follow threads on environmental justice and intersectionality.</p>
+                </article>
+                <article class="recommendation-card">
+                    <h3>Responsible AI &amp; color practices</h3>
+                    <p>Explore <a href="show-me-your-colors.html">Show Me your colors</a> for responsible AI questions within color-focused work.</p>
+                </article>
+            </div>
+        </section>
+
         <footer class="landing-footer">
             <a href="mailto:mtcarmier@berkeley.edu">mtcarmier@berkeley.edu</a>
             <a href="https://linkedin.com/in/mtcarmier" target="_blank">LinkedIn</a>
         </footer>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
