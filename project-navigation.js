@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'responsible-ai.html',
         'black-eco-feminisms.html',
         'show-me-your-colors.html',
+        'rebrew.html',
         'art.html'
     ];
 
