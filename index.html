@@ -22,10 +22,12 @@
 
         <section class="landing-section">
             <h2 class="section-header">Skills & Expertise</h2>
-            <div class="skills-accordion">
-                <div class="skill-category">
-                    <span>Technical</span>
-                    <div class="skill-content">
+            <div class="skills-accordion" role="region" aria-label="Skills accordion">
+                <div class="skill-category" data-open="true">
+                    <button class="skill-trigger" type="button" aria-expanded="true" aria-controls="skill-technical">
+                        <span class="skill-label">Technical</span>
+                    </button>
+                    <div class="skill-content" id="skill-technical">
                         <h3>Technical Skills</h3>
                         <ul>
                             <li>HTML, CSS, JavaScript</li>
@@ -38,8 +40,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Research</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-research">
+                        <span class="skill-label">Research</span>
+                    </button>
+                    <div class="skill-content" id="skill-research" hidden>
                         <h3>Research Methods</h3>
                         <ul>
                             <li>OSINT & threat intelligence</li>
@@ -51,8 +55,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Design</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-design">
+                        <span class="skill-label">Design</span>
+                    </button>
+                    <div class="skill-content" id="skill-design" hidden>
                         <h3>Design Practice</h3>
                         <ul>
                             <li>UX/UI for vulnerable populations</li>
@@ -64,8 +70,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Impact</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-impact">
+                        <span class="skill-label">Impact</span>
+                    </button>
+                    <div class="skill-content" id="skill-impact" hidden>
                         <h3>Community Impact</h3>
                         <ul>
                             <li>Community organizing</li>
