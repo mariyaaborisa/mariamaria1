@@ -365,7 +365,8 @@ body::after {
 @media (max-width: 900px) {
     .card-layout-row,
     .card-layout-asymmetric,
-    .card-layout-three {
+    .card-layout-three,
+    .about-focus {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 }
@@ -459,7 +460,7 @@ body::after {
 /* About Page Focus Overview */
 .about-focus {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     margin: var(--space-2xl) 0 var(--space-xl);
 }
