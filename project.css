@@ -611,6 +611,40 @@ body::after {
     color: var(--accent-strong);
 }
 
+/* Project Images */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.project-image,
+.project-image-large {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--panel-border);
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.project-image {
+    max-height: 400px;
+}
+
+.project-image-large {
+    max-height: 500px;
+    grid-column: 1 / -1;
+}
+
+.project-image:hover,
+.project-image-large:hover {
+    border-color: var(--accent-strong);
+    box-shadow: 0 8px 30px rgba(255, 0, 110, 0.2);
+    transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .timeline-nav {
