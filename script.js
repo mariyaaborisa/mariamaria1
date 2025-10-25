@@ -1,7 +1,75 @@
 // Landing page animations and interactions
 
 document.addEventListener('DOMContentLoaded', () => {
+    const mainName = document.querySelector('.main-name');
     const projectItems = document.querySelectorAll('.project-item');
+
+    if (mainName) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const originalText = mainName.textContent;
+
+        const createWaveEffect = () => {
+            const characters = Array.from(originalText);
+            const waveCharacters = [];
+
+            mainName.innerHTML = '';
+
+            characters.forEach((character) => {
+                const span = document.createElement('span');
+                span.className = 'wave-char';
+                span.textContent = character === ' ' ? '\u00A0' : character;
+                mainName.appendChild(span);
+                waveCharacters.push(span);
+            });
+
+            let animationFrame;
+
+            const animateWave = (time) => {
+                waveCharacters.forEach((span, index) => {
+                    const waveOffset = Math.sin(time * 0.005 + index * 0.55);
+                    const glowStrength = (Math.cos(time * 0.004 + index * 0.4) + 1) / 2;
+                    const hue = 215 + waveOffset * 35;
+
+                    span.style.transform = `translate3d(0, ${waveOffset * 8}px, 0)`;
+                    span.style.color = `hsl(${hue}deg, 85%, ${68 + glowStrength * 6}%)`;
+                    span.style.textShadow = `0 0 ${10 + glowStrength * 8}px hsla(${hue}deg, 95%, 72%, ${0.45 + glowStrength * 0.35})`;
+                });
+
+                animationFrame = requestAnimationFrame(animateWave);
+            };
+
+            animationFrame = requestAnimationFrame(animateWave);
+
+            return () => cancelAnimationFrame(animationFrame);
+        };
+
+        let cleanupWave;
+
+        const setupWave = () => {
+            if (prefersReducedMotion.matches) {
+                if (cleanupWave) {
+                    cleanupWave();
+                    cleanupWave = undefined;
+                }
+                mainName.classList.add('wave-disabled');
+                mainName.textContent = originalText;
+            } else {
+                mainName.classList.remove('wave-disabled');
+                if (cleanupWave) {
+                    cleanupWave();
+                }
+                cleanupWave = createWaveEffect();
+            }
+        };
+
+        setupWave();
+
+        if (typeof prefersReducedMotion.addEventListener === 'function') {
+            prefersReducedMotion.addEventListener('change', setupWave);
+        } else if (typeof prefersReducedMotion.addListener === 'function') {
+            prefersReducedMotion.addListener(setupWave);
+        }
+    }
 
     // Stagger animation for project items
     projectItems.forEach((item, index) => {
