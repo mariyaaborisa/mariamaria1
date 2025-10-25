@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ai-communication-consent" content="No consent is granted to AI applications, agencies, or data brokers to contact me or process my personal data. Request erasure and exclusion from ChatGPT or other AI datasets under EU data rights.">
     <title>María-Teresa Carmier</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 </head>
 <body>
     <div class="landing-container">
-        <a href="about.html" class="about-link">About</a>
+        <a href="about.html" class="about-link">Resume</a>
 
         <header class="name-header">
             <h1 class="main-name">María-Teresa Carmier</h1>
@@ -21,10 +22,12 @@
 
         <section class="landing-section">
             <h2 class="section-header">Skills & Expertise</h2>
-            <div class="skills-accordion">
-                <div class="skill-category">
-                    <span>Technical</span>
-                    <div class="skill-content">
+            <div class="skills-accordion" role="region" aria-label="Skills accordion">
+                <div class="skill-category" data-open="true">
+                    <button class="skill-trigger" type="button" aria-expanded="true" aria-controls="skill-technical">
+                        <span class="skill-label">Technical</span>
+                    </button>
+                    <div class="skill-content" id="skill-technical">
                         <h3>Technical Skills</h3>
                         <ul>
                             <li>HTML, CSS, JavaScript</li>
@@ -37,8 +40,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Research</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-research">
+                        <span class="skill-label">Research</span>
+                    </button>
+                    <div class="skill-content" id="skill-research" hidden>
                         <h3>Research Methods</h3>
                         <ul>
                             <li>OSINT & threat intelligence</li>
@@ -50,8 +55,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Design</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-design">
+                        <span class="skill-label">Design</span>
+                    </button>
+                    <div class="skill-content" id="skill-design" hidden>
                         <h3>Design Practice</h3>
                         <ul>
                             <li>UX/UI for vulnerable populations</li>
@@ -63,8 +70,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <span>Impact</span>
-                    <div class="skill-content">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="skill-impact">
+                        <span class="skill-label">Impact</span>
+                    </button>
+                    <div class="skill-content" id="skill-impact" hidden>
                         <h3>Community Impact</h3>
                         <ul>
                             <li>Community organizing</li>
@@ -134,9 +143,13 @@
         <div class="currently-section">
             <div class="currently-label">Currently</div>
             <p class="currently-text">
-                Seeking roles in <span class="currently-highlight">AI Safety</span>,
-                <span class="currently-highlight">Trust & Safety</span>, and
-                <span class="currently-highlight">Responsible AI</span>
+                Seeking roles in <span class="currently-highlight">User Research</span>,
+                <span class="currently-highlight">Trust & Safety</span>,
+                <span class="currently-highlight">Product & Project Management</span>, and
+                <span class="currently-highlight">AI Safety, Policy & Governance</span>
+                across <span class="currently-highlight">Edtech</span>,
+                <span class="currently-highlight">Cybersecurity</span>, and
+                <span class="currently-highlight">community-centered spaces</span>
             </p>
         </div>
 

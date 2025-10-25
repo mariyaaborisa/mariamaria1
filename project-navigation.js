@@ -73,4 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         container.style.animation = 'slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
     }
+
+    const resumeFilters = document.querySelectorAll('.resume-filter');
+    const resumeItems = document.querySelectorAll('.resume-item');
+
+    if (resumeFilters.length && resumeItems.length) {
+        resumeFilters.forEach((button) => {
+            button.addEventListener('click', () => {
+                const targetFilter = button.dataset.filter;
+
+                resumeFilters.forEach((filterButton) => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle('is-active', isActive);
+                    filterButton.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
+
+                resumeItems.forEach((item) => {
+                    const tags = (item.dataset.tags || '')
+                        .split(' ')
+                        .map((tag) => tag.trim())
+                        .filter(Boolean);
+
+                    if (targetFilter === 'all' || tags.includes(targetFilter)) {
+                        item.classList.remove('is-hidden');
+                    } else {
+                        item.classList.add('is-hidden');
+                        item.open = false;
+                    }
+                });
+            });
+        });
+    }
 });
