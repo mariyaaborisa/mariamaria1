@@ -156,10 +156,25 @@ body::after {
     letter-spacing: 0.05em;
     margin-bottom: var(--space-md);
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     text-shadow: 0 0 40px rgba(100, 220, 255, 0.4),
                  0 0 80px rgba(255, 0, 110, 0.2);
     transition: all 0.4s ease;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.02em;
+}
+
+.main-name .wave-char {
+    display: inline-block;
+    padding: 0 0.01em;
+    will-change: transform, color, text-shadow;
+    transition: transform 0.12s ease, color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.main-name.wave-disabled {
+    display: inline-block;
+    gap: 0;
 }
 
 .main-name:hover {
