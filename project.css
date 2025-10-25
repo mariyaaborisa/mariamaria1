@@ -630,11 +630,11 @@ body::after {
 }
 
 .project-image {
-    max-height: 400px;
+    max-height: 280px;
 }
 
 .project-image-large {
-    max-height: 500px;
+    max-height: 320px;
     grid-column: 1 / -1;
 }
 
