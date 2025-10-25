@@ -140,31 +140,6 @@
             </nav>
         </section>
 
-        <section class="landing-section tech-spotlight" aria-labelledby="tech-spotlight-heading">
-            <h2 class="section-header" id="tech-spotlight-heading">Technical Spotlights</h2>
-            <div class="tech-spotlight__intro">
-                <p>Employers and fellowship reviewers often want to glimpse how you think through interaction design and data storytelling. This section highlights a lightweight React prototype and a Python automation concept you can reference in interviews or portfolio reviews.</p>
-            </div>
-            <div id="react-spotlight-root" class="tech-spotlight__react" aria-live="polite"></div>
-
-            <div class="python-showcase" aria-labelledby="python-showcase-heading">
-                <h3 id="python-showcase-heading">Python Content Planner</h3>
-                <p>Pair the React recommendations with a Python utility that organizes portfolio content by audience. The script surfaces impact metrics or narrative prompts depending on whether the viewer is an employer, fellowship committee, or collaborator.</p>
-                <p class="python-showcase__details">Run <code>python scripts/portfolio_recommendations.py</code> to generate a shareable summary for each audience.</p>
-                <pre class="code-block" aria-label="Python automation excerpt"><code class="language-python">from dataclasses import dataclass
-from typing import Iterable
-
-@dataclass
-class AudienceProfile:
-    name: str
-    priorities: tuple[str, ...]
-    highlight_sections: tuple[str, ...]
-
-# See scripts/portfolio_recommendations.py for full context.
-</code></pre>
-            </div>
-        </section>
-
         <div class="currently-section">
             <div class="currently-label">Currently</div>
             <p class="currently-text">
@@ -192,8 +167,5 @@ class AudienceProfile:
         </footer>
     </div>
     <script src="script.js"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
-    <script src="react-showcase.js" defer></script>
 </body>
 </html>
