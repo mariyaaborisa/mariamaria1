@@ -1,0 +1,38 @@
+# Netlify Security Headers Configuration
+# This file configures HTTP security headers for all pages
+# Deploy this file to the root of your site
+
+/*
+  # Content Security Policy - Restrict resource loading
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'none'
+
+  # Prevent clickjacking attacks
+  X-Frame-Options: SAMEORIGIN
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Enable XSS protection in older browsers
+  X-XSS-Protection: 1; mode=block
+
+  # Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict browser features and APIs
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Force HTTPS for 1 year (only enable after confirming HTTPS works)
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Cache control for static assets
+  Cache-Control: public, max-age=31536000, immutable
+
+# Special cache control for HTML files (shorter cache)
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# PDF files
+/*.pdf
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+  Cache-Control: public, max-age=86400
+  X-Content-Type-Options: nosniff
