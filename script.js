@@ -22,25 +22,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 waveCharacters.push(span);
             });
 
-            let animationFrame;
+            let pendingAnimationFrame = false;
 
-            const animateWave = (time) => {
+            const updateWaveFromScroll = () => {
+                pendingAnimationFrame = false;
+
+                const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+                const progress = Math.min(scrollY / 220, 1);
+                const amplitude = 12 * progress;
+                const wavePhase = scrollY * 0.015;
+
                 waveCharacters.forEach((span, index) => {
-                    const waveOffset = Math.sin(time * 0.005 + index * 0.55);
-                    const glowStrength = (Math.cos(time * 0.004 + index * 0.4) + 1) / 2;
-                    const hue = 215 + waveOffset * 35;
+                    if (progress < 0.02) {
+                        span.style.transform = '';
+                        span.style.color = '';
+                        span.style.textShadow = '';
+                        return;
+                    }
 
-                    span.style.transform = `translate3d(0, ${waveOffset * 8}px, 0)`;
-                    span.style.color = `hsl(${hue}deg, 85%, ${68 + glowStrength * 6}%)`;
-                    span.style.textShadow = `0 0 ${10 + glowStrength * 8}px hsla(${hue}deg, 95%, 72%, ${0.45 + glowStrength * 0.35})`;
+                    const offset = Math.sin(wavePhase + index * 0.55) * amplitude;
+                    const hueShift = Math.sin(wavePhase + index * 0.25) * 12 * progress;
+                    const lightness = 68 + progress * 6;
+                    const shadowSize = 6 + progress * 12;
+                    const shadowAlpha = 0.2 + progress * 0.35;
+
+                    span.style.transform = `translate3d(0, ${offset}px, 0)`;
+                    span.style.color = `hsl(${215 + hueShift}deg, 80%, ${lightness}%)`;
+                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${215 + hueShift}deg, 90%, 72%, ${shadowAlpha})`;
                 });
-
-                animationFrame = requestAnimationFrame(animateWave);
             };
 
-            animationFrame = requestAnimationFrame(animateWave);
+            const handleScroll = () => {
+                if (!pendingAnimationFrame) {
+                    pendingAnimationFrame = true;
+                    requestAnimationFrame(updateWaveFromScroll);
+                }
+            };
 
-            return () => cancelAnimationFrame(animationFrame);
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            requestAnimationFrame(updateWaveFromScroll);
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+                waveCharacters.forEach((span) => {
+                    span.style.transform = '';
+                    span.style.color = '';
+                    span.style.textShadow = '';
+                });
+            };
         };
 
         let cleanupWave;
