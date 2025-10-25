@@ -148,6 +148,22 @@ body::after {
     animation: slideDown 1.2s ease;
 }
 
+/* Section Headers */
+.landing-section {
+    margin-bottom: var(--space-2xl);
+}
+
+.section-header {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent-cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-lg);
+    opacity: 0.8;
+}
+
 /* Project List */
 .project-list {
     display: flex;
