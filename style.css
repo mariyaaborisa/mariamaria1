@@ -476,6 +476,19 @@ body::after {
     line-height: 1.6;
 }
 
+.currently-availability {
+    font-size: 0.9rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 255, 136, 0.08);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 6px;
+    text-shadow: 0 0 8px var(--glow-green);
+}
+
 /* Calendar Button Container */
 .calendar-button-container {
     margin-top: 1.5rem;
@@ -607,7 +620,25 @@ body::after {
     font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.popup-header p:last-child {
     margin-bottom: 2rem;
+}
+
+.popup-urgency {
+    font-size: 0.9rem !important;
+    color: var(--accent-green) !important;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    padding: 0.5rem 1rem;
+    background: rgba(0, 255, 136, 0.1);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 4px;
+    display: inline-block;
+    text-shadow: 0 0 8px var(--glow-green);
+    margin-top: 0.5rem;
 }
 
 .popup-actions {

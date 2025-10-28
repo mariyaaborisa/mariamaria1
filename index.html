@@ -151,6 +151,7 @@
         <div class="currently-section">
             <div class="currently-label">Currently</div>
             <p class="currently-text">
+                <strong>Actively interviewing for Q1 2026 start dates.</strong><br>
                 Seeking roles in <span class="currently-highlight">User Research</span>,
                 <span class="currently-highlight">Trust & Safety</span>,
                 <span class="currently-highlight">Product/Project Management</span>, and
@@ -158,8 +159,9 @@
                 in <span class="currently-highlight">EdTech</span>,
                 <span class="currently-highlight">cybersecurity</span>, and
                 <span class="currently-highlight">community-centered spaces</span>
-                where infrastructure design meets social impact. Bilingual (English/Spanish). Let's connect!
+                where infrastructure design meets social impact. Bilingual (English/Spanish).
             </p>
+            <p class="currently-availability">📅 Available for interviews now • Open to remote, hybrid, or SF Bay Area roles</p>
             <div class="calendar-button-container">
                 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
                 <script>
@@ -198,7 +200,8 @@
             <button class="popup-close" aria-label="Close popup">&times;</button>
             <div class="popup-header">
                 <h2>👋 Like what you see?</h2>
-                <p>Let's connect and talk about Trust & Safety, AI Policy, or Product Research opportunities.</p>
+                <p>I'm actively interviewing for roles starting Q1 2026. Let's connect about Trust & Safety, AI Policy, or Product Research opportunities.</p>
+                <p class="popup-urgency">📅 Booking meetings for January start dates now</p>
             </div>
             <div class="popup-actions">
                 <a href="about.html" class="popup-btn popup-btn-primary">
@@ -214,7 +217,7 @@
 
     <script src="script.js"></script>
     <script>
-    // Engagement Popup Logic
+    // Engagement Popup Logic (Exit Intent Only - Less Aggressive)
     (function() {
         const popup = document.getElementById('engagement-popup');
         const closeBtn = popup.querySelector('.popup-close');
@@ -222,14 +225,23 @@
         const overlay = popup.querySelector('.popup-overlay');
         const bookMeetingBtn = document.getElementById('popup-book-meeting');
 
-        // Don't show if already shown this session
-        if (sessionStorage.getItem('popupShown')) return;
+        // Don't show if already shown this session or dismissed
+        if (sessionStorage.getItem('popupShown') || sessionStorage.getItem('popupDismissed')) return;
 
-        let projectsViewed = parseInt(sessionStorage.getItem('projectsViewed') || '0');
         let popupShown = false;
+        let pageLoadTime = Date.now();
+        let hasScrolled = false;
 
         function showPopup() {
             if (popupShown) return;
+
+            // Only show if user has been on page for at least 15 seconds
+            const timeOnPage = (Date.now() - pageLoadTime) / 1000;
+            if (timeOnPage < 15) return;
+
+            // Only show if user has scrolled (engaged with content)
+            if (!hasScrolled) return;
+
             popup.style.display = 'flex';
             sessionStorage.setItem('popupShown', 'true');
             popupShown = true;
@@ -237,20 +249,23 @@
 
         function hidePopup() {
             popup.style.display = 'none';
+            sessionStorage.setItem('popupDismissed', 'true');
         }
 
-        // Exit intent detection
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY < 0 && !popupShown) {
-                showPopup();
-            }
+        // Track if user has scrolled (engaged)
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            hasScrolled = true;
+            // Clear any existing timeout
+            clearTimeout(scrollTimeout);
         });
 
-        // Show after scrolling to bottom
-        window.addEventListener('scroll', function() {
-            const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-            if (scrollPercent > 0.9 && !popupShown) {
-                setTimeout(showPopup, 1000); // Delay 1s after reaching bottom
+        // Exit intent detection (ONLY trigger - less annoying)
+        document.addEventListener('mouseleave', function(e) {
+            // Only trigger on top exit (not bottom or sides)
+            if (e.clientY < 0 && !popupShown) {
+                // Small delay to avoid accidental triggers
+                setTimeout(showPopup, 200);
             }
         });
 
