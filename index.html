@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Microsoft Clarity Analytics -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "tx50823cyl");
+    </script>
 </head>
 <body>
     <div class="landing-container">
@@ -245,6 +254,11 @@
             popup.style.display = 'flex';
             sessionStorage.setItem('popupShown', 'true');
             popupShown = true;
+
+            // Track popup shown in Clarity
+            if (window.clarity) {
+                clarity('event', 'popup_shown');
+            }
         }
 
         function hidePopup() {
@@ -271,14 +285,33 @@
 
         // Book meeting button - scroll to calendar
         bookMeetingBtn.addEventListener('click', function() {
+            // Track in Clarity
+            if (window.clarity) {
+                clarity('event', 'popup_book_meeting_clicked');
+            }
             hidePopup();
             document.querySelector('.calendar-button-container').scrollIntoView({ behavior: 'smooth' });
         });
 
         // Close handlers
-        closeBtn.addEventListener('click', hidePopup);
-        dismissBtn.addEventListener('click', hidePopup);
-        overlay.addEventListener('click', hidePopup);
+        closeBtn.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_closed');
+            }
+            hidePopup();
+        });
+        dismissBtn.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_dismissed');
+            }
+            hidePopup();
+        });
+        overlay.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_overlay_clicked');
+            }
+            hidePopup();
+        });
 
         // Escape key
         document.addEventListener('keydown', function(e) {
