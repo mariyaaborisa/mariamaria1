@@ -9,7 +9,7 @@ export async function onRequest(context) {
   // Core security headers
   newResponse.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'none'"
+    "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://calendar.google.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://calendar.google.com; script-src 'self' https://calendar.google.com; connect-src 'self' https://calendar.google.com; frame-src https://calendar.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'none'"
   );
 
   newResponse.headers.set('X-Frame-Options', 'SAMEORIGIN');

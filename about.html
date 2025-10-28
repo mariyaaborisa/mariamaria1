@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
 </head>
 <body>
@@ -232,6 +233,22 @@
                         <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mtcarmier" target="_blank" rel="noopener">linkedin.com/in/mtcarmier</a><br>
                         <strong>Current Work:</strong> Seeking roles in AI Safety, Trust &amp; Safety, Responsible AI, and childhood rights advocacy
                     </p>
+                    <div class="calendar-button-container" style="margin-top: 1.5rem;">
+                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                        <script>
+                        (function() {
+                          var target = document.currentScript;
+                          window.addEventListener('load', function() {
+                            calendar.schedulingButton.load({
+                              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true',
+                              color: '#F09300',
+                              label: 'Book an appointment',
+                              target,
+                            });
+                          });
+                        })();
+                        </script>
+                    </div>
                 </section>
             </div>
         </div>

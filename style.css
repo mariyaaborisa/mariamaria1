@@ -476,6 +476,45 @@ body::after {
     line-height: 1.6;
 }
 
+/* Calendar Button Container */
+.calendar-button-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override Google Calendar Button Styles */
+.calendar-button-container iframe {
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.calendar-button-container button,
+.calendar-button-container iframe button {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)) !important;
+    color: var(--bg-primary) !important;
+    font-family: var(--font-body) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 8px !important;
+    border: 2px solid var(--accent-cyan) !important;
+    box-shadow: 0 0 20px var(--glow-cyan), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-size: 0.9rem !important;
+}
+
+.calendar-button-container button:hover,
+.calendar-button-container iframe button:hover {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan)) !important;
+    border-color: var(--accent-purple) !important;
+    box-shadow: 0 0 30px var(--glow-purple), 0 6px 16px rgba(0, 0, 0, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
 .currently-highlight {
     color: var(--accent-green);
     font-weight: 500;
