@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate content on load
     const container = document.querySelector('.project-container');
     if (container) {
-        container.style.animation = 'slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        container.style.animation = 'fadeInProject 0.45s ease both';
     }
 
     const resumeFilters = document.querySelectorAll('.resume-filter');
