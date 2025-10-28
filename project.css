@@ -330,6 +330,7 @@ body::after {
     border: 1px solid rgba(255, 0, 110, 0.3);
 }
 
+
 .project-figure figcaption {
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -1148,38 +1149,30 @@ body::after {
 }
 
 /* Project Images */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-xl) 0;
-}
-
-.project-image,
-.project-image-large {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid var(--panel-border);
-    transition: all 0.3s ease;
-    object-fit: cover;
-}
-
 .project-image {
-    max-height: 280px;
+    display: block;
+    max-width: min(100%, 960px);
+    width: auto;
+    height: auto;
+    margin: clamp(1.75rem, 3vw, 2.75rem) auto;
+    border-radius: 18px;
+    border: none;
+    background: transparent;
+    transition: transform 0.3s ease;
 }
 
-.project-image-large {
-    max-height: 320px;
-    grid-column: 1 / -1;
+.project-image:hover {
+    transform: translateY(-6px);
 }
 
-.project-image:hover,
-.project-image-large:hover {
-    border-color: var(--accent-strong);
-    box-shadow: 0 8px 30px rgba(255, 0, 110, 0.2);
-    transform: translateY(-2px);
+.project-image--full {
+    max-width: min(100%, 1200px);
 }
+
+.project-image--tight {
+    max-width: min(100%, 720px);
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
