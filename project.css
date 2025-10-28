@@ -6,23 +6,25 @@
 }
 
 :root {
-    /* Futuristic Project Page Colors - Different from Landing */
-    --bg: #0a0619;
-    --surface: #15122a;
-    --surface-elevated: #231a3d;
-    --text-primary: #f2edff;
-    --text-secondary: #d6cff7;
-    --text-muted: #9b90c0;
-    --accent: #ff4d9d;
-    --accent-strong: #ff85c7;
-    --accent-cyan: #8dd3ff;
-    --border: rgba(255, 133, 199, 0.18);
-    --glow-pink: rgba(255, 77, 157, 0.45);
-    --glow-cyan: rgba(141, 211, 255, 0.4);
-    --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.28'/%3E%3C/svg%3E");
-    --panel-bg: rgba(20, 14, 44, 0.78);
-    --panel-border: rgba(173, 141, 235, 0.25);
-    --panel-shadow: 0 28px 60px rgba(6, 4, 20, 0.65);
+    /* Cyberpunk Black + Neon Project Colors */
+    --bg: #000000;
+    --surface: #0f0f0f;
+    --surface-elevated: #1a1a1a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0e5e8;
+    --text-muted: #68a8ab;
+    --accent: #ff006e;
+    --accent-strong: #ff006e;
+    --accent-cyan: #00e5ff;
+    --accent-green: #00ff88;
+    --border: rgba(0, 229, 255, 0.25);
+    --glow-pink: rgba(255, 0, 110, 0.6);
+    --glow-cyan: rgba(0, 229, 255, 0.5);
+    --glow-green: rgba(0, 255, 136, 0.5);
+    --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+    --panel-bg: rgba(0, 20, 15, 0.85);
+    --panel-border: rgba(0, 229, 255, 0.3);
+    --panel-shadow: 0 28px 60px rgba(0, 0, 0, 0.9);
     --code-font: 'IBM Plex Mono', monospace;
 
     /* Spacing Scale */
@@ -34,25 +36,25 @@
     --space-2xl: 4rem;
 
     /* Card Color Variants for Visual Variance */
-    --card-blue-bg: rgba(30, 60, 120, 0.25);
-    --card-blue-border: rgba(100, 170, 255, 0.35);
-    --card-blue-accent: #64aaff;
+    --card-blue-bg: rgba(0, 80, 120, 0.35);
+    --card-blue-border: rgba(0, 229, 255, 0.5);
+    --card-blue-accent: #00e5ff;
 
-    --card-cyan-bg: rgba(15, 80, 100, 0.28);
-    --card-cyan-border: rgba(100, 220, 255, 0.38);
-    --card-cyan-accent: #64dcff;
+    --card-cyan-bg: rgba(0, 80, 100, 0.35);
+    --card-cyan-border: rgba(0, 229, 255, 0.5);
+    --card-cyan-accent: #00e5ff;
 
-    --card-purple-bg: rgba(80, 30, 120, 0.28);
-    --card-purple-border: rgba(180, 100, 255, 0.35);
-    --card-purple-accent: #b464ff;
+    --card-purple-bg: rgba(80, 0, 120, 0.35);
+    --card-purple-border: rgba(189, 0, 255, 0.5);
+    --card-purple-accent: #bd00ff;
 
-    --card-pink-bg: rgba(100, 20, 80, 0.28);
-    --card-pink-border: rgba(255, 100, 200, 0.35);
-    --card-pink-accent: #ff64c8;
+    --card-pink-bg: rgba(100, 0, 60, 0.35);
+    --card-pink-border: rgba(255, 0, 110, 0.5);
+    --card-pink-accent: #ff006e;
 
-    --card-green-bg: rgba(20, 80, 60, 0.28);
-    --card-green-border: rgba(80, 220, 180, 0.35);
-    --card-green-accent: #50dcb4;
+    --card-green-bg: rgba(0, 80, 60, 0.35);
+    --card-green-border: rgba(0, 255, 136, 0.5);
+    --card-green-accent: #00ff88;
 }
 
 html {
@@ -61,9 +63,10 @@ html {
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background: radial-gradient(circle at 20% 15%, rgba(255, 0, 110, 0.18), transparent 55%),
-        radial-gradient(circle at 80% 0%, rgba(0, 212, 255, 0.12), transparent 50%),
-        linear-gradient(140deg, #040112 0%, var(--bg) 45%, #1f0b3c 100%);
+    background: radial-gradient(circle at 20% 15%, rgba(0, 255, 136, 0.15), transparent 55%),
+        radial-gradient(circle at 80% 0%, rgba(0, 229, 255, 0.12), transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(255, 0, 110, 0.08), transparent 60%),
+        var(--bg);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -83,18 +86,18 @@ body::after {
 }
 
 body::before {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
-        radial-gradient(rgba(147, 197, 255, 0.3) 1px, transparent 1px),
-        radial-gradient(rgba(255, 180, 255, 0.2) 2px, transparent 2px);
+    background-image: radial-gradient(rgba(0, 229, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(rgba(0, 255, 136, 0.4) 1px, transparent 1px),
+        radial-gradient(rgba(255, 0, 110, 0.3) 2px, transparent 2px);
     background-size: 120px 120px, 210px 210px, 320px 320px;
     background-position: 0 0, 80px 60px, 160px 120px;
     animation: driftStars 70s linear infinite;
-    opacity: 0.55;
+    opacity: 0.4;
 }
 
 body::after {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px),
-        radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(0, 229, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(rgba(0, 255, 136, 0.5) 1px, transparent 1px);
     background-size: 95px 95px, 160px 160px;
     background-position: 40px 90px, 100px 30px;
     animation: twinkle 9s ease-in-out infinite alternate;
