@@ -687,6 +687,68 @@ body::after {
     color: var(--accent-cyan);
 }
 
+/* Process Details Collapsible Sections */
+.process-details {
+    margin: var(--space-xl) 0;
+    border: 1px solid rgba(173, 141, 235, 0.2);
+    border-radius: 12px;
+    background: rgba(18, 12, 42, 0.4);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.process-details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease;
+}
+
+.process-details summary:hover {
+    background: rgba(173, 141, 235, 0.08);
+}
+
+.process-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.process-details summary h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.expand-icon {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--accent-strong);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.process-details[open] .expand-icon {
+    transform: rotate(45deg);
+}
+
+.process-content {
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.process-content p {
+    margin-bottom: var(--space-md);
+}
+
+.process-content ul {
+    margin-top: var(--space-sm);
+}
+
 @media (max-width: 768px) {
     .resume-section {
         padding: var(--space-xl);
