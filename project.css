@@ -360,6 +360,10 @@ body::after {
     width: min(100%, 820px);
 }
 
+.project-image.is-full {
+    width: min(100%, 1040px);
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
