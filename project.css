@@ -669,22 +669,6 @@ body::after {
     color: var(--text-primary);
 }
 
-.about-narrative {
-    margin-top: var(--space-2xl);
-    display: grid;
-    gap: var(--space-md);
-}
-
-.about-narrative h2 {
-    font-size: 1.4rem;
-    color: var(--accent);
-}
-
-.about-narrative p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
 .connect-section {
     margin-top: var(--space-2xl);
     padding: var(--space-xl);
