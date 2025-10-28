@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Microsoft Clarity Analytics -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "tx50823cyl");
+    </script>
 </head>
 <body>
     <div class="landing-container">
@@ -151,6 +160,7 @@
         <div class="currently-section">
             <div class="currently-label">Currently</div>
             <p class="currently-text">
+                <strong>Actively interviewing for Q1 2026 start dates.</strong><br>
                 Seeking roles in <span class="currently-highlight">User Research</span>,
                 <span class="currently-highlight">Trust & Safety</span>,
                 <span class="currently-highlight">Product/Project Management</span>, and
@@ -158,8 +168,9 @@
                 in <span class="currently-highlight">EdTech</span>,
                 <span class="currently-highlight">cybersecurity</span>, and
                 <span class="currently-highlight">community-centered spaces</span>
-                where infrastructure design meets social impact. Bilingual (English/Spanish). Let's connect!
+                where infrastructure design meets social impact. Bilingual (English/Spanish).
             </p>
+            <p class="currently-availability">📅 Available for interviews now • Open to remote, hybrid, or SF Bay Area roles</p>
             <div class="calendar-button-container">
                 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
                 <script>
@@ -169,7 +180,7 @@
                     calendar.schedulingButton.load({
                       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true',
                       color: '#F09300',
-                      label: 'Book an appointment',
+                      label: 'Book a meeting',
                       target,
                     });
                   });
@@ -191,6 +202,124 @@
             </div>
         </footer>
     </div>
+    <!-- Exit Intent / Engagement Popup -->
+    <div id="engagement-popup" class="engagement-popup" style="display: none;">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Close popup">&times;</button>
+            <div class="popup-header">
+                <h2>👋 Like what you see?</h2>
+                <p>I'm actively interviewing for roles starting Q1 2026. Let's connect about Trust & Safety, AI Policy, or Product Research opportunities.</p>
+                <p class="popup-urgency">📅 Booking meetings for January start dates now</p>
+            </div>
+            <div class="popup-actions">
+                <a href="about.html" class="popup-btn popup-btn-primary">
+                    📄 View Resume
+                </a>
+                <button class="popup-btn popup-btn-secondary" id="popup-book-meeting">
+                    📅 Book a Meeting
+                </button>
+            </div>
+            <button class="popup-dismiss">Maybe later</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+    // Engagement Popup Logic (Exit Intent Only - Less Aggressive)
+    (function() {
+        const popup = document.getElementById('engagement-popup');
+        const closeBtn = popup.querySelector('.popup-close');
+        const dismissBtn = popup.querySelector('.popup-dismiss');
+        const overlay = popup.querySelector('.popup-overlay');
+        const bookMeetingBtn = document.getElementById('popup-book-meeting');
+
+        // Don't show if already shown this session or dismissed
+        if (sessionStorage.getItem('popupShown') || sessionStorage.getItem('popupDismissed')) return;
+
+        let popupShown = false;
+        let pageLoadTime = Date.now();
+        let hasScrolled = false;
+
+        function showPopup() {
+            if (popupShown) return;
+
+            // Only show if user has been on page for at least 15 seconds
+            const timeOnPage = (Date.now() - pageLoadTime) / 1000;
+            if (timeOnPage < 15) return;
+
+            // Only show if user has scrolled (engaged with content)
+            if (!hasScrolled) return;
+
+            popup.style.display = 'flex';
+            sessionStorage.setItem('popupShown', 'true');
+            popupShown = true;
+
+            // Track popup shown in Clarity
+            if (window.clarity) {
+                clarity('event', 'popup_shown');
+            }
+        }
+
+        function hidePopup() {
+            popup.style.display = 'none';
+            sessionStorage.setItem('popupDismissed', 'true');
+        }
+
+        // Track if user has scrolled (engaged)
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            hasScrolled = true;
+            // Clear any existing timeout
+            clearTimeout(scrollTimeout);
+        });
+
+        // Exit intent detection (ONLY trigger - less annoying)
+        document.addEventListener('mouseleave', function(e) {
+            // Only trigger on top exit (not bottom or sides)
+            if (e.clientY < 0 && !popupShown) {
+                // Small delay to avoid accidental triggers
+                setTimeout(showPopup, 200);
+            }
+        });
+
+        // Book meeting button - scroll to calendar
+        bookMeetingBtn.addEventListener('click', function() {
+            // Track in Clarity
+            if (window.clarity) {
+                clarity('event', 'popup_book_meeting_clicked');
+            }
+            hidePopup();
+            document.querySelector('.calendar-button-container').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Close handlers
+        closeBtn.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_closed');
+            }
+            hidePopup();
+        });
+        dismissBtn.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_dismissed');
+            }
+            hidePopup();
+        });
+        overlay.addEventListener('click', function() {
+            if (window.clarity) {
+                clarity('event', 'popup_overlay_clicked');
+            }
+            hidePopup();
+        });
+
+        // Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.style.display === 'flex') {
+                hidePopup();
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
