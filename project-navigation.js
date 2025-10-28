@@ -3,10 +3,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Define the navigation structure
     const pages = [
-        'junipers-clompass.html',
         'responsible-ai.html',
-        'black-eco-feminisms.html',
         'show-me-your-colors.html',
+        'junipers-clompass.html',
+        'black-eco-feminisms.html',
         'rebrew.html',
         'art.html'
     ];
