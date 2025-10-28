@@ -1184,6 +1184,14 @@ body::after {
     max-width: min(100%, 600px);  /* Reduced from 720px */
 }
 
+.project-image--7x5 {
+    max-width: min(100%, 560px);
+}
+
+.project-image--5x7 {
+    max-width: min(100%, 420px);
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
