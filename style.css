@@ -217,6 +217,42 @@ body::after {
     line-height: 1.5;
 }
 
+/* Intro Section */
+.intro-section {
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    border-radius: 14px;
+    background-image: linear-gradient(140deg, rgba(19, 16, 45, 0.75), rgba(10, 7, 28, 0.75)), var(--noise-texture);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 220px;
+    background-blend-mode: normal, soft-light;
+    border: 1px solid rgba(176, 132, 255, 0.25);
+    box-shadow: 0 18px 40px rgba(6, 4, 22, 0.35);
+    animation: fadeIn 1.2s ease;
+    line-height: 1.7;
+}
+
+.intro-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+}
+
+.intro-section p:first-child {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+}
+
+.intro-section p:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section strong {
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
 /* Section Headers */
 .landing-section {
     margin-bottom: var(--space-2xl);
@@ -758,6 +794,18 @@ a, button {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .intro-section {
+        padding: var(--space-lg);
+    }
+
+    .intro-section p {
+        font-size: 0.9rem;
+    }
+
+    .intro-section p:first-child {
+        font-size: 1rem;
+    }
+
     .main-name {
         font-size: 1.05rem;
     }
@@ -826,6 +874,18 @@ a, button {
 }
 
 @media (max-width: 480px) {
+    .intro-section {
+        padding: var(--space-md);
+    }
+
+    .intro-section p {
+        font-size: 0.85rem;
+    }
+
+    .intro-section p:first-child {
+        font-size: 0.95rem;
+    }
+
     .about-link {
         position: fixed;
         top: 1rem;
