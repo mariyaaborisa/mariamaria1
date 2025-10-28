@@ -1162,26 +1162,26 @@ body::after {
 /* Project Images */
 .project-image {
     display: block;
-    max-width: min(100%, 960px);
-    width: auto;
+    max-width: min(100%, 800px);  /* Reduced from 960px for better performance */
+    width: 100%;
     height: auto;
-    margin: clamp(1.75rem, 3vw, 2.75rem) auto;
-    border-radius: 18px;
-    border: none;
+    margin: 0 auto;  /* Remove vertical margin when inside figure */
+    border-radius: 14px;
+    border: 1px solid rgba(255, 0, 110, 0.3);
     background: transparent;
     transition: transform 0.3s ease;
 }
 
 .project-image:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 }
 
 .project-image--full {
-    max-width: min(100%, 1200px);
+    max-width: min(100%, 1000px);  /* Reduced from 1200px */
 }
 
 .project-image--tight {
-    max-width: min(100%, 720px);
+    max-width: min(100%, 600px);  /* Reduced from 720px */
 }
 
 
