@@ -51,9 +51,9 @@ html {
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background: radial-gradient(circle at 18% 22%, rgba(184, 77, 255, 0.25), transparent 55%),
+    background: radial-gradient(circle at 18% 22%, rgba(10, 80, 120, 0.28), transparent 55%),
         radial-gradient(circle at 82% 12%, rgba(0, 212, 255, 0.18), transparent 52%),
-        linear-gradient(135deg, #050313 0%, var(--bg-primary) 45%, #1a0b2e 100%);
+        linear-gradient(135deg, #050313 0%, var(--bg-primary) 45%, #0a1528 100%);
     color: var(--text-primary);
     min-height: 100vh;
     display: flex;
@@ -84,9 +84,9 @@ body::before {
 }
 
 body::after {
-    background: radial-gradient(circle at 20% 25%, rgba(255, 102, 196, 0.14), transparent 60%),
-        radial-gradient(circle at 78% 18%, rgba(94, 208, 255, 0.16), transparent 55%),
-        radial-gradient(circle at 50% 80%, rgba(80, 220, 180, 0.1), transparent 50%);
+    background: radial-gradient(circle at 20% 25%, rgba(255, 102, 196, 0.12), transparent 60%),
+        radial-gradient(circle at 78% 18%, rgba(94, 208, 255, 0.20), transparent 55%),
+        radial-gradient(circle at 50% 80%, rgba(80, 220, 180, 0.12), transparent 50%);
     opacity: 0.65;
 }
 
@@ -215,6 +215,42 @@ body::after {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.5;
+}
+
+/* Intro Section */
+.intro-section {
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    border-radius: 14px;
+    background-image: linear-gradient(140deg, rgba(19, 16, 45, 0.75), rgba(10, 7, 28, 0.75)), var(--noise-texture);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 220px;
+    background-blend-mode: normal, soft-light;
+    border: 1px solid rgba(176, 132, 255, 0.25);
+    box-shadow: 0 18px 40px rgba(6, 4, 22, 0.35);
+    animation: fadeIn 1.2s ease;
+    line-height: 1.7;
+}
+
+.intro-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+}
+
+.intro-section p:first-child {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+}
+
+.intro-section p:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section strong {
+    color: var(--accent-cyan);
+    font-weight: 500;
 }
 
 /* Section Headers */
@@ -758,6 +794,18 @@ a, button {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .intro-section {
+        padding: var(--space-lg);
+    }
+
+    .intro-section p {
+        font-size: 0.9rem;
+    }
+
+    .intro-section p:first-child {
+        font-size: 1rem;
+    }
+
     .main-name {
         font-size: 1.05rem;
     }
@@ -826,6 +874,18 @@ a, button {
 }
 
 @media (max-width: 480px) {
+    .intro-section {
+        padding: var(--space-md);
+    }
+
+    .intro-section p {
+        font-size: 0.85rem;
+    }
+
+    .intro-section p:first-child {
+        font-size: 0.95rem;
+    }
+
     .about-link {
         position: fixed;
         top: 1rem;
