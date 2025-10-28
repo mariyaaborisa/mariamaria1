@@ -330,6 +330,7 @@ body::after {
     border: 1px solid rgba(255, 0, 110, 0.3);
 }
 
+
 .project-figure figcaption {
     font-size: 0.85rem;
     color: var(--text-muted);
