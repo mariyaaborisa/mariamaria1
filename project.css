@@ -19,10 +19,14 @@
     --accent-fuchsia: #FF3E9D;
     --accent-purple: #C5A5FF;
     --accent-peach: #FFB5A7;
+    --accent-cyan: #8DD3FF;
+    --accent-green: #50DCB4;
     --border: rgba(255, 107, 122, 0.25);
     --glow-pink: rgba(255, 179, 198, 0.4);
     --glow-coral: rgba(255, 107, 122, 0.35);
     --glow-purple: rgba(197, 165, 255, 0.35);
+    --glow-cyan: rgba(141, 211, 255, 0.35);
+    --glow-green: rgba(80, 220, 180, 0.35);
     --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     --panel-bg: rgba(237, 213, 200, 0.85);
     --panel-border: rgba(255, 107, 122, 0.3);
@@ -485,10 +489,10 @@ body::after {
 .focus-card {
     position: relative;
     padding: var(--space-xl);
-    background: linear-gradient(145deg, rgba(26, 18, 54, 0.8), rgba(34, 22, 68, 0.6));
-    border: 1px solid rgba(173, 141, 235, 0.32);
+    background: linear-gradient(145deg, rgba(237, 213, 200, 0.9), rgba(232, 208, 194, 0.85));
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 16px;
-    box-shadow: 0 18px 45px rgba(6, 4, 20, 0.45);
+    box-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -508,7 +512,7 @@ body::after {
 .focus-card h2 {
     font-size: 1.2rem;
     margin-bottom: var(--space-sm);
-    color: var(--accent-strong);
+    color: var(--text-primary);
     position: relative;
     z-index: 1;
 }
@@ -525,10 +529,10 @@ body::after {
 .resume-section {
     margin-top: var(--space-2xl);
     padding: var(--space-2xl) var(--space-xl);
-    background: rgba(18, 10, 38, 0.72);
-    border: 1px solid rgba(173, 141, 235, 0.28);
+    background: rgba(237, 213, 200, 0.92);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 20px;
-    box-shadow: 0 28px 60px rgba(6, 4, 20, 0.65);
+    box-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
 }
 
 .resume-header {
@@ -540,11 +544,11 @@ body::after {
 
 .resume-header h2 {
     font-size: 1.5rem;
-    color: var(--accent-cyan);
+    color: var(--text-primary);
 }
 
 .resume-header p {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     max-width: 48ch;
 }
 
@@ -557,9 +561,9 @@ body::after {
 
 .resume-filter {
     appearance: none;
-    border: 1px solid rgba(141, 211, 255, 0.32);
-    background: rgba(18, 26, 54, 0.65);
-    color: var(--text-secondary);
+    border: 1px solid rgba(255, 107, 122, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--text-primary);
     font-family: inherit;
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
@@ -573,13 +577,14 @@ body::after {
     border-color: var(--accent-strong);
     color: var(--accent-strong);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 77, 157, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 62, 157, 0.2);
 }
 
 .resume-filter.is-active {
-    background: linear-gradient(135deg, rgba(255, 77, 157, 0.32), rgba(141, 211, 255, 0.24));
-    border-color: rgba(255, 77, 157, 0.5);
+    background: linear-gradient(135deg, rgba(255, 62, 157, 0.25), rgba(197, 165, 255, 0.2));
+    border-color: var(--accent-strong);
     color: var(--text-primary);
+    font-weight: 600;
 }
 
 .resume-timeline {
@@ -588,17 +593,17 @@ body::after {
 }
 
 .resume-item {
-    border: 1px solid rgba(173, 141, 235, 0.25);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 16px;
-    background: rgba(13, 8, 31, 0.85);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(12px);
     padding: var(--space-md) var(--space-lg);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resume-item[open] {
-    border-color: rgba(255, 77, 157, 0.5);
-    box-shadow: 0 18px 40px rgba(255, 77, 157, 0.12);
+    border-color: var(--accent-strong);
+    box-shadow: 0 8px 24px rgba(255, 62, 157, 0.2);
 }
 
 .resume-item.is-hidden {
@@ -628,6 +633,7 @@ body::after {
 .resume-summary h3 {
     font-size: 1.05rem;
     margin-bottom: 0.2rem;
+    color: var(--text-primary);
 }
 
 .resume-meta {
@@ -647,9 +653,9 @@ body::after {
     font-size: 0.75rem;
     padding: 0.3rem 0.6rem;
     border-radius: 999px;
-    background: rgba(141, 211, 255, 0.16);
-    color: var(--accent-cyan);
-    border: 1px solid rgba(141, 211, 255, 0.35);
+    background: rgba(197, 165, 255, 0.2);
+    color: var(--accent-purple);
+    border: 1px solid rgba(197, 165, 255, 0.4);
 }
 
 .resume-item ul {
@@ -667,12 +673,13 @@ body::after {
 .resume-education {
     margin-top: var(--space-2xl);
     padding-top: var(--space-xl);
-    border-top: 1px solid rgba(173, 141, 235, 0.2);
+    border-top: 1px solid rgba(255, 107, 122, 0.3);
 }
 
 .resume-education h3 {
     font-size: 1.15rem;
     margin-bottom: var(--space-md);
+    color: var(--text-primary);
 }
 
 .resume-education ul {
@@ -689,19 +696,25 @@ body::after {
 .connect-section {
     margin-top: var(--space-2xl);
     padding: var(--space-xl);
-    border: 1px solid rgba(173, 141, 235, 0.2);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 16px;
-    background: rgba(18, 12, 42, 0.65);
+    background: rgba(237, 213, 200, 0.9);
 }
 
 .connect-section h2 {
     font-size: 1.2rem;
     margin-bottom: var(--space-sm);
-    color: var(--accent-strong);
+    color: var(--text-primary);
 }
 
 .connect-section a {
-    color: var(--accent-cyan);
+    color: var(--accent-coral);
+    transition: all 0.3s ease;
+}
+
+.connect-section a:hover {
+    color: var(--accent-strong);
+    text-shadow: 0 0 8px var(--glow-coral);
 }
 
 /* Calendar Button Container */
@@ -831,9 +844,9 @@ body::after {
 /* Process Details Collapsible Sections */
 .process-details {
     margin: var(--space-xl) 0;
-    border: 1px solid rgba(173, 141, 235, 0.2);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 12px;
-    background: rgba(18, 12, 42, 0.4);
+    background: rgba(237, 213, 200, 0.6);
     overflow: hidden;
     transition: all 0.3s ease;
 }
@@ -849,7 +862,7 @@ body::after {
 }
 
 .process-details summary:hover {
-    background: rgba(173, 141, 235, 0.08);
+    background: rgba(255, 107, 122, 0.1);
 }
 
 .process-details summary::-webkit-details-marker {
@@ -912,17 +925,11 @@ body::after {
 
 .project-pill {
     border-radius: 999px;
-    border: 1px solid rgba(255, 0, 110, 0.25);
+    border: 1px solid rgba(255, 107, 122, 0.35);
     padding: 0.45rem 0.85rem;
     font-size: 0.8rem;
     color: var(--text-secondary);
-    background: rgba(26, 11, 46, 0.5);
-    /* Static, no hover effects to reduce visual weight */
-    border: 1px solid rgba(173, 141, 235, 0.35);
-    padding: 0.45rem 0.85rem;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: rgba(26, 18, 54, 0.55);
+    background: rgba(237, 213, 200, 0.7);
     backdrop-filter: blur(12px);
     transition: all 0.3s ease;
 }
@@ -934,9 +941,9 @@ body::after {
 }
 
 .callout {
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--accent-strong);
     padding: 1rem 1.25rem;
-    background: rgba(255, 0, 110, 0.08);
+    background: rgba(255, 62, 157, 0.1);
     border-radius: 0 18px 18px 0;
     color: var(--text-secondary);
 }
@@ -1002,13 +1009,13 @@ body::after {
 }
 
 .code-block {
-    background: rgba(26, 11, 46, 0.8);
-    border: 1px solid rgba(255, 0, 110, 0.3);
+    background: rgba(237, 213, 200, 0.8);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     border-radius: 14px;
     padding: 1rem 1.25rem;
     font-family: var(--code-font);
     font-size: 0.85rem;
-    color: var(--accent-cyan);
+    color: var(--text-primary);
     overflow-x: auto;
 }
 
@@ -1065,7 +1072,7 @@ body::after {
     max-width: 1100px;
     margin: 6rem auto 2.5rem;
     padding-top: var(--space-lg);
-    border-top: 1px solid rgba(173, 141, 235, 0.25);
+    border-top: 1px solid rgba(255, 107, 122, 0.25);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1133,8 +1140,8 @@ body::after {
 .icon-item:hover {
     transform: translateY(-6px) scale(1.05);
     border-color: var(--accent-strong);
-    box-shadow: 0 12px 30px rgba(255, 0, 110, 0.3);
-    background: rgba(21, 18, 42, 0.8);
+    box-shadow: 0 12px 30px rgba(255, 62, 157, 0.3);
+    background: rgba(237, 213, 200, 0.95);
 }
 
 .icon-item img {
@@ -1169,7 +1176,7 @@ body::after {
     height: auto;
     margin: 0 auto;  /* Remove vertical margin when inside figure */
     border-radius: 14px;
-    border: 1px solid rgba(255, 0, 110, 0.3);
+    border: 1px solid rgba(255, 107, 122, 0.3);
     background: transparent;
     transition: transform 0.3s ease;
 }
