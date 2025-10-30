@@ -7,9 +7,9 @@
 
 :root {
     /* Feminine Warm Palette for Projects */
-    --bg: #FFFBF5;
-    --surface: #FFF3E8;
-    --surface-elevated: #FFEEE0;
+    --bg: #F2DED4;
+    --surface: #EDD5C8;
+    --surface-elevated: #E8D0C2;
     --text-primary: #2D2424;
     --text-secondary: #6B5D5D;
     --text-muted: #9D8F8F;
@@ -24,7 +24,7 @@
     --glow-coral: rgba(255, 107, 122, 0.35);
     --glow-purple: rgba(197, 165, 255, 0.35);
     --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
-    --panel-bg: rgba(255, 243, 232, 0.85);
+    --panel-bg: rgba(237, 213, 200, 0.85);
     --panel-border: rgba(255, 107, 122, 0.3);
     --panel-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
     --code-font: 'IBM Plex Mono', monospace;
@@ -38,23 +38,23 @@
     --space-2xl: 4rem;
 
     /* Card Color Variants for Visual Variance */
-    --card-blue-bg: rgba(255, 243, 240, 0.6);
+    --card-blue-bg: rgba(237, 213, 200, 0.6);
     --card-blue-border: rgba(255, 107, 122, 0.3);
     --card-blue-accent: #FF6B7A;
 
-    --card-cyan-bg: rgba(255, 243, 240, 0.6);
+    --card-cyan-bg: rgba(237, 213, 200, 0.6);
     --card-cyan-border: rgba(255, 107, 122, 0.3);
     --card-cyan-accent: #FF6B7A;
 
-    --card-purple-bg: rgba(247, 242, 255, 0.6);
+    --card-purple-bg: rgba(235, 225, 245, 0.6);
     --card-purple-border: rgba(197, 165, 255, 0.35);
     --card-purple-accent: #C5A5FF;
 
-    --card-pink-bg: rgba(255, 246, 249, 0.6);
+    --card-pink-bg: rgba(242, 222, 225, 0.6);
     --card-pink-border: rgba(255, 179, 198, 0.35);
     --card-pink-accent: #FFB3C6;
 
-    --card-green-bg: rgba(255, 245, 242, 0.6);
+    --card-green-bg: rgba(240, 220, 212, 0.6);
     --card-green-border: rgba(255, 181, 167, 0.35);
     --card-green-accent: #FFB5A7;
 }
@@ -112,7 +112,7 @@ body::after {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 251, 245, 0.92);
+    background: rgba(242, 222, 212, 0.92);
     backdrop-filter: blur(18px);
     padding: 1.35rem 2rem;
     display: flex;
