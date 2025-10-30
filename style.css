@@ -7,8 +7,8 @@
 
 :root {
     /* Feminine Warm Palette */
-    --bg-primary: #FFFBF5;
-    --bg-secondary: #FFF3E8;
+    --bg-primary: #F2DED4;
+    --bg-secondary: #EDD5C8;
     --text-primary: #2D2424;
     --text-secondary: #6B5D5D;
     --text-tertiary: #9D8F8F;
@@ -18,7 +18,7 @@
     --accent-purple: #C5A5FF;
     --accent-peach: #FFB5A7;
     --accent-strong: #FF3E9D;
-    --panel-bg: rgba(255, 243, 232, 0.85);
+    --panel-bg: rgba(237, 213, 200, 0.85);
     --panel-border: rgba(255, 107, 122, 0.3);
     --panel-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
     --glow-pink: rgba(255, 179, 198, 0.4);
@@ -118,7 +118,7 @@ body::after {
     padding: 0.6rem 1.2rem;
     border: 1px solid rgba(255, 107, 122, 0.5);
     border-radius: 16px;
-    background-image: linear-gradient(135deg, rgba(255, 251, 245, 0.95), rgba(255, 243, 232, 0.95)), var(--noise-texture);
+    background-image: linear-gradient(135deg, rgba(242, 222, 212, 0.95), rgba(237, 213, 200, 0.95)), var(--noise-texture);
     background-repeat: no-repeat, repeat;
     background-size: cover, 220px;
     background-blend-mode: normal, soft-light;
@@ -226,7 +226,7 @@ body::after {
     margin-bottom: var(--space-2xl);
     padding: var(--space-xl);
     border-radius: 20px;
-    background-image: linear-gradient(140deg, rgba(255, 243, 232, 0.8), rgba(255, 251, 245, 0.6)), var(--noise-texture);
+    background-image: linear-gradient(140deg, rgba(237, 213, 200, 0.8), rgba(242, 222, 212, 0.6)), var(--noise-texture);
     background-repeat: no-repeat, repeat;
     background-size: cover, 220px;
     background-blend-mode: normal, soft-light;
@@ -427,7 +427,7 @@ body::after {
     padding: var(--space-lg);
     position: relative;
     border-radius: 20px;
-    background-image: linear-gradient(140deg, rgba(255, 243, 232, 0.9), rgba(255, 251, 245, 0.7)), var(--noise-texture);
+    background-image: linear-gradient(140deg, rgba(237, 213, 200, 0.9), rgba(242, 222, 212, 0.7)), var(--noise-texture);
     background-repeat: no-repeat, repeat;
     background-size: cover, 220px;
     background-blend-mode: normal, soft-light;
@@ -556,7 +556,7 @@ body::after {
 
 .popup-content {
     position: relative;
-    background: linear-gradient(135deg, rgba(255, 243, 232, 0.98), rgba(255, 251, 245, 0.98));
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.98), rgba(242, 222, 212, 0.98));
     border: 2px solid var(--accent-coral);
     border-radius: 20px;
     padding: 2.5rem 2rem;
@@ -726,7 +726,7 @@ body::after {
     width: 100%;
     height: 300px;
     border-radius: 20px;
-    background-image: linear-gradient(150deg, rgba(255, 243, 232, 0.95), rgba(255, 251, 245, 0.85)), var(--noise-texture);
+    background-image: linear-gradient(150deg, rgba(237, 213, 200, 0.95), rgba(242, 222, 212, 0.85)), var(--noise-texture);
     background-repeat: no-repeat, repeat;
     background-size: cover, 220px;
     background-blend-mode: normal, soft-light;
@@ -761,7 +761,7 @@ body::after {
     overflow: hidden;
     border-radius: 12px;
     transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(255, 251, 245, 0.8);
+    background: rgba(242, 222, 212, 0.8);
     border: 1px solid transparent;
     display: flex;
     flex-direction: column;
@@ -787,7 +787,7 @@ body::after {
 
 .skill-category[data-open="true"] {
     flex: 3.6;
-    background: rgba(255, 243, 232, 0.95);
+    background: rgba(237, 213, 200, 0.95);
     box-shadow: 0 6px 20px rgba(255, 107, 122, 0.2);
 }
 
