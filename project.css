@@ -15,21 +15,21 @@
     --text-muted: #9D8F8F;
     --accent: #FF3E9D;
     --accent-strong: #FF3E9D;
-    --accent-coral: #FF6B7A;
+    --accent-coral: #E85570;
     --accent-fuchsia: #FF3E9D;
     --accent-purple: #C5A5FF;
-    --accent-peach: #FFB5A7;
+    --accent-peach: #E87550;
     --accent-cyan: #8DD3FF;
     --accent-green: #50DCB4;
-    --border: rgba(255, 107, 122, 0.25);
-    --glow-pink: rgba(255, 179, 198, 0.4);
-    --glow-coral: rgba(255, 107, 122, 0.35);
+    --border: rgba(232, 85, 112, 0.25);
+    --glow-pink: rgba(230, 66, 138, 0.4);
+    --glow-coral: rgba(232, 85, 112, 0.35);
     --glow-purple: rgba(197, 165, 255, 0.35);
     --glow-cyan: rgba(141, 211, 255, 0.35);
     --glow-green: rgba(80, 220, 180, 0.35);
     --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     --panel-bg: rgba(237, 213, 200, 0.85);
-    --panel-border: rgba(255, 107, 122, 0.3);
+    --panel-border: rgba(232, 85, 112, 0.3);
     --panel-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
     --code-font: 'IBM Plex Mono', monospace;
 
@@ -43,24 +43,24 @@
 
     /* Card Color Variants for Visual Variance */
     --card-blue-bg: rgba(237, 213, 200, 0.6);
-    --card-blue-border: rgba(255, 107, 122, 0.3);
-    --card-blue-accent: #FF6B7A;
+    --card-blue-border: rgba(232, 85, 112, 0.3);
+    --card-blue-accent: #E85570;
 
     --card-cyan-bg: rgba(237, 213, 200, 0.6);
-    --card-cyan-border: rgba(255, 107, 122, 0.3);
-    --card-cyan-accent: #FF6B7A;
+    --card-cyan-border: rgba(232, 85, 112, 0.3);
+    --card-cyan-accent: #E85570;
 
     --card-purple-bg: rgba(235, 225, 245, 0.6);
     --card-purple-border: rgba(197, 165, 255, 0.35);
     --card-purple-accent: #C5A5FF;
 
     --card-pink-bg: rgba(242, 222, 225, 0.6);
-    --card-pink-border: rgba(255, 179, 198, 0.35);
-    --card-pink-accent: #FFB3C6;
+    --card-pink-border: rgba(230, 66, 138, 0.35);
+    --card-pink-accent: #E6428A;
 
     --card-green-bg: rgba(240, 220, 212, 0.6);
-    --card-green-border: rgba(255, 181, 167, 0.35);
-    --card-green-accent: #FFB5A7;
+    --card-green-border: rgba(232, 117, 80, 0.35);
+    --card-green-accent: #E87550;
 }
 
 html {
@@ -69,9 +69,9 @@ html {
 
 body {
     font-family: 'DM Sans', 'Space Grotesk', sans-serif;
-    background: radial-gradient(circle at 20% 15%, rgba(255, 181, 167, 0.12), transparent 55%),
+    background: radial-gradient(circle at 20% 15%, rgba(232, 117, 80, 0.12), transparent 55%),
         radial-gradient(circle at 80% 0%, rgba(197, 165, 255, 0.10), transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(255, 179, 198, 0.08), transparent 60%),
+        radial-gradient(circle at 50% 90%, rgba(230, 66, 138, 0.08), transparent 60%),
         var(--bg);
     color: var(--text-primary);
     min-height: 100vh;
@@ -92,9 +92,9 @@ body::after {
 }
 
 body::before {
-    background-image: radial-gradient(rgba(255, 107, 122, 0.35) 1px, transparent 1px),
+    background-image: radial-gradient(rgba(232, 85, 112, 0.35) 1px, transparent 1px),
         radial-gradient(rgba(197, 165, 255, 0.3) 1px, transparent 1px),
-        radial-gradient(rgba(255, 179, 198, 0.25) 2px, transparent 2px);
+        radial-gradient(rgba(230, 66, 138, 0.25) 2px, transparent 2px);
     background-size: 120px 120px, 210px 210px, 320px 320px;
     background-position: 0 0, 80px 60px, 160px 120px;
     animation: driftStars 70s linear infinite;
@@ -102,7 +102,7 @@ body::before {
 }
 
 body::after {
-    background-image: radial-gradient(rgba(255, 107, 122, 0.4) 1px, transparent 1px),
+    background-image: radial-gradient(rgba(232, 85, 112, 0.4) 1px, transparent 1px),
         radial-gradient(rgba(197, 165, 255, 0.35) 1px, transparent 1px);
     background-size: 95px 95px, 160px 160px;
     background-position: 40px 90px, 100px 30px;
@@ -123,7 +123,7 @@ body::after {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 107, 122, 0.18);
+    border-bottom: 1px solid rgba(232, 85, 112, 0.18);
 }
 
 .nav-home {
@@ -190,14 +190,14 @@ body::after {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(255, 179, 198, 0.25);
-    border: 1px solid rgba(255, 179, 198, 0.35);
+    background: rgba(230, 66, 138, 0.25);
+    border: 1px solid rgba(230, 66, 138, 0.35);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .progress-dot:hover {
-    background: rgba(255, 179, 198, 0.45);
+    background: rgba(230, 66, 138, 0.45);
     transform: scale(1.2);
 }
 
@@ -244,7 +244,7 @@ body::after {
     flex-direction: column;
     gap: 0.75rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 107, 122, 0.2);
+    border-bottom: 1px solid rgba(232, 85, 112, 0.2);
 }
 
 .project-number {
@@ -336,7 +336,7 @@ body::after {
     width: 100%;
     border-radius: 20px;
     border: 1px solid var(--border);
-    background: linear-gradient(135deg, rgba(255, 179, 198, 0.12), rgba(197, 165, 255, 0.08));
+    background: linear-gradient(135deg, rgba(230, 66, 138, 0.12), rgba(197, 165, 255, 0.08));
     padding: 1.5rem;
     margin: 1rem 0 1.5rem;
 }
@@ -344,7 +344,7 @@ body::after {
 .project-figure img {
     width: 100%;
     border-radius: 14px;
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
 }
 
 
@@ -490,7 +490,7 @@ body::after {
     position: relative;
     padding: var(--space-xl);
     background: linear-gradient(145deg, rgba(237, 213, 200, 0.9), rgba(232, 208, 194, 0.85));
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
     overflow: hidden;
@@ -530,7 +530,7 @@ body::after {
     margin-top: var(--space-2xl);
     padding: var(--space-2xl) var(--space-xl);
     background: rgba(237, 213, 200, 0.92);
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
 }
@@ -561,7 +561,7 @@ body::after {
 
 .resume-filter {
     appearance: none;
-    border: 1px solid rgba(255, 107, 122, 0.4);
+    border: 1px solid rgba(232, 85, 112, 0.4);
     background: rgba(255, 255, 255, 0.4);
     color: var(--text-primary);
     font-family: inherit;
@@ -593,7 +593,7 @@ body::after {
 }
 
 .resume-item {
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(12px);
@@ -673,7 +673,7 @@ body::after {
 .resume-education {
     margin-top: var(--space-2xl);
     padding-top: var(--space-xl);
-    border-top: 1px solid rgba(255, 107, 122, 0.3);
+    border-top: 1px solid rgba(232, 85, 112, 0.3);
 }
 
 .resume-education h3 {
@@ -696,7 +696,7 @@ body::after {
 .connect-section {
     margin-top: var(--space-2xl);
     padding: var(--space-xl);
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 16px;
     background: rgba(237, 213, 200, 0.9);
 }
@@ -844,7 +844,7 @@ body::after {
 /* Process Details Collapsible Sections */
 .process-details {
     margin: var(--space-xl) 0;
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 12px;
     background: rgba(237, 213, 200, 0.6);
     overflow: hidden;
@@ -862,7 +862,7 @@ body::after {
 }
 
 .process-details summary:hover {
-    background: rgba(255, 107, 122, 0.1);
+    background: rgba(232, 85, 112, 0.1);
 }
 
 .process-details summary::-webkit-details-marker {
@@ -925,7 +925,7 @@ body::after {
 
 .project-pill {
     border-radius: 999px;
-    border: 1px solid rgba(255, 107, 122, 0.35);
+    border: 1px solid rgba(232, 85, 112, 0.35);
     padding: 0.45rem 0.85rem;
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -1010,7 +1010,7 @@ body::after {
 
 .code-block {
     background: rgba(237, 213, 200, 0.8);
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     border-radius: 14px;
     padding: 1rem 1.25rem;
     font-family: var(--code-font);
@@ -1072,7 +1072,7 @@ body::after {
     max-width: 1100px;
     margin: 6rem auto 2.5rem;
     padding-top: var(--space-lg);
-    border-top: 1px solid rgba(255, 107, 122, 0.25);
+    border-top: 1px solid rgba(232, 85, 112, 0.25);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1176,7 +1176,7 @@ body::after {
     height: auto;
     margin: 0 auto;  /* Remove vertical margin when inside figure */
     border-radius: 14px;
-    border: 1px solid rgba(255, 107, 122, 0.3);
+    border: 1px solid rgba(232, 85, 112, 0.3);
     background: transparent;
     transition: transform 0.3s ease;
 }
