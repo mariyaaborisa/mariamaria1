@@ -118,7 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             }
             if (content) {
-                content.hidden = !expanded;
+                // Use a timeout to allow CSS transitions to work properly
+                if (expanded) {
+                    content.hidden = false;
+                    // Force reflow to ensure transition works
+                    content.offsetHeight;
+                } else {
+                    // Wait for transition to complete before hiding
+                    setTimeout(() => {
+                        if (category.dataset.open === 'false') {
+                            content.hidden = true;
+                        }
+                    }, 400);
+                }
             }
         };
 
@@ -190,6 +202,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     event.preventDefault();
                     const prevIndex = (index - 1 + triggerList.length) % triggerList.length;
                     triggerList[prevIndex].focus();
+                }
+
+                if (event.key === 'Home') {
+                    event.preventDefault();
+                    triggerList[0].focus();
+                    activateCategory(categoryList[0]);
+                }
+
+                if (event.key === 'End') {
+                    event.preventDefault();
+                    const lastIndex = triggerList.length - 1;
+                    triggerList[lastIndex].focus();
+                    activateCategory(categoryList[lastIndex]);
+                }
+
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    trigger.click();
                 }
             });
         });

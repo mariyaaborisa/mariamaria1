@@ -482,6 +482,7 @@ body::after {
     border: none;
     box-shadow: none;
     margin-top: 2rem;
+    transition: none;
 }
 
 .offerings-page .skills-accordion::before {
@@ -491,22 +492,25 @@ body::after {
 .offerings-page .skill-category {
     height: auto;
     flex: none;
-    background: rgba(232, 85, 112, 0.06);
-    border: 1px solid rgba(232, 85, 112, 0.18);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.4), rgba(242, 222, 212, 0.3));
+    border: 1px solid rgba(232, 85, 112, 0.22);
     border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .offerings-page .skill-category:hover {
-    border-color: rgba(232, 85, 112, 0.3);
-    box-shadow: 0 4px 12px rgba(232, 85, 112, 0.15);
+    border-color: rgba(232, 85, 112, 0.4);
+    box-shadow: 0 6px 16px rgba(232, 85, 112, 0.2);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.6), rgba(242, 222, 212, 0.5));
 }
 
 .offerings-page .skill-category[data-open="true"] {
     flex: none;
-    background: rgba(237, 213, 200, 0.5);
-    border-color: rgba(232, 85, 112, 0.35);
-    box-shadow: 0 8px 20px rgba(232, 85, 112, 0.18);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.7), rgba(242, 222, 212, 0.6));
+    border-color: rgba(232, 85, 112, 0.45);
+    box-shadow: 0 10px 24px rgba(232, 85, 112, 0.25);
 }
 
 .offerings-page .skill-trigger {
@@ -518,6 +522,18 @@ body::after {
     letter-spacing: -0.01em;
     justify-content: space-between;
     color: var(--text-primary);
+    transition: color 0.3s ease;
+    outline: none;
+}
+
+.offerings-page .skill-trigger:hover {
+    color: var(--accent-coral);
+}
+
+.offerings-page .skill-trigger:focus-visible {
+    outline: 2px solid var(--accent-fuchsia);
+    outline-offset: -4px;
+    border-radius: 12px;
 }
 
 .offerings-page .skill-trigger::after {
@@ -525,14 +541,25 @@ body::after {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--accent-coral);
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease, color 0.35s ease;
     position: static;
     border: none;
     inset: auto;
+    display: inline-block;
+}
+
+.offerings-page .skill-trigger:hover::after {
+    color: var(--accent-fuchsia);
+    transform: scale(1.1);
 }
 
 .offerings-page .skill-category[data-open="true"] .skill-trigger::after {
     content: '−';
+    transform: rotate(180deg);
+}
+
+.offerings-page .skill-category[data-open="true"] .skill-trigger:hover::after {
+    transform: rotate(180deg) scale(1.1);
 }
 
 .offerings-page .skill-label {
@@ -547,6 +574,16 @@ body::after {
 .offerings-page .skill-content {
     padding: 0 1.5rem 1.5rem;
     height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+}
+
+.offerings-page .skill-category[data-open="true"] .skill-content {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
 }
 
 .offerings-page .skill-content h3 {
