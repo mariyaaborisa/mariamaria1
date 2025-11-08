@@ -139,6 +139,32 @@ body::after {
     text-shadow: 0 0 10px var(--glow-coral);
 }
 
+.nav-links-secondary {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.nav-secondary-link {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-secondary-link:hover,
+.nav-secondary-link:focus {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--glow-coral);
+}
+
+.nav-secondary-link[aria-current="page"] {
+    color: var(--accent);
+}
+
 .nav-arrows {
     display: flex;
     gap: var(--space-lg);
