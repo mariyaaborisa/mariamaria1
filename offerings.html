@@ -115,16 +115,45 @@
                 </section>
 
                 <script>
-                document.getElementById('email-signup').addEventListener('submit', function(e) {
+                document.getElementById('email-signup').addEventListener('submit', async function(e) {
                     e.preventDefault();
                     const email = document.getElementById('email').value;
                     const message = document.getElementById('signup-message');
+                    const submitButton = e.target.querySelector('button[type="submit"]');
 
-                    // Here you would integrate with your email service (Mailchimp, ConvertKit, etc.)
-                    // For now, just show a success message
-                    message.textContent = 'Thanks! You\'ll receive the Digital Safety Playbook as soon as it\'s ready.';
-                    message.style.display = 'block';
-                    document.getElementById('email').value = '';
+                    // Disable button and show loading state
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+
+                    try {
+                        const response = await fetch('/.netlify/functions/submit-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email: email })
+                        });
+
+                        if (response.ok) {
+                            message.textContent = 'Thanks! You\'ll receive the Digital Safety Playbook as soon as it\'s ready.';
+                            message.style.color = 'var(--accent-green)';
+                            message.style.display = 'block';
+                            document.getElementById('email').value = '';
+                        } else {
+                            message.textContent = 'Oops! There was a problem. Please try again or email me directly.';
+                            message.style.color = '#d9534f';
+                            message.style.display = 'block';
+                        }
+                    } catch (error) {
+                        console.error('Error submitting email:', error);
+                        message.textContent = 'Oops! There was a problem. Please try again or email me directly.';
+                        message.style.color = '#d9534f';
+                        message.style.display = 'block';
+                    } finally {
+                        // Re-enable button
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send It My Way';
+                    }
                 });
                 </script>
             </div>

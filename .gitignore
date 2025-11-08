@@ -1,0 +1,13 @@
+# Environment variables (contains API keys and secrets)
+.env
+.env.local
+
+# Netlify
+.netlify/
+
+# Node modules (if you add any dependencies later)
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
