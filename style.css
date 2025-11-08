@@ -538,6 +538,16 @@ body::after {
     .stack-card-content {
         padding: 0 var(--space-md) var(--space-md);
     }
+
+    /* Improve accordion touch targets on mobile */
+    .landing-accordion .skill-trigger {
+        padding: 1.5rem 1.25rem;
+        font-size: 1.05rem;
+    }
+
+    .landing-accordion .skill-content {
+        font-size: 0.95rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -546,7 +556,11 @@ body::after {
     .stack-card,
     .stack-card::before,
     .stack-card-icon::before,
-    .stack-card-icon::after {
+    .stack-card-icon::after,
+    .skill-category,
+    .skill-trigger,
+    .skill-content,
+    .landing-accordion .skill-category {
         transition: none !important;
         animation: none !important;
     }
@@ -1017,6 +1031,7 @@ body::after {
     position: relative;
     overflow: hidden;
     z-index: 0;
+    transition: all 0.3s ease;
 }
 
 .skills-accordion::before {
@@ -1044,6 +1059,7 @@ body::after {
     flex-direction: column;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .skill-category:nth-child(1) {
@@ -1062,22 +1078,31 @@ body::after {
     border-color: rgba(232, 117, 80, 0.4);
 }
 
+.skill-category:hover {
+    border-color: rgba(232, 85, 112, 0.5);
+    background: rgba(237, 213, 200, 0.85);
+}
+
 .skill-category[data-open="true"] {
     flex: 3.6;
     background: rgba(237, 213, 200, 0.95);
-    box-shadow: 0 6px 20px rgba(232, 85, 112, 0.2);
+    box-shadow: 0 6px 20px rgba(232, 85, 112, 0.3);
+}
+
+.skill-category:nth-child(1)[data-open="true"] {
+    box-shadow: 0 8px 24px rgba(232, 85, 112, 0.3);
 }
 
 .skill-category:nth-child(2)[data-open="true"] {
-    box-shadow: 0 6px 20px rgba(197, 165, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(197, 165, 255, 0.3);
 }
 
 .skill-category:nth-child(3)[data-open="true"] {
-    box-shadow: 0 6px 20px rgba(230, 66, 138, 0.2);
+    box-shadow: 0 8px 24px rgba(230, 66, 138, 0.3);
 }
 
 .skill-category:nth-child(4)[data-open="true"] {
-    box-shadow: 0 6px 20px rgba(232, 117, 80, 0.2);
+    box-shadow: 0 8px 24px rgba(232, 117, 80, 0.3);
 }
 
 .skill-trigger {
@@ -1099,6 +1124,7 @@ body::after {
     font-weight: 500;
     letter-spacing: 0.15em;
     position: relative;
+    outline: none;
 }
 
 .skill-trigger::before {
@@ -1111,13 +1137,18 @@ body::after {
     position: absolute;
     inset: var(--space-xs);
     border-radius: 6px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: none;
 }
 
 .skill-trigger:focus-visible::after {
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 0 3px rgba(125, 210, 255, 0.35);
+    border-color: var(--accent-fuchsia);
+    box-shadow: 0 0 0 3px rgba(255, 62, 157, 0.3);
+}
+
+.skill-trigger:hover {
+    color: var(--accent-coral);
 }
 
 .skill-label {
@@ -1159,7 +1190,7 @@ body::after {
 .skill-content {
     opacity: 0;
     padding: var(--space-xl) var(--space-lg);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.45s ease 0.1s;
     overflow-y: auto;
     height: 100%;
 }
@@ -1170,6 +1201,18 @@ body::after {
 
 .skill-category[data-open="true"] .skill-content {
     opacity: 1;
+    animation: fadeInSlide 0.5s ease forwards;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .skill-content h3 {
@@ -1214,6 +1257,7 @@ body::after {
     border: none;
     box-shadow: none;
     margin-top: 2rem;
+    transition: none;
 }
 
 .landing-accordion::before {
@@ -1223,22 +1267,24 @@ body::after {
 .landing-accordion .skill-category {
     height: auto;
     flex: none;
-    background: rgba(232, 85, 112, 0.06);
-    border: 1px solid rgba(232, 85, 112, 0.18);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.4), rgba(242, 222, 212, 0.3));
+    border: 1px solid rgba(232, 85, 112, 0.22);
     border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .landing-accordion .skill-category:hover {
-    border-color: rgba(232, 85, 112, 0.3);
-    box-shadow: 0 4px 12px rgba(232, 85, 112, 0.15);
+    border-color: rgba(232, 85, 112, 0.4);
+    box-shadow: 0 6px 16px rgba(232, 85, 112, 0.2);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.6), rgba(242, 222, 212, 0.5));
 }
 
 .landing-accordion .skill-category[data-open="true"] {
     flex: none;
-    background: rgba(237, 213, 200, 0.5);
-    border-color: rgba(232, 85, 112, 0.35);
-    box-shadow: 0 8px 20px rgba(232, 85, 112, 0.18);
+    background: linear-gradient(135deg, rgba(237, 213, 200, 0.7), rgba(242, 222, 212, 0.6));
+    border-color: rgba(232, 85, 112, 0.45);
+    box-shadow: 0 10px 24px rgba(232, 85, 112, 0.25);
 }
 
 .landing-accordion .skill-trigger {
@@ -1250,6 +1296,18 @@ body::after {
     letter-spacing: -0.01em;
     justify-content: space-between;
     color: var(--text-primary);
+    transition: color 0.3s ease;
+    outline: none;
+}
+
+.landing-accordion .skill-trigger:hover {
+    color: var(--accent-coral);
+}
+
+.landing-accordion .skill-trigger:focus-visible {
+    outline: 2px solid var(--accent-fuchsia);
+    outline-offset: -4px;
+    border-radius: 12px;
 }
 
 .landing-accordion .skill-trigger::after {
@@ -1257,14 +1315,25 @@ body::after {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--accent-coral);
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease, color 0.35s ease;
     position: static;
     border: none;
     inset: auto;
+    display: inline-block;
+}
+
+.landing-accordion .skill-trigger:hover::after {
+    color: var(--accent-fuchsia);
+    transform: scale(1.1);
 }
 
 .landing-accordion .skill-category[data-open="true"] .skill-trigger::after {
     content: '−';
+    transform: rotate(180deg);
+}
+
+.landing-accordion .skill-category[data-open="true"] .skill-trigger:hover::after {
+    transform: rotate(180deg) scale(1.1);
 }
 
 .landing-accordion .skill-label {
@@ -1279,6 +1348,16 @@ body::after {
 .landing-accordion .skill-content {
     padding: 0 1.5rem 1.5rem;
     height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+}
+
+.landing-accordion .skill-category[data-open="true"] .skill-content {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
 }
 
 .landing-accordion .skill-content p {
