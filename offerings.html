@@ -68,7 +68,8 @@
                     <h2 style="text-align: center; margin-bottom: 1rem;">Get the Digital Safety Playbook</h2>
                     <p style="text-align: center; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">5 critical questions every nonprofit and school should ask about digital safety. Sign up to receive it when it's ready.</p>
 
-                    <form id="email-signup" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <form id="email-signup" name="digital-safety-playbook" method="POST" data-netlify="true" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <input type="hidden" name="form-name" value="digital-safety-playbook">
                         <input type="email" id="email" name="email" placeholder="Your email address" required
                                style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 1px solid rgba(232, 85, 112, 0.3); border-radius: 8px; font-size: 1rem;">
                         <button type="submit"
@@ -76,7 +77,7 @@
                             Send It My Way
                         </button>
                     </form>
-                    <p id="signup-message" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--accent-green); display: none;"></p>
+                    <p id="signup-message" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
                 </section>
 
                 <section style="text-align: center; margin-bottom: 4rem;">
@@ -113,49 +114,6 @@
                         <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mtcarmier" target="_blank" rel="noopener">linkedin.com/in/mtcarmier</a>
                     </p>
                 </section>
-
-                <script>
-                document.getElementById('email-signup').addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('signup-message');
-                    const submitButton = e.target.querySelector('button[type="submit"]');
-
-                    // Disable button and show loading state
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Submitting...';
-
-                    try {
-                        const response = await fetch('/.netlify/functions/submit-email', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({ email: email })
-                        });
-
-                        if (response.ok) {
-                            message.textContent = 'Thanks! You\'ll receive the Digital Safety Playbook as soon as it\'s ready.';
-                            message.style.color = 'var(--accent-green)';
-                            message.style.display = 'block';
-                            document.getElementById('email').value = '';
-                        } else {
-                            message.textContent = 'Oops! There was a problem. Please try again or email me directly.';
-                            message.style.color = '#d9534f';
-                            message.style.display = 'block';
-                        }
-                    } catch (error) {
-                        console.error('Error submitting email:', error);
-                        message.textContent = 'Oops! There was a problem. Please try again or email me directly.';
-                        message.style.color = '#d9534f';
-                        message.style.display = 'block';
-                    } finally {
-                        // Re-enable button
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send It My Way';
-                    }
-                });
-                </script>
             </div>
         </div>
     </div>
