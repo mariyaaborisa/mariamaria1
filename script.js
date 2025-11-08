@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectItems = document.querySelectorAll('.project-item');
     const skillCategories = document.querySelectorAll('.skill-category');
     const skillTriggers = document.querySelectorAll('.skill-trigger');
+    const stackCards = document.querySelectorAll('.stack-card');
+    const stackTriggers = document.querySelectorAll('.stack-card-trigger');
 
     if (mainName) {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -191,6 +193,98 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    }
+
+    // Sovereign Stack interactive cards
+    if (stackCards.length && stackTriggers.length) {
+        const cardList = Array.from(stackCards);
+        const triggerList = Array.from(stackTriggers);
+        const multiColumnQuery = window.matchMedia('(min-width: 769px)');
+
+        const syncCardState = (card, expanded) => {
+            const trigger = card.querySelector('.stack-card-trigger');
+            const content = card.querySelector('.stack-card-content');
+
+            card.dataset.open = expanded ? 'true' : 'false';
+
+            if (trigger) {
+                trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            }
+
+            if (content) {
+                content.hidden = !expanded;
+            }
+        };
+
+        const openExclusiveCard = (targetCard) => {
+            cardList.forEach((card) => {
+                syncCardState(card, card === targetCard);
+            });
+        };
+
+        const ensureDefaultCard = () => {
+            const currentOpen = cardList.find((card) => card.dataset.open === 'true');
+            if (!currentOpen && cardList.length) {
+                syncCardState(cardList[0], true);
+            }
+        };
+
+        const initialOpen = cardList.find((card) => card.dataset.open === 'true');
+        if (initialOpen) {
+            syncCardState(initialOpen, true);
+        } else {
+            ensureDefaultCard();
+        }
+
+        triggerList.forEach((trigger, index) => {
+            const card = cardList[index];
+
+            trigger.addEventListener('click', () => {
+                const isOpen = card.dataset.open === 'true';
+                if (isOpen && !multiColumnQuery.matches) {
+                    syncCardState(card, false);
+                    return;
+                }
+
+                openExclusiveCard(card);
+            });
+
+            trigger.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+                    event.preventDefault();
+                    const nextIndex = (index + 1) % triggerList.length;
+                    triggerList[nextIndex].focus();
+                }
+
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    const prevIndex = (index - 1 + triggerList.length) % triggerList.length;
+                    triggerList[prevIndex].focus();
+                }
+
+                if (event.key === 'Home') {
+                    event.preventDefault();
+                    triggerList[0].focus();
+                }
+
+                if (event.key === 'End') {
+                    event.preventDefault();
+                    triggerList[triggerList.length - 1].focus();
+                }
+            });
+        });
+
+        const handleColumnChange = (event) => {
+            if (event.matches) {
+                ensureDefaultCard();
+            }
+        };
+
+        if (typeof multiColumnQuery.addEventListener === 'function') {
+            multiColumnQuery.addEventListener('change', handleColumnChange);
+        } else if (typeof multiColumnQuery.addListener === 'function') {
+            multiColumnQuery.addListener(handleColumnChange);
+        }
     }
 
     if (mainName) {
