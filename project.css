@@ -472,6 +472,99 @@ body::after {
     color: var(--text-muted);
 }
 
+/* Vertical Accordion for Sovereign Stack on Offerings Page */
+.offerings-page .skills-accordion {
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: 2rem;
+}
+
+.offerings-page .skills-accordion::before {
+    display: none;
+}
+
+.offerings-page .skill-category {
+    height: auto;
+    flex: none;
+    background: rgba(232, 85, 112, 0.06);
+    border: 1px solid rgba(232, 85, 112, 0.18);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.offerings-page .skill-category:hover {
+    border-color: rgba(232, 85, 112, 0.3);
+    box-shadow: 0 4px 12px rgba(232, 85, 112, 0.15);
+}
+
+.offerings-page .skill-category[data-open="true"] {
+    flex: none;
+    background: rgba(237, 213, 200, 0.5);
+    border-color: rgba(232, 85, 112, 0.35);
+    box-shadow: 0 8px 20px rgba(232, 85, 112, 0.18);
+}
+
+.offerings-page .skill-trigger {
+    height: auto;
+    padding: 1.25rem 1.5rem;
+    text-transform: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    justify-content: space-between;
+    color: var(--text-primary);
+}
+
+.offerings-page .skill-trigger::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--accent-coral);
+    transition: transform 0.3s ease;
+    position: static;
+    border: none;
+    inset: auto;
+}
+
+.offerings-page .skill-category[data-open="true"] .skill-trigger::after {
+    content: '−';
+}
+
+.offerings-page .skill-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+}
+
+.offerings-page .skill-category[data-open="true"] .skill-trigger {
+    color: var(--accent-coral);
+}
+
+.offerings-page .skill-content {
+    padding: 0 1.5rem 1.5rem;
+    height: auto;
+}
+
+.offerings-page .skill-content h3 {
+    display: none;
+}
+
+.offerings-page .skill-content p {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.offerings-page .skill-content .stack-card-footnote {
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(232, 85, 112, 0.15);
+}
+
 .offerings-page .offerings-section--playbook p {
     max-width: 52ch;
     margin: 0 auto;
