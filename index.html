@@ -54,34 +54,74 @@
 
         <section class="landing-section" aria-labelledby="sovereign-stack-heading">
             <h2 class="section-header" id="sovereign-stack-heading">My Sovereign Stack</h2>
-            <p style="max-width: 760px; margin: 0 auto 2rem;">
-                Each engagement activates one or more layers of my Sovereign Stack so you get the right-sized partnership without the overhead. We move from rapid assessment to implementation with clear, actionable deliverables.
+            <p class="section-intro">
+                Each engagement activates one or more layers of my Sovereign Stack so you get the right-sized partnership without the overhead. Explore how each layer expands to meet your team where you are.
             </p>
-            <div class="stack-table" role="table" aria-label="Sovereign Stack layers" style="max-width: 900px; margin: 0 auto;">
-                <div role="rowgroup">
-                    <div role="row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-                        <div role="cell" style="background: rgba(232, 85, 112, 0.08); padding: 1.25rem; border-radius: 12px;">
-                            <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Community Data Stewardship</h3>
-                            <p style="margin-bottom: 0.75rem;">Protect vulnerable populations and design digital trust systems that reflect cultural values.</p>
-                            <p style="font-size: 0.95rem; color: #555;">Data-governance frameworks • Privacy protocols • Staff training</p>
+            <div class="stack-grid" role="list" aria-label="Sovereign Stack layers">
+                <article class="stack-card" data-open="true" role="listitem">
+                    <button class="stack-card-trigger" type="button" aria-expanded="true" aria-controls="stack-community">
+                        <div class="stack-card-header">
+                            <h3>Community Data Stewardship</h3>
+                            <p>Protect vulnerable populations and design digital trust systems that reflect cultural values.</p>
                         </div>
-                        <div role="cell" style="background: rgba(232, 85, 112, 0.08); padding: 1.25rem; border-radius: 12px;">
-                            <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Incident-Response Design</h3>
-                            <p style="margin-bottom: 0.75rem;">Crisis management that centers safety and dignity—not punishment.</p>
-                            <p style="font-size: 0.95rem; color: #555;">Security playbooks • Digital-safety drills • After-action reviews</p>
-                        </div>
-                        <div role="cell" style="background: rgba(232, 85, 112, 0.08); padding: 1.25rem; border-radius: 12px;">
-                            <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Ethical Tech &amp; AI Literacy</h3>
-                            <p style="margin-bottom: 0.75rem;">Help educators and NGOs use emerging tech responsibly and transparently.</p>
-                            <p style="font-size: 0.95rem; color: #555;">Curriculum design • AI-literacy workshops • OSINT investigations</p>
-                        </div>
-                        <div role="cell" style="background: rgba(232, 85, 112, 0.08); padding: 1.25rem; border-radius: 12px;">
-                            <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Organizational Resilience</h3>
-                            <p style="margin-bottom: 0.75rem;">Build capacity and sustainable systems that keep mission-critical work moving.</p>
-                            <p style="font-size: 0.95rem; color: #555;">Policy frameworks • Strategic coaching • Business-development support</p>
-                        </div>
+                        <span class="stack-card-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="stack-card-content" id="stack-community">
+                        <ul class="stack-card-list">
+                            <li>Data-governance frameworks</li>
+                            <li>Privacy protocols</li>
+                            <li>Staff training</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
+                <article class="stack-card" data-open="false" role="listitem">
+                    <button class="stack-card-trigger" type="button" aria-expanded="false" aria-controls="stack-incident">
+                        <div class="stack-card-header">
+                            <h3>Incident-Response Design</h3>
+                            <p>Crisis management that centers safety and dignity—not punishment.</p>
+                        </div>
+                        <span class="stack-card-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="stack-card-content" id="stack-incident" hidden>
+                        <ul class="stack-card-list">
+                            <li>Security playbooks</li>
+                            <li>Digital-safety drills</li>
+                            <li>After-action reviews</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="stack-card" data-open="false" role="listitem">
+                    <button class="stack-card-trigger" type="button" aria-expanded="false" aria-controls="stack-ethical">
+                        <div class="stack-card-header">
+                            <h3>Ethical Tech &amp; AI Literacy</h3>
+                            <p>Help educators and NGOs use emerging tech responsibly and transparently.</p>
+                        </div>
+                        <span class="stack-card-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="stack-card-content" id="stack-ethical" hidden>
+                        <ul class="stack-card-list">
+                            <li>Curriculum design</li>
+                            <li>AI-literacy workshops</li>
+                            <li>OSINT investigations</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="stack-card" data-open="false" role="listitem">
+                    <button class="stack-card-trigger" type="button" aria-expanded="false" aria-controls="stack-resilience">
+                        <div class="stack-card-header">
+                            <h3>Organizational Resilience</h3>
+                            <p>Build capacity and sustainable systems that keep mission-critical work moving.</p>
+                        </div>
+                        <span class="stack-card-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="stack-card-content" id="stack-resilience" hidden>
+                        <ul class="stack-card-list">
+                            <li>Policy frameworks</li>
+                            <li>Strategic coaching</li>
+                            <li>Business-development support</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
