@@ -2259,12 +2259,18 @@ body.projects-page {
     background: rgba(237, 213, 200, 0.3);
 }
 
-.unicorn-embed > div {
+.unicorn-embed > div,
+.unicorn-embed > canvas {
     position: absolute !important;
     top: 0;
     left: 0;
     width: 100% !important;
     height: 100% !important;
+}
+
+#textile-canvas {
+    background: linear-gradient(135deg, rgba(242, 222, 212, 0.6), rgba(237, 213, 200, 0.8));
+    cursor: crosshair;
 }
 
 @media (max-width: 768px) {
