@@ -461,4 +461,62 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.head.appendChild(style);
     }
+
+    // Sovereign Stack expandable cards
+    const sovereignCards = document.querySelectorAll('.sovereign-stack-card');
+
+    if (sovereignCards.length) {
+        sovereignCards.forEach((card) => {
+            const toggleCard = () => {
+                const isExpanded = card.getAttribute('aria-expanded') === 'true';
+                const content = card.querySelector('.stack-layer-content');
+
+                // Toggle state
+                card.setAttribute('aria-expanded', !isExpanded);
+
+                if (content) {
+                    content.setAttribute('aria-hidden', isExpanded);
+                }
+            };
+
+            // Click event
+            card.addEventListener('click', toggleCard);
+
+            // Keyboard events
+            card.addEventListener('keydown', (event) => {
+                // Enter or Space to toggle
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleCard();
+                }
+
+                // Arrow navigation between cards
+                const allCards = Array.from(sovereignCards);
+                const currentIndex = allCards.indexOf(card);
+
+                if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    const nextIndex = (currentIndex + 1) % allCards.length;
+                    allCards[nextIndex].focus();
+                }
+
+                if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    const prevIndex = (currentIndex - 1 + allCards.length) % allCards.length;
+                    allCards[prevIndex].focus();
+                }
+
+                // Home/End keys
+                if (event.key === 'Home') {
+                    event.preventDefault();
+                    allCards[0].focus();
+                }
+
+                if (event.key === 'End') {
+                    event.preventDefault();
+                    allCards[allCards.length - 1].focus();
+                }
+            });
+        });
+    }
 });
