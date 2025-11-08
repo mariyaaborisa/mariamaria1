@@ -332,6 +332,251 @@ body::after {
     color: var(--text-primary);
 }
 
+/* Offerings Page Layout */
+.offerings-page .project-container {
+    padding: clamp(8rem, 10vw, 9rem) clamp(1.75rem, 4vw, 3rem) clamp(4rem, 6vw, 5rem);
+}
+
+.offerings-page .project-panel {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(232, 85, 112, 0.22);
+    border-radius: 22px;
+    padding: clamp(2.75rem, 5vw, 3.75rem);
+    margin: 0 auto;
+    max-width: 980px;
+    box-shadow: 0 28px 55px rgba(45, 36, 36, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.offerings-page .project-content {
+    max-width: none;
+    margin: 0;
+    gap: 3.5rem;
+}
+
+.offerings-page .offerings-hero {
+    align-items: center;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    gap: 0.85rem;
+}
+
+.offerings-page .offerings-lede {
+    max-width: 48ch;
+    margin: 0 auto;
+}
+
+.offerings-page .offerings-section {
+    max-width: 56ch;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.25rem;
+    text-align: left;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.offerings-page .offerings-section--wide {
+    max-width: 64ch;
+}
+
+.offerings-page .offerings-section--stack,
+.offerings-page .offerings-section--playbook {
+    max-width: 100%;
+}
+
+.offerings-page .offerings-section--stack > p {
+    max-width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.offerings-page .offerings-heading {
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.offerings-page .offerings-section--stack .offerings-heading,
+.offerings-page .offerings-section--playbook .offerings-heading,
+.offerings-page .offerings-section--cta .offerings-heading {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.offerings-page .stack-table {
+    margin-top: 1.5rem;
+}
+
+.offerings-page .stack-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.offerings-page .stack-card {
+    background: rgba(232, 85, 112, 0.08);
+    border: 1px solid rgba(232, 85, 112, 0.18);
+    border-radius: 18px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+    min-height: 100%;
+    box-shadow: 0 18px 38px rgba(232, 85, 112, 0.12);
+}
+
+.offerings-page .stack-card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+
+.offerings-page .stack-card p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.offerings-page .stack-card-footnote {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.offerings-page .offerings-section--playbook p {
+    max-width: 52ch;
+    margin: 0 auto;
+}
+
+.offerings-page .offerings-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.1rem;
+}
+
+.offerings-page .offerings-list li {
+    position: relative;
+    padding-left: 1.65rem;
+}
+
+.offerings-page .offerings-list li::before {
+    content: '✶';
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--accent-coral);
+}
+
+.offerings-page .offerings-playbook {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(242, 222, 212, 0.6), rgba(237, 213, 200, 0.55));
+    border: 1px solid rgba(232, 85, 112, 0.2);
+    border-radius: 16px;
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    box-shadow: 0 24px 48px rgba(45, 36, 36, 0.12);
+}
+
+.offerings-page .offerings-playbook form {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.offerings-page .offerings-playbook input[type="email"] {
+    flex: 1 1 260px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(232, 85, 112, 0.3);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-primary);
+}
+
+.offerings-page .offerings-playbook button {
+    padding: 0.75rem 2.25rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent-coral);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offerings-page .offerings-playbook button:hover,
+.offerings-page .offerings-playbook button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(232, 85, 112, 0.28);
+    outline: none;
+}
+
+.offerings-page #signup-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-height: 1.2em;
+}
+
+.offerings-page .offerings-section--cta {
+    max-width: 60ch;
+    text-align: center;
+}
+
+.offerings-page .offerings-cta-note {
+    color: var(--text-muted);
+}
+
+.offerings-page .calendar-button-container {
+    margin: 0 auto 1.5rem;
+}
+
+.offerings-page .offerings-rate-card {
+    max-width: 34ch;
+    margin: 1.5rem auto 0;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(232, 85, 112, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 18px 36px rgba(45, 36, 36, 0.1);
+    text-align: left;
+}
+
+.offerings-page .offerings-rate-heading {
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.offerings-page .offerings-rate-card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.offerings-page .offerings-contact {
+    max-width: none;
+    text-align: center;
+    border-top: 1px solid rgba(232, 85, 112, 0.2);
+    padding-top: 2rem;
+}
+
+.offerings-page .offerings-contact p {
+    margin: 0.5rem 0;
+}
+
 /* Image Placeholder */
 .project-figure {
     width: 100%;
@@ -1237,5 +1482,58 @@ body::after {
 
     .project-content {
         font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .offerings-page .project-container {
+        padding: clamp(7rem, 12vw, 7.5rem) clamp(1.5rem, 6vw, 2.25rem) clamp(3.5rem, 6vw, 4.5rem);
+    }
+
+    .offerings-page .project-panel {
+        padding: clamp(2rem, 6vw, 3rem);
+        border-radius: 20px;
+    }
+
+    .offerings-page .project-content {
+        gap: 3rem;
+    }
+
+    .offerings-page .offerings-section {
+        max-width: min(64ch, 100%);
+    }
+}
+
+@media (max-width: 640px) {
+    .offerings-page .project-container {
+        padding: clamp(6.5rem, 14vw, 7rem) clamp(1.25rem, 6vw, 1.75rem) clamp(3rem, 8vw, 4rem);
+    }
+
+    .offerings-page .project-panel {
+        padding: clamp(1.75rem, 8vw, 2.25rem);
+        border-radius: 18px;
+    }
+
+    .offerings-page .stack-row {
+        grid-template-columns: 1fr;
+    }
+
+    .offerings-page .offerings-list li {
+        padding-left: 1.45rem;
+    }
+
+    .offerings-page .offerings-playbook form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .offerings-page .offerings-playbook button {
+        width: 100%;
+    }
+
+    .offerings-page .offerings-rate-card {
+        max-width: 100%;
+        text-align: left;
     }
 }
