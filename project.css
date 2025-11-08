@@ -1739,3 +1739,115 @@ body::after {
         padding: 0 0.5rem;
     }
 }
+
+/* Sovereign Stack Expandable Card Component */
+.card {
+    width: 210px;
+    height: 254px;
+    border-radius: 8px;
+    background: rgba(237, 213, 200, 0.4);
+    display: flex;
+    gap: 5px;
+    padding: 0.4em;
+    box-shadow: 0 8px 24px rgba(197, 165, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.card p {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(242, 222, 212, 0.8), rgba(237, 213, 200, 0.9));
+    border: 2px solid var(--accent-coral);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card p::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-fuchsia), var(--accent-purple));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.card p:hover {
+    flex: 4;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(242, 222, 212, 0.95));
+    border-color: var(--accent-fuchsia);
+    box-shadow: 0 8px 20px rgba(232, 85, 112, 0.3);
+}
+
+.card p:hover::before {
+    opacity: 1;
+}
+
+.card p span {
+    min-width: 14em;
+    padding: 0.5em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    color: var(--accent-coral);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.card p:hover span {
+    transform: rotate(0);
+    color: var(--accent-fuchsia);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for the sovereign stack card */
+@media (max-width: 768px) {
+    .card {
+        width: 180px;
+        height: 220px;
+    }
+
+    .card p span {
+        font-size: 0.75rem;
+        min-width: 12em;
+    }
+
+    .card p:hover span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sovereign-stack-container {
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+
+    .card {
+        width: 160px;
+        height: 200px;
+        min-width: 160px;
+    }
+
+    .card p span {
+        font-size: 0.7rem;
+        min-width: 10em;
+    }
+
+    .card p:hover span {
+        font-size: 0.75rem;
+    }
+}
