@@ -29,13 +29,13 @@
     <div class="project-container">
         <div class="project-panel">
             <div class="project-content">
-                <header class="project-header">
+                <header class="project-header" style="text-align: center;">
                     <h1 class="project-title">Protect the communities you serve—without the corporate consulting markup</h1>
                     <p class="project-subtitle">Expert digital safety, cybersecurity, and policy support for nonprofits, schools, and local government</p>
                 </header>
 
                 <section class="about-focus" aria-label="Why this work matters" style="margin-bottom: 3rem;">
-                    <p style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+                    <p style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: center;">
                         I bring a unique perspective shaped by lived experience as a mixed Black Indigenous Chicanx person raised in South Central Los Angeles. My work centers community wisdom, cultural responsiveness, and practical solutions that serve the most vulnerable while creating frameworks that benefit everyone. Every engagement prioritizes participatory methods, actionable deliverables, and sustainable capacity-building for your organization.
                     </p>
                 </section>
@@ -68,7 +68,8 @@
                     <h2 style="text-align: center; margin-bottom: 1rem;">Get the Digital Safety Playbook</h2>
                     <p style="text-align: center; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">5 critical questions every nonprofit and school should ask about digital safety. Sign up to receive it when it's ready.</p>
 
-                    <form id="email-signup" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <form id="email-signup" name="digital-safety-playbook" method="POST" data-netlify="true" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <input type="hidden" name="form-name" value="digital-safety-playbook">
                         <input type="email" id="email" name="email" placeholder="Your email address" required
                                style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 1px solid rgba(232, 85, 112, 0.3); border-radius: 8px; font-size: 1rem;">
                         <button type="submit"
@@ -76,7 +77,7 @@
                             Send It My Way
                         </button>
                     </form>
-                    <p id="signup-message" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--accent-green); display: none;"></p>
+                    <p id="signup-message" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
                 </section>
 
                 <section style="text-align: center; margin-bottom: 4rem;">
@@ -100,8 +101,10 @@
                         </script>
                     </div>
 
-                    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">$150/hour consulting rate</p>
-                    <p style="font-size: 0.95rem; color: #666;">Serving nonprofits, NGOs, K-12 schools, and small local government</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Sliding Scale: $150–450/hour</p>
+                    <p style="font-size: 1rem; margin-bottom: 0.75rem;">Serving nonprofits, NGOs, K-12 schools, and small local government</p>
+                    <p style="font-size: 1rem; color: var(--accent-coral); font-weight: 500;">Collective Rate Available</p>
+                    <p style="font-size: 0.95rem; color: #666; max-width: 500px; margin: 0.5rem auto 0;">Includes unlimited aftercare and crisis management support</p>
                 </section>
 
                 <section style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(232, 85, 112, 0.2);">
@@ -111,20 +114,6 @@
                         <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mtcarmier" target="_blank" rel="noopener">linkedin.com/in/mtcarmier</a>
                     </p>
                 </section>
-
-                <script>
-                document.getElementById('email-signup').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('signup-message');
-
-                    // Here you would integrate with your email service (Mailchimp, ConvertKit, etc.)
-                    // For now, just show a success message
-                    message.textContent = 'Thanks! You\'ll receive the Digital Safety Playbook as soon as it\'s ready.';
-                    message.style.display = 'block';
-                    document.getElementById('email').value = '';
-                });
-                </script>
             </div>
         </div>
     </div>
