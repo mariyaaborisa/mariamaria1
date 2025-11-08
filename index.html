@@ -59,23 +59,39 @@
             <p class="section-intro">
                 Your team can plug into the layer you need today and expand into deeper partnership as capacity grows.
             </p>
-            <div class="support-grid" role="list" aria-label="Core support layers">
-                <article class="support-card" role="listitem">
-                    <h3>Community Data Stewardship</h3>
-                    <p>Privacy engineering, compliance-ready policies, and staff training that keep vulnerable people centered.</p>
-                </article>
-                <article class="support-card" role="listitem">
-                    <h3>Incident-Response Design</h3>
-                    <p>Trauma-informed crisis playbooks, drills, and aftercare so safety plans feel actionable under pressure.</p>
-                </article>
-                <article class="support-card" role="listitem">
-                    <h3>Ethical Tech &amp; AI Literacy</h3>
-                    <p>Culturally responsive curriculum, audits, and workshops that demystify emerging technology.</p>
-                </article>
-                <article class="support-card" role="listitem">
-                    <h3>Organizational Resilience</h3>
-                    <p>Executive advisory, change-management, and capacity design that sustains mission-critical work.</p>
-                </article>
+            <div class="skills-accordion landing-accordion" role="region" aria-label="Core support layers">
+                <div class="skill-category" data-open="true">
+                    <button class="skill-trigger" type="button" aria-expanded="true" aria-controls="layer-data">
+                        <span class="skill-label">Community Data Stewardship</span>
+                    </button>
+                    <div class="skill-content" id="layer-data">
+                        <p>Privacy engineering, compliance-ready policies, and staff training that keep vulnerable people centered.</p>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="layer-incident">
+                        <span class="skill-label">Incident-Response Design</span>
+                    </button>
+                    <div class="skill-content" id="layer-incident" hidden>
+                        <p>Trauma-informed crisis playbooks, drills, and aftercare so safety plans feel actionable under pressure.</p>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="layer-tech">
+                        <span class="skill-label">Ethical Tech &amp; AI Literacy</span>
+                    </button>
+                    <div class="skill-content" id="layer-tech" hidden>
+                        <p>Culturally responsive curriculum, audits, and workshops that demystify emerging technology.</p>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <button class="skill-trigger" type="button" aria-expanded="false" aria-controls="layer-resilience">
+                        <span class="skill-label">Organizational Resilience</span>
+                    </button>
+                    <div class="skill-content" id="layer-resilience" hidden>
+                        <p>Executive advisory, change-management, and capacity design that sustains mission-critical work.</p>
+                    </div>
+                </div>
             </div>
             <p class="section-link">
                 <a href="offerings.html">See how the full Sovereign Stack comes together →</a>

@@ -1204,6 +1204,90 @@ body::after {
     text-shadow: 0 0 8px var(--glow-coral);
 }
 
+/* Landing Page Vertical Accordion */
+.landing-accordion {
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: 2rem;
+}
+
+.landing-accordion::before {
+    display: none;
+}
+
+.landing-accordion .skill-category {
+    height: auto;
+    flex: none;
+    background: rgba(232, 85, 112, 0.06);
+    border: 1px solid rgba(232, 85, 112, 0.18);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landing-accordion .skill-category:hover {
+    border-color: rgba(232, 85, 112, 0.3);
+    box-shadow: 0 4px 12px rgba(232, 85, 112, 0.15);
+}
+
+.landing-accordion .skill-category[data-open="true"] {
+    flex: none;
+    background: rgba(237, 213, 200, 0.5);
+    border-color: rgba(232, 85, 112, 0.35);
+    box-shadow: 0 8px 20px rgba(232, 85, 112, 0.18);
+}
+
+.landing-accordion .skill-trigger {
+    height: auto;
+    padding: 1.25rem 1.5rem;
+    text-transform: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    justify-content: space-between;
+    color: var(--text-primary);
+}
+
+.landing-accordion .skill-trigger::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--accent-coral);
+    transition: transform 0.3s ease;
+    position: static;
+    border: none;
+    inset: auto;
+}
+
+.landing-accordion .skill-category[data-open="true"] .skill-trigger::after {
+    content: '−';
+}
+
+.landing-accordion .skill-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+}
+
+.landing-accordion .skill-category[data-open="true"] .skill-trigger {
+    color: var(--accent-coral);
+}
+
+.landing-accordion .skill-content {
+    padding: 0 1.5rem 1.5rem;
+    height: auto;
+}
+
+.landing-accordion .skill-content p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
 /* Footer */
 .landing-footer {
     display: grid;
