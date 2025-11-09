@@ -1742,16 +1742,18 @@ body::after {
 
 /* Sovereign Stack Expandable Card Component */
 .sovereign-stack-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    display: flex;
+    gap: 0.75rem;
     margin: 2rem 0;
-    max-width: 1000px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
 }
 
 .sovereign-stack-card {
+    flex: 1;
+    min-width: 0;
     background: linear-gradient(135deg, rgba(242, 222, 212, 0.8), rgba(237, 213, 200, 0.9));
     border: 2px solid var(--accent-coral);
     border-radius: 8px;
@@ -1866,12 +1868,18 @@ body::after {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .sovereign-stack-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 0.75rem;
     }
 
+    .sovereign-stack-card {
+        flex: none;
+    }
+}
+
+@media (max-width: 768px) {
     .stack-layer-title {
         font-size: 0.9rem;
     }
