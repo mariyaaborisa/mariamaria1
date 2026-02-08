@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const shadowAlpha = 0.2 + progress * 0.35;
 
                     span.style.transform = `translate3d(0, ${offset}px, 0)`;
-                    span.style.color = `hsl(${215 + hueShift}deg, 80%, ${lightness}%)`;
-                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${215 + hueShift}deg, 90%, 72%, ${shadowAlpha})`;
+                    span.style.color = `hsl(${330 + hueShift}deg, 55%, ${lightness}%)`;
+                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${330 + hueShift}deg, 55%, 50%, ${shadowAlpha})`;
                 });
             };
 
@@ -360,8 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const shadowAlpha = 0.2 + progress * 0.35;
 
                     span.style.transform = `translate3d(0, ${offset}px, 0)`;
-                    span.style.color = `hsl(${215 + hueShift}deg, 80%, ${lightness}%)`;
-                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${215 + hueShift}deg, 90%, 72%, ${shadowAlpha})`;
+                    span.style.color = `hsl(${330 + hueShift}deg, 55%, ${lightness}%)`;
+                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${330 + hueShift}deg, 55%, 50%, ${shadowAlpha})`;
                 });
             };
 
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: 10px;
                 height: 10px;
-                background: rgba(74, 63, 53, 0.3);
+                background: rgba(51, 50, 89, 0.3);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s ease-out;

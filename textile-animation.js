@@ -11,11 +11,11 @@ class TextileParticleSystem {
         this.threads = [];
         this.mouse = { x: 0, y: 0, radius: 150 };
         this.colors = [
-            { r: 232, g: 85, b: 112, name: 'coral' },      // --accent-coral
-            { r: 230, g: 66, b: 138, name: 'pink' },       // --accent-pink
-            { r: 197, g: 165, b: 255, name: 'purple' },    // --accent-purple
-            { r: 232, g: 117, b: 80, name: 'peach' },      // --accent-peach
-            { r: 255, g: 62, b: 157, name: 'fuchsia' }     // --accent-fuchsia
+            { r: 140, g: 43, b: 89, name: 'berry' },       // --accent-coral (#8c2b59)
+            { r: 87, g: 49, b: 90, name: 'plum' },         // --accent-purple (#57315a)
+            { r: 190, g: 191, b: 149, name: 'sage' },      // --accent-peach (#bebf95)
+            { r: 140, g: 132, b: 116, name: 'taupe' },     // --text-tertiary (#8C8474)
+            { r: 184, g: 56, b: 120, name: 'magenta' }     // --accent-fuchsia (#b83878)
         ];
 
         this.init();
@@ -216,7 +216,7 @@ class TextileParticleSystem {
         const time = Date.now() * 0.001;
 
         // Clear canvas with subtle fade effect
-        this.ctx.fillStyle = 'rgba(242, 222, 212, 0.1)';
+        this.ctx.fillStyle = 'rgba(51, 50, 89, 0.1)';
         this.ctx.fillRect(0, 0, this.width, this.height);
 
         // Draw threads first (background layer)
