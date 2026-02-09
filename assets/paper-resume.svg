@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1e8" />
+      <stop offset="100%" stop-color="#e9dfd3" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#paper)" />
+  <rect x="48" y="48" width="544" height="324" rx="18" fill="#ffffff" opacity="0.6" />
+  <rect x="80" y="88" width="240" height="18" rx="9" fill="#b8ada1" />
+  <rect x="80" y="128" width="440" height="12" rx="6" fill="#c9beb3" />
+  <rect x="80" y="156" width="420" height="12" rx="6" fill="#c9beb3" />
+  <rect x="80" y="184" width="380" height="12" rx="6" fill="#c9beb3" />
+  <rect x="80" y="228" width="200" height="12" rx="6" fill="#c9beb3" />
+  <rect x="80" y="256" width="300" height="12" rx="6" fill="#c9beb3" />
+  <rect x="80" y="284" width="260" height="12" rx="6" fill="#c9beb3" />
+  <text x="80" y="336" font-family="'Space Grotesk', sans-serif" font-size="22" fill="#8f8378">Resume</text>
+</svg>

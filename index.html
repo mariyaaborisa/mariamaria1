@@ -28,6 +28,46 @@
             <a href="projects.html" class="about-link">Projects</a>
         </nav>
 
+        <section id="desk" class="desk" aria-label="Interactive desk">
+            <div class="deskHint">Drag items</div>
+
+            <article class="paper" tabindex="0"
+                style="--x: 10vw; --y: 16vh; --r: -4deg;"
+                data-link="about.html"
+                data-title="Resume"
+                data-caption="Dynamic resume">
+                <img src="assets/paper-resume.svg" alt="Resume" />
+                <div class="meta">
+                    <div class="title">Resume</div>
+                    <div class="cap">Open</div>
+                </div>
+            </article>
+
+            <article class="paper" tabindex="0"
+                style="--x: 44vw; --y: 10vh; --r: 3deg;"
+                data-link="projects.html"
+                data-title="Projects"
+                data-caption="Browse the library">
+                <img src="assets/paper-projects.svg" alt="Projects" />
+                <div class="meta">
+                    <div class="title">Projects</div>
+                    <div class="cap">Open</div>
+                </div>
+            </article>
+
+            <article class="paper" tabindex="0"
+                style="--x: 66vw; --y: 44vh; --r: -2deg;"
+                data-link="#connect"
+                data-title="Connect"
+                data-caption="Email + LinkedIn">
+                <img src="assets/paper-connect.svg" alt="Connect" />
+                <div class="meta">
+                    <div class="title">Connect</div>
+                    <div class="cap">Jump</div>
+                </div>
+            </article>
+        </section>
+
         <section class="intro-section" aria-labelledby="hero-heading">
             <h1 id="hero-heading" style="font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: -0.02em;">
                 Hola, Halito, Hej & Hello
@@ -125,7 +165,7 @@
             </p>
         </section>
 
-        <div class="currently-section">
+        <div class="currently-section" id="connect">
             <div class="currently-label">Let's Connect</div>
             <p class="currently-text">
                 <strong>Available now for full-time roles</strong> in AI Product Management, Creative Technology, User Research, and AI Safety/Policy.<br>
@@ -163,6 +203,7 @@
         </footer>
     </div>
 
+    <script src="app.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

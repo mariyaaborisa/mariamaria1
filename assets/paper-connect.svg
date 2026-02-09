@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6f7" />
+      <stop offset="100%" stop-color="#d9ecef" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#paper)" />
+  <rect x="52" y="56" width="536" height="308" rx="20" fill="#ffffff" opacity="0.6" />
+  <circle cx="140" cy="176" r="56" fill="#b5d6dd" />
+  <rect x="220" y="130" width="300" height="16" rx="8" fill="#b5d6dd" />
+  <rect x="220" y="160" width="260" height="12" rx="6" fill="#c6e0e6" />
+  <rect x="220" y="184" width="220" height="12" rx="6" fill="#c6e0e6" />
+  <rect x="220" y="208" width="180" height="12" rx="6" fill="#c6e0e6" />
+  <text x="80" y="330" font-family="'Space Grotesk', sans-serif" font-size="22" fill="#6c9096">Connect</text>
+</svg>
