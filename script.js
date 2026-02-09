@@ -45,14 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const offset = Math.sin(wavePhase + index * 0.55) * amplitude;
-                    const hueShift = Math.sin(wavePhase + index * 0.25) * 12 * progress;
-                    const lightness = 68 + progress * 6;
                     const shadowSize = 6 + progress * 12;
-                    const shadowAlpha = 0.2 + progress * 0.35;
+                    const lightness = 80 + progress * 15;
+                    const alpha = 0.3 + progress * 0.5;
 
                     span.style.transform = `translate3d(0, ${offset}px, 0)`;
-                    span.style.color = `hsl(${330 + hueShift}deg, 55%, ${lightness}%)`;
-                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${330 + hueShift}deg, 55%, 50%, ${shadowAlpha})`;
+                    span.style.color = `hsl(0deg, 0%, ${lightness}%)`;
+                    span.style.textShadow = `0 0 ${shadowSize}px rgba(255, 255, 255, ${alpha})`;
                 });
             };
 
@@ -354,14 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const offset = Math.sin(wavePhase + index * 0.55) * amplitude;
-                    const hueShift = Math.sin(wavePhase + index * 0.25) * 12 * progress;
-                    const lightness = 68 + progress * 6;
                     const shadowSize = 6 + progress * 12;
-                    const shadowAlpha = 0.2 + progress * 0.35;
+                    const lightness = 80 + progress * 15;
+                    const alpha = 0.3 + progress * 0.5;
 
                     span.style.transform = `translate3d(0, ${offset}px, 0)`;
-                    span.style.color = `hsl(${330 + hueShift}deg, 55%, ${lightness}%)`;
-                    span.style.textShadow = `0 0 ${shadowSize}px hsla(${330 + hueShift}deg, 55%, 50%, ${shadowAlpha})`;
+                    span.style.color = `hsl(0deg, 0%, ${lightness}%)`;
+                    span.style.textShadow = `0 0 ${shadowSize}px rgba(255, 255, 255, ${alpha})`;
                 });
             };
 
@@ -433,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: absolute;
                 width: 10px;
                 height: 10px;
-                background: rgba(51, 50, 89, 0.3);
+                background: rgba(255, 255, 255, 0.15);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s ease-out;

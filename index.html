@@ -22,83 +22,42 @@
     </script>
 </head>
 <body>
-    <div class="landing-container">
-        <nav class="top-nav-links">
-            <a href="about.html" class="about-link">Resume</a>
-            <a href="projects.html" class="about-link">Projects</a>
-        </nav>
+    <nav class="top-nav-links">
+        <a href="about.html" class="about-link">Resume</a>
+        <a href="projects.html" class="about-link">Projects</a>
+    </nav>
 
-        <section id="desk" class="desk" aria-label="Interactive desk">
-            <div class="deskHint">Drag items</div>
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+            <p class="hero-label">Creative Technologist & Researcher</p>
+            <h1 id="hero-heading">Hola, Halito,<br>Hej & Hello</h1>
+            <p class="hero-subtitle">My name is Maria-Teresa (yes, I go by both)</p>
+        </div>
+    </section>
 
-            <article class="paper" tabindex="0"
-                style="--x: 10vw; --y: 16vh; --r: -4deg;"
-                data-link="about.html"
-                data-title="Resume"
-                data-caption="Dynamic resume">
-                <img src="assets/paper-resume.svg" alt="Resume" />
-                <div class="meta">
-                    <div class="title">Resume</div>
-                    <div class="cap">Open</div>
+    <main class="main-content">
+        <section class="about-section" aria-labelledby="about-heading">
+            <div class="about-grid">
+                <div class="about-photo">
+                    <img src="https://github.com/user-attachments/assets/5bb6a0f6-d0a8-45cb-b0ad-5047b28fdf98" alt="Maria-Teresa Carmier">
                 </div>
-            </article>
-
-            <article class="paper" tabindex="0"
-                style="--x: 44vw; --y: 10vh; --r: 3deg;"
-                data-link="projects.html"
-                data-title="Projects"
-                data-caption="Browse the library">
-                <img src="assets/paper-projects.svg" alt="Projects" />
-                <div class="meta">
-                    <div class="title">Projects</div>
-                    <div class="cap">Open</div>
+                <div class="about-text">
+                    <h2 id="about-heading" class="section-header">About</h2>
+                    <p>Creative technologist and researcher specializing in AI safety, product innovation, and responsible technology design. I build products and frameworks that bridge technical systems with human-centered design.</p>
+                    <ul class="degrees-list">
+                        <li><strong>MDes in Design Engineering</strong> — UC Berkeley, New Media and Responsible Technology</li>
+                        <li><strong>MIE in Innovation & Entrepreneurship</strong> — UC Irvine, Paul Merage School of Business</li>
+                    </ul>
+                    <p>Experience spans leading product teams, conducting user research in multilingual settings, and managing cross-functional initiatives from concept to launch.</p>
+                    <div class="hero-cta" role="group" aria-label="Primary site actions">
+                        <a href="about.html" class="hero-cta__link hero-cta__link--primary">View Resume</a>
+                        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true" class="hero-cta__link" target="_blank" rel="noopener">Schedule a Conversation</a>
+                    </div>
                 </div>
-            </article>
-
-            <article class="paper" tabindex="0"
-                style="--x: 66vw; --y: 44vh; --r: -2deg;"
-                data-link="#connect"
-                data-title="Connect"
-                data-caption="Email + LinkedIn">
-                <img src="assets/paper-connect.svg" alt="Connect" />
-                <div class="meta">
-                    <div class="title">Connect</div>
-                    <div class="cap">Jump</div>
-                </div>
-            </article>
-        </section>
-
-        <section class="intro-section" aria-labelledby="hero-heading">
-            <h1 id="hero-heading" style="font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: -0.02em;">
-                Hola, Halito, Hej & Hello
-            </h1>
-            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
-                My name is Maria-Teresa (yes, I go by both)
-            </p>
-            <div style="text-align: center; margin: 2.5rem 0;">
-                <img src="https://github.com/user-attachments/assets/5bb6a0f6-d0a8-45cb-b0ad-5047b28fdf98" alt="Maria-Teresa Carmier" style="width: 160px; height: 160px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); filter: grayscale(100%) contrast(1.1);">
-            </div>
-            <p style="font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-secondary);">
-                Creative technologist and researcher specializing in AI safety, product innovation, and responsible technology design. I build products and frameworks that bridge technical systems with human-centered design.
-            </p>
-            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                Two master's degrees:
-            </p>
-            <ul style="font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.7; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
-                <li style="margin-bottom: 0.75rem;"><strong>MDes in Design Engineering</strong> - UC Berkeley, New Media and Responsible Technology</li>
-                <li style="margin-bottom: 0.75rem;"><strong>MIE in Innovation & Entrepreneurship</strong> - UC Irvine, Paul Merage School of Business</li>
-            </ul>
-            <p style="font-size: 1rem; margin-bottom: 2.5rem; color: var(--text-secondary); line-height: 1.7;">
-                Experience spans leading product teams, conducting user research in multilingual settings, and managing cross-functional initiatives from concept to launch.
-            </p>
-            <div class="hero-cta" role="group" aria-label="Primary site actions">
-                <a href="about.html" class="hero-cta__link hero-cta__link--primary">View Resume</a>
-                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true" class="hero-cta__link" target="_blank" rel="noopener">Schedule a Conversation</a>
             </div>
         </section>
 
-
-        <section class="landing-section" aria-labelledby="services-heading">
+        <section class="expertise-section" aria-labelledby="services-heading">
             <h2 class="section-header" id="services-heading">Core Expertise</h2>
             <p class="section-intro">
                 Product leadership, security engineering, and user research proven across startups, nonprofits, and research institutions.
@@ -139,8 +98,7 @@
             </div>
         </section>
 
-
-        <section class="landing-section" aria-labelledby="projects-heading">
+        <section class="projects-section" aria-labelledby="projects-heading">
             <h2 class="section-header" id="projects-heading">Project highlights</h2>
             <p class="section-intro">Case studies spanning child online safety, equitable AI, and liberation-centered service design.</p>
             <div class="projects-preview" role="list" aria-label="Featured projects">
@@ -169,7 +127,7 @@
             <div class="currently-label">Let's Connect</div>
             <p class="currently-text">
                 <strong>Available now for full-time roles</strong> in AI Product Management, Creative Technology, User Research, and AI Safety/Policy.<br>
-                West Coast (PNW, California) • Remote, hybrid, or in-person • Also open to US, Mexico, Canada, EU • Bilingual (English/Spanish)
+                West Coast (PNW, California) · Remote, hybrid, or in-person · Also open to US, Mexico, Canada, EU · Bilingual (English/Spanish)
             </p>
             <div class="calendar-button-container">
                 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
@@ -201,9 +159,8 @@
                 <a href="https://linkedin.com/in/mtcarmier" target="_blank">LinkedIn</a>
             </div>
         </footer>
-    </div>
+    </main>
 
-    <script src="app.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
