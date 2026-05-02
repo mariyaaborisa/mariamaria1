@@ -126,12 +126,10 @@ body::before {
 }
 
 .hero-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: clamp(1rem, 2vw, 1.15rem);
     font-weight: 400;
-    color: var(--text-tertiary);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .hero h1 {
@@ -142,18 +140,11 @@ body::before {
     color: var(--text-primary);
 }
 
-.hero-greeting {
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 300;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-}
-
 .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--text-secondary);
-    font-weight: 400;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
 }
 
 .hero-image {
