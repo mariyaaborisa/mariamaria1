@@ -6,21 +6,21 @@
 }
 
 :root {
-    /* Monochromatic B&W Palette */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #181818;
-    --bg-elevated: #1e1e1e;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0a0;
-    --text-tertiary: #666666;
-    --accent: #ffffff;
-    --accent-dim: rgba(255, 255, 255, 0.6);
-    --accent-muted: rgba(255, 255, 255, 0.15);
-    --border: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.2);
-    --glow: rgba(255, 255, 255, 0.06);
-    --glow-strong: rgba(255, 255, 255, 0.12);
+    /* Warm Light Palette */
+    --bg-primary: #F5F0EB;
+    --bg-secondary: #EDE8E2;
+    --bg-tertiary: #E5DFD8;
+    --bg-elevated: #F5F0EB;
+    --text-primary: #1A1A18;
+    --text-secondary: #4A4A46;
+    --text-tertiary: #7A7A74;
+    --accent: #8B3A2A;
+    --accent-dim: rgba(139, 58, 42, 0.6);
+    --accent-muted: rgba(139, 58, 42, 0.15);
+    --border: rgba(26, 26, 24, 0.1);
+    --border-hover: rgba(26, 26, 24, 0.25);
+    --glow: transparent;
+    --glow-strong: transparent;
 
     /* Spacing Scale */
     --space-xs: 0.5rem;
@@ -32,8 +32,9 @@
     --space-3xl: 6rem;
 
     /* Typography */
-    --font-body: 'Space Grotesk', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'DM Serif Display', serif;
+    --font-mono: 'DM Sans', sans-serif;
 }
 
 html {
@@ -44,22 +45,14 @@ body {
     font-family: var(--font-body);
     background: var(--bg-primary);
     color: var(--text-primary);
+    line-height: 1.7;
     min-height: 100vh;
     position: relative;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background:
-        radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+h1, h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
 }
 
 /* ============================================
@@ -85,7 +78,7 @@ body::before {
     transition: all 0.3s ease;
     padding: 0.6rem 1.2rem;
     border: 1px solid var(--border);
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(245, 240, 235, 0.8);
     backdrop-filter: blur(20px);
 }
 
@@ -114,7 +107,7 @@ body::before {
     gap: clamp(3rem, 5vw, 5rem);
     align-items: center;
     padding: var(--space-2xl) clamp(2rem, 6vw, 6rem);
-    max-width: 1100px;
+    max-width: 720px;
     width: 100%;
     animation: fadeIn 1.2s ease;
 }
@@ -159,7 +152,6 @@ body::before {
     aspect-ratio: 1;
     object-fit: cover;
     border: 1px solid var(--border);
-    filter: grayscale(100%) contrast(1.1);
 }
 
 /* ============================================
@@ -183,7 +175,7 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -257,8 +249,7 @@ body::before {
 .hero-cta__link:focus {
     color: var(--accent);
     border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+    background: transparent;
 }
 
 .hero-cta__link--primary {
@@ -272,19 +263,17 @@ body::before {
 .hero-cta__link--primary:focus {
     background: transparent;
     color: var(--accent);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================
    Section shared styles
    ============================================ */
 .section-header {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
     font-weight: 400;
-    color: var(--text-tertiary);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
     margin-bottom: var(--space-lg);
 }
 
@@ -301,7 +290,7 @@ body::before {
 .philosophy-section {
     padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem);
     border-bottom: 1px solid var(--border);
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -332,7 +321,7 @@ body::before {
 .expertise-section {
     padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem);
     border-bottom: 1px solid var(--border);
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -369,7 +358,7 @@ body::before {
 .skill-category[data-open="true"] {
     flex: 3.6;
     border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.02);
+    background: transparent;
 }
 
 .skill-trigger {
@@ -516,12 +505,12 @@ body::before {
 }
 
 .landing-accordion .skill-category:hover {
-    background: rgba(255, 255, 255, 0.01);
+    background: transparent;
 }
 
 .landing-accordion .skill-category[data-open="true"] {
     flex: none;
-    background: rgba(255, 255, 255, 0.02);
+    background: transparent;
 }
 
 .landing-accordion .skill-trigger {
@@ -604,7 +593,7 @@ body::before {
 .projects-section {
     padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem);
     border-bottom: 1px solid var(--border);
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -689,7 +678,7 @@ body::before {
     border-bottom: 1px solid var(--border);
     animation: fadeIn 2s ease;
     z-index: 0;
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -761,7 +750,7 @@ body::before {
     border-top: 1px solid var(--border);
     opacity: 0.85;
     animation: fadeIn 1.5s ease;
-    max-width: 1100px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
