@@ -52,9 +52,11 @@
         </header>
 
         <div class="project-content">
-            <h2>Executive Summary</h2>
             <p class="project-summary">
-                This case study demonstrates policy design for AI systems interacting with vulnerable users. The project addresses a core tension in AI development: how to provide meaningful support without creating dependency, surveillance, or harm. Through user research with elementary students, I designed a framework that balances child privacy, parental awareness, and AI intervention while accounting for how children actually experience and conceptualize emotions.
+                Children don't have a neutral language for feelings. This project tried to build one. Working with K-5 students during the 2024 election, I watched kids map Inside Out colors onto political candidates. Red meant Trump meant anger meant power. Blue meant Kamala meant sadness meant losing. The system needed a new metaphor entirely.
+            </p>
+            <p>
+                Ice cream melts. It's temporary, normal, and nobody's fault. That became the framework.
             </p>
 
             <div class="project-meta-grid card-layout-row">
@@ -171,28 +173,13 @@
             <h2>Edge Cases & Safeguards</h2>
 
             <h3>Preventing Misuse</h3>
-            <p><strong>Risk:</strong> Parent uses data punitively ("I saw you had a melt today, what did you do wrong?")</p>
-            <ul>
-                <li><strong>Mitigation:</strong> Zero access to triggers, timing, or conversation content</li>
-                <li><strong>Language design:</strong> "Big feelings" frames as information, not alarm</li>
-                <li><strong>Normalization:</strong> Frequent melts presented as expected, reducing pressure on child</li>
-            </ul>
+            <p>A parent could use data punitively — "I saw you had a melt today, what did you do wrong?" The system prevents this by providing zero access to triggers, timing, or conversation content. "Big feelings" frames the notification as information, not alarm. Frequent melts are presented as expected, reducing pressure on the child.</p>
 
             <h3>Dependency Prevention</h3>
-            <p><strong>Risk:</strong> Child becomes reliant on AI for emotional regulation</p>
-            <ul>
-                <li><strong>Mitigation:</strong> AI prompts emphasize "you're learning to notice" rather than "let me fix this"</li>
-                <li><strong>Scaffolding design:</strong> Prompts gradually reduce frequency as child demonstrates self-regulation</li>
-                <li><strong>Human connection:</strong> Parent notification creates opportunity for co-regulation, not AI replacement of human support</li>
-            </ul>
+            <p>A child could become reliant on AI for emotional regulation. AI prompts emphasize "you're learning to notice" rather than "let me fix this." Prompts gradually reduce frequency as the child demonstrates self-regulation. Parent notification creates opportunity for co-regulation, not AI replacement of human support.</p>
 
             <h3>Crisis Escalation</h3>
-            <p><strong>Risk:</strong> Child experiencing genuine crisis that exceeds AI capability</p>
-            <ul>
-                <li><strong>Detection:</strong> Sustained elevated HRV beyond threshold, specific language patterns</li>
-                <li><strong>Response:</strong> System immediately notifies parent/teacher with urgency level</li>
-                <li><strong>AI behavior:</strong> Shifts to acknowledgment only, stops intervention attempts</li>
-            </ul>
+            <p>When a child experiences a genuine crisis that exceeds AI capability, the system detects sustained elevated HRV beyond threshold and specific language patterns. It immediately notifies the parent or teacher with an urgency level. The AI shifts to acknowledgment only and stops intervention attempts.</p>
 
             <h2>User Research Insights</h2>
             <p>
@@ -243,17 +230,17 @@
             <details class="process-details">
                 <summary><h2>Design & Engineering Process <span class="expand-icon">+</span></h2></summary>
                 <div class="process-content">
-                    <p><strong>Speculative Design Approach:</strong> This project combines policy design with speculative engineering to explore how AI governance frameworks can be embedded into working prototypes. The physical artifacts serve as design probes to test ethical principles in practice.</p>
+                    <p>This project combines policy design with speculative engineering to explore how AI governance frameworks can be embedded into working prototypes. The physical artifacts serve as design probes to test ethical principles in practice.</p>
 
-                    <p><strong>Research:</strong> Observed how edtech increases monitoring and complexity. Explored HRV monitoring with AI-assisted pattern recognition as health-first alternative to behavior tracking.</p>
+                    <p>Observed how edtech increases monitoring and complexity. Explored HRV monitoring with AI-assisted pattern recognition as a health-first alternative to behavior tracking.</p>
 
-                    <p><strong>Co-design:</strong> K-5 students created visual metaphors for physiological states through emotion mapping exercises. Ice cream system (full/melting/melted) emerged as culturally neutral and developmentally appropriate.</p>
+                    <p>K-5 students created visual metaphors for physiological states through emotion mapping exercises. The ice cream system (full/melting/melted) emerged as culturally neutral and developmentally appropriate.</p>
 
-                    <p><strong>AI Policy Development:</strong> Built lightweight AI model for HRV interpretation paired with governance rules for intervention timing, language design, dependency prevention, and information access controls.</p>
+                    <p>Built a lightweight AI model for HRV interpretation paired with governance rules for intervention timing, language design, dependency prevention, and information access controls.</p>
 
-                    <p><strong>Engineering Implementation:</strong> Arduino HRV wearable with wireless parent remote. System architecture designed to enforce privacy boundaries through technical constraints rather than policy alone.</p>
+                    <p>Arduino HRV wearable with wireless parent remote. System architecture designed to enforce privacy boundaries through technical constraints rather than policy alone.</p>
 
-                    <p><strong>Key tension:</strong> How do we use AI to support children's well-being while protecting privacy and agency? The answer required both policy frameworks and technical implementation that makes violating those policies technically difficult.</p>
+                    <p>How do we use AI to support children's well-being while protecting privacy and agency? The answer required both policy frameworks and technical implementation that makes violating those policies technically difficult.</p>
                 </div>
             </details>
 
@@ -284,28 +271,10 @@
             <h2>Outcomes & Next Steps</h2>
 
             <h3>What Worked</h3>
-            <ul>
-                <li>Privacy architecture successfully balanced parental awareness with child autonomy</li>
-                <li>Ice cream metaphor provided culturally neutral, age-appropriate emotional framework</li>
-                <li>AI control enabled iterative policy refinement based on real interaction patterns</li>
-                <li>Speculative engineering approach demonstrated how policy frameworks can be embedded into technical constraints</li>
-            </ul>
+            <p>The privacy architecture held. Children maintained control over disclosure. Parents had enough to open a conversation, not enough to interrogate.</p>
 
             <h3>Open Questions for Scale</h3>
-            <ul>
-                <li><strong>Cultural adaptation:</strong> How should metaphor and language shift across different cultural contexts?</li>
-                <li><strong>Long-term dependency:</strong> At what point does continued AI support shift from scaffolding to crutch?</li>
-                <li><strong>Evaluation metrics:</strong> How do we measure success beyond HRV reduction? (Self-reported awareness, behavioral change, parent-child communication quality)</li>
-                <li><strong>Edge case coverage:</strong> What happens when child shares AI interaction with peers? When multiple children compare their "melt" frequencies?</li>
-            </ul>
-
-            <h3>Key Insight</h3>
-            <p>
-                This project demonstrates that effective AI policy design requires understanding not just technical capability, but human behavior, developmental psychology, cultural context, and the ethics of surveillance vs. support. The hardest work in building AI for vulnerable populations isn't the algorithm — it's the governance framework that determines when and how that algorithm should intervene.
-            </p>
-            <p>
-                As a speculative design engineering project, Show Me Your Colors uses working prototypes to explore how AI governance can be embedded into technical systems. The physical artifacts serve as probes to test whether ethical principles can be enforced through architecture rather than policy alone, demonstrating that the most effective safeguards combine both technical constraints and thoughtful policy design.
-            </p>
+            <p>Open questions remain around cultural adaptation, long-term scaffolding versus dependency, and what happens when children compare their melts with peers.</p>
 
             <div class="project-cta">
                 <h3>Want to learn more about my work?</h3>
