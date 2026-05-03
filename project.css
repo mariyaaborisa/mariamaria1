@@ -210,8 +210,8 @@ h1, h2 {
 
 /* Project Content Container */
 .project-container {
-    padding: 8rem 2.5rem 4.5rem;
-    max-width: 720px;
+    padding: 8rem 64px 4.5rem;
+    max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
     animation: fadeInProject 0.45s ease both;
@@ -259,7 +259,7 @@ h1, h2 {
 .project-content {
     font-size: 1.05rem;
     line-height: 1.7;
-    max-width: 720px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1349,7 +1349,7 @@ h1, h2 {
 
 /* Footer */
 .project-footer {
-    max-width: 720px;
+    max-width: 1200px;
     margin: 6rem auto 2.5rem;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--border);
@@ -1481,7 +1481,7 @@ h1, h2 {
     }
 
     .project-container {
-        padding: 7rem 1.5rem 3.5rem;
+        padding: 7rem 24px 3.5rem;
     }
 
     .project-panel {
@@ -1491,7 +1491,7 @@ h1, h2 {
 
 @media (max-width: 640px) {
     .project-container {
-        padding: 6.5rem 1.25rem 3rem;
+        padding: 6.5rem 24px 3rem;
     }
 
     .project-panel {
