@@ -133,6 +133,14 @@ h1, h2 {
     color: var(--text-primary);
 }
 
+.hero-support {
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
 .hero-subtitle {
     font-family: var(--font-mono);
     font-size: 0.8rem;
