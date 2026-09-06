@@ -5,7 +5,7 @@ const projects = [
         number: '01',
         title: "Juniper's Clompass",
         category: 'Edtech · Curriculum Design · Learning Science',
-        color: 'cyan',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
@@ -15,7 +15,7 @@ const projects = [
                     { label: 'Role', title: 'Lead Designer & Developer', desc: 'Full-stack development, prompt engineering, pedagogical design' }
                 ]
             },
-            { type: 'image', src: 'assets/placeholder.jpg' },
+            { type: 'image', src: 'assets/IMG_3952.jpg' },
             {
                 type: 'about',
                 title: 'About This Project',
@@ -27,22 +27,22 @@ const projects = [
         id: 'responsible-ai',
         number: '02',
         title: 'Responsible AI in the Humanities',
-        category: 'Digital Humanities · Responsible AI · Museum Studies',
-        color: 'purple',
+        category: 'Digital Humanities · Responsible AI · HCI Research',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
                 type: 'meta',
                 cards: [
-                    { label: 'Context', title: 'Getty Museum Partnership', desc: 'Digital humanities research with museum collections' },
-                    { label: 'Focus', title: 'HCI Research & Exhibition Design', desc: 'Responsible AI prototyping and museum studies' }
+                    { label: 'Institution', title: 'UC Berkeley English Dept Research Team', desc: 'Digital humanities research exploring responsible AI' },
+                    { label: 'Focus', title: 'HCI Research & Design Engineering', desc: 'Responsible AI prototyping and UX research' }
                 ]
             },
-            { type: 'image', src: 'assets/placeholder.jpg' },
+            { type: 'image', src: 'assets/IMG_3931.jpg' },
             {
                 type: 'about',
                 title: 'About This Project',
-                text: 'Research project exploring responsible AI applications in digital humanities and museum contexts.'
+                text: 'Research project with UC Berkeley English Department exploring responsible AI applications in digital humanities contexts.'
             }
         ]
     },
@@ -51,7 +51,7 @@ const projects = [
         number: '03',
         title: 'Black Eco Feminisms',
         category: 'Community/Social Impact Design',
-        color: 'green',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
@@ -61,7 +61,7 @@ const projects = [
                     { label: 'Methods', title: 'Systems Mapping · Co-design', desc: 'Community-centered civic design tools' }
                 ]
             },
-            { type: 'image', src: 'assets/placeholder.jpg' },
+            { type: 'image', src: 'assets/IMG_3838.jpg' },
             {
                 type: 'about',
                 title: 'About This Project',
@@ -74,21 +74,21 @@ const projects = [
         number: '04',
         title: 'Show Me Your Colors',
         category: 'AI in Children\'s Health · Design Prototyping · User Research',
-        color: 'pink',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
                 type: 'meta',
                 cards: [
                     { label: 'System', title: 'HRV Wearable + Parent Remote', desc: 'Student health monitoring in classroom settings' },
-                    { label: 'Stack', title: 'Arduino · HRV Sensors', desc: 'Real-time physiological data transmission' }
+                    { label: 'Stack', title: 'Arduino · HRV Sensors · AI Policy Design', desc: 'Real-time physiological data with privacy architecture' }
                 ]
             },
             { type: 'image', src: 'assets/parentcontroller.jpg' },
             {
                 type: 'about',
                 title: 'About This Project',
-                text: 'HRV-based wearable system designed for classroom settings, allowing parents to monitor their child\'s physiological well-being during school.'
+                text: 'HRV-based wearable system with AI-guided breathing exercises, designed to balance child privacy with parental awareness through a three-tier information architecture.'
             }
         ]
     },
@@ -97,7 +97,7 @@ const projects = [
         number: '05',
         title: 'ReBrew',
         category: 'Material Design',
-        color: 'pink',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
@@ -107,7 +107,7 @@ const projects = [
                     { label: 'Focus', title: 'Material Futures', desc: 'Sustainable material design exploration' }
                 ]
             },
-            { type: 'image', src: 'assets/placeholder.jpg' },
+            { type: 'image', src: 'assets/IMG_3874.jpg' },
             {
                 type: 'about',
                 title: 'About This Project',
@@ -120,7 +120,7 @@ const projects = [
         number: '06',
         title: 'Art',
         category: 'Mixed Media',
-        color: 'cyan',
+        color: 'accent',
         slides: [
             { type: 'hero' },
             {
