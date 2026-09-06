@@ -1,16 +1,16 @@
 :root {
-    --bg-primary: #F5F0EB;
-    --bg-secondary: #EDE8E2;
-    --bg-tertiary: #E5DFD8;
-    --text-primary: #1A1A18;
-    --text-secondary: #4A4A46;
-    --text-tertiary: #7A7A74;
-    --accent: #8B3A2A;
-    --accent-dim: rgba(139, 58, 42, 0.6);
-    --accent-hover: #A04734;
-    --border: rgba(26, 26, 24, 0.1);
-    --panel-bg: rgba(237, 232, 226, 0.6);
-    --panel-border: rgba(139, 58, 42, 0.2);
+    --bg-primary: #F3EEE4;
+    --bg-secondary: #EAE2D3;
+    --bg-tertiary: #E3D9C7;
+    --text-primary: #2A2118;
+    --text-secondary: #5C4A3A;
+    --text-tertiary: #8A7A68;
+    --accent: #4F7A63;
+    --accent-dim: rgba(79, 122, 99, 0.6);
+    --accent-hover: #6FA085;
+    --border: rgba(42, 33, 24, 0.1);
+    --panel-bg: rgba(234, 226, 211, 0.6);
+    --panel-border: rgba(79, 122, 99, 0.2);
 }
 
 * {
@@ -35,7 +35,7 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    background: rgba(245, 240, 235, 0.95);
+    background: rgba(243, 238, 228, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--panel-border);
     display: flex;
@@ -275,7 +275,7 @@ body {
 
 .nav-prev,
 .nav-next {
-    background: rgba(237, 232, 226, 0.9);
+    background: rgba(234, 226, 211, 0.9);
     border: 1px solid var(--panel-border);
     color: var(--text-primary);
     width: 40px;
@@ -307,7 +307,7 @@ body {
 }
 
 .cycle-btn {
-    background: rgba(237, 232, 226, 0.9);
+    background: rgba(234, 226, 211, 0.9);
     border: 1px solid var(--panel-border);
     color: var(--text-secondary);
     padding: 0.5rem 1rem;
