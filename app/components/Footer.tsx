@@ -16,7 +16,7 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="https://instagram.com/cyborg.bmstudio"
+            href="https://www.instagram.com/cyborgbm.studio/"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors duration-300 hover:text-accent-ink"

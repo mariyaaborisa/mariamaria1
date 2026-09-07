@@ -138,7 +138,7 @@ export default function About() {
               Email
             </a>
             <a
-              href="https://instagram.com/cyborg.bmstudio"
+              href="https://www.instagram.com/cyborgbm.studio/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink/80 transition-colors duration-300 hover:text-accent-ink-ink"
