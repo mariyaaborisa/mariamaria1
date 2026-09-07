@@ -22,8 +22,8 @@ const config: Config = {
           900: '#0A0503',
         },
         accent: {
-          DEFAULT: '#55DD52',
-          surface: '#2A6F2A',
+          DEFAULT: '#88C0DD',
+          surface: '#2D5876',
         },
         bone: '#F5F0EB',
       },
