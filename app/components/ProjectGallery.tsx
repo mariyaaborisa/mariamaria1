@@ -23,7 +23,7 @@ const projects = [
     title: 'ReBrew',
     description: 'Wetware for everyday healing: rehydratable papers infused with herbs and flowers.',
     href: '/rebrew',
-    image: null, // TODO: Add ReBrew hero image
+    image: '/images/projects/rebrew/hero.svg',
     imageAlt: 'ReBrew rehydratable paper prototype',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: 'Black Eco Feminisms',
     description: 'Participatory research tools supporting collective knowledge-building and justice-centered collaboration.',
     href: '/black-eco-feminisms',
-    image: null, // TODO: Add Black Eco Feminisms hero image
+    image: '/images/projects/black-eco-feminisms/hero.svg',
     imageAlt: 'Black Eco Feminisms research toolkit',
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     title: 'Show Me Your Colors',
     description: 'Co-created child safety and AI governance tools protecting K-12 learners from data exploitation.',
     href: '/show-me-your-colors',
-    image: null, // TODO: Add Show Me Your Colors hero image
+    image: '/images/projects/show-me-your-colors/hero.svg',
     imageAlt: 'Show Me Your Colors workshop materials',
   },
 ];
@@ -117,21 +117,16 @@ export default function ProjectGallery() {
               }`}>
                 {/* Image - alternating left/right */}
                 <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                  {project.image ? (
-                    <div className="relative aspect-[4/3] w-full bg-ink/5">
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 60vw"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative aspect-[4/3] w-full bg-ink/5 flex items-center justify-center border border-ink/20">
-                      <span className="text-ink/40 text-sm font-body">Image coming soon</span>
-                    </div>
-                  )}
+                  <div className="relative aspect-[4/3] w-full bg-ink/5">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                      unoptimized={project.image.endsWith('.svg')}
+                    />
+                  </div>
                 </div>
 
                 {/* Content */}

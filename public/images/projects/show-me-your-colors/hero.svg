@@ -1,0 +1,5 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#B8D1E0"/>
+  <text x="600" y="450" font-family="sans-serif" font-size="120" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#2B1D14" opacity="0.15">SMYC</text>
+  <text x="600" y="550" font-family="sans-serif" font-size="24" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#4C2410" opacity="0.4">Show Me Your Colors</text>
+</svg>
