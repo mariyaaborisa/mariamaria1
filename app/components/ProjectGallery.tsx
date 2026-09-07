@@ -2,40 +2,19 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = [
-  // Design Engineering, Strategy & AI
-  {
-    id: 'show-me-your-colors',
-    category: 'design',
-    tag: 'Child safety · AI policy',
-    title: 'Show Me Your Colors',
-    description: 'Co-created child safety and AI governance tools designed to protect K-12 learners from data exploitation and platform harm.',
-    href: '/show-me-your-colors',
-  },
+  // Design Engineering, Strategy & AI - ordered most artistic → most tech per spec
   {
     id: 'responsible-ai',
     category: 'design',
     tag: 'Responsible AI · Public humanities',
     title: 'Responsible AI in the Humanities',
-    description: 'Developed an accountable AI experience that translated responsible innovation principles into a public-facing humanities context.',
+    description: 'AI-driven interactive exhibit reviving the 19th-century poet George Moses Horton through spoken dialogue.',
     href: '/responsible-ai',
-  },
-  {
-    id: 'junipers-clompass',
-    category: 'design',
-    tag: 'Learning science · Creative literacies',
-    title: "Juniper's Clompass",
-    description: 'Analog-digital learning companion that turns a vintage clock into a compass and storytelling tool for kids.',
-    href: '/junipers-clompass',
-  },
-  {
-    id: 'black-eco-feminisms',
-    category: 'design',
-    tag: 'Community resilience · Environmental justice',
-    title: 'Black Eco Feminisms',
-    description: 'Built participatory research tools that supported collective knowledge-building, community resilience, and justice-centered collaboration.',
-    href: '/black-eco-feminisms',
+    image: '/images/projects/george-moses-horton/museum-visitor.webp',
+    imageAlt: 'Museum visitor interacting with George Moses Horton AI exhibit',
   },
   {
     id: 'rebrew',
@@ -44,15 +23,38 @@ const projects = [
     title: 'ReBrew',
     description: 'Wetware for everyday healing: rehydratable papers infused with herbs and flowers.',
     href: '/rebrew',
+    image: null, // TODO: Add ReBrew hero image
+    imageAlt: 'ReBrew rehydratable paper prototype',
   },
-  // Art & Performance
   {
-    id: 'art',
-    category: 'art',
-    tag: 'Mixed media · Performance',
-    title: 'Art Portfolio',
-    description: 'Creative practice spanning mixed media installation, speculative storytelling, participatory design, and self-published works.',
-    href: '/art',
+    id: 'black-eco-feminisms',
+    category: 'design',
+    tag: 'Community resilience · Environmental justice',
+    title: 'Black Eco Feminisms',
+    description: 'Participatory research tools supporting collective knowledge-building and justice-centered collaboration.',
+    href: '/black-eco-feminisms',
+    image: null, // TODO: Add Black Eco Feminisms hero image
+    imageAlt: 'Black Eco Feminisms research toolkit',
+  },
+  {
+    id: 'junipers-clompass',
+    category: 'design',
+    tag: 'Learning science · Creative literacies',
+    title: "Juniper's Clompass",
+    description: 'Analog-digital learning companion turning a vintage clock into a compass and storytelling tool.',
+    href: '/junipers-clompass',
+    image: '/images/projects/junipers-clompass/final-prototype.webp',
+    imageAlt: "Juniper's Clompass final prototype",
+  },
+  {
+    id: 'show-me-your-colors',
+    category: 'design',
+    tag: 'Child safety · AI policy',
+    title: 'Show Me Your Colors',
+    description: 'Co-created child safety and AI governance tools protecting K-12 learners from data exploitation.',
+    href: '/show-me-your-colors',
+    image: null, // TODO: Add Show Me Your Colors hero image
+    imageAlt: 'Show Me Your Colors workshop materials',
   },
 ];
 
@@ -83,101 +85,81 @@ export default function ProjectGallery() {
     return () => observer.disconnect();
   }, []);
 
-  const designProjects = projects.filter((p) => p.category === 'design');
-  const artProjects = projects.filter((p) => p.category === 'art');
-
   return (
     <section className="py-16 md:py-24 px-8 md:px-16" aria-labelledby="projects-heading">
-      <div className="container mx-auto max-w-4xl">
-        <h2 id="projects-heading" className="text-3xl md:text-4xl font-display tracking-tight mb-6">
-          Project highlights
+      <div className="container mx-auto max-w-6xl">
+        <h2 id="projects-heading" className="text-3xl md:text-5xl font-display tracking-tight mb-6">
+          Selected Work
         </h2>
 
-        <p className="text-lg text-ink/80 mb-16">
-          Selected projects across child online safety, accountable AI, justice-centered digital systems, and interdisciplinary art practice.
+        <p className="text-lg text-ink/80 mb-16 max-w-3xl">
+          Projects across accountable AI, justice-centered digital systems, speculative design, and participatory research.
         </p>
 
-        {/* Design Engineering, Strategy & AI */}
-        <div className="mb-20">
-          <h3 className="text-sm uppercase tracking-widest font-body text-ink/60 mb-8">
-            Design Engineering, Strategy & AI
-          </h3>
-          <div className="space-y-12">
-            {designProjects.map((project) => (
-              <Link
-                key={project.id}
-                href={project.href}
-                data-project-id={project.id}
-                ref={(el) => {
-                  if (el) projectRefs.current.set(project.id, el);
-                }}
-                className={`block group transition-all duration-700 ${
-                  visibleProjects.has(project.id)
-                    ? 'opacity-100 blur-0 translate-y-0'
-                    : 'opacity-0 blur-sm translate-y-4'
-                }`}
-              >
-                <article className="py-8 border-t border-b border-ink/20 transition-all duration-300 hover:border-accent-ink">
-                  <span className="text-xs uppercase tracking-widest font-body text-accent-ink block mb-3">
-                    {project.tag}
-                  </span>
-                  <h4 className="text-2xl md:text-3xl font-display tracking-tight mb-3 transition-colors duration-300 group-hover:text-accent-ink">
-                    {project.title}
-                  </h4>
-                  <p className="text-ink/80 leading-relaxed">
-                    {project.description}
-                  </p>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </div>
+        {/* All projects in continuous scroll */}
+        <div className="space-y-24">
+          {projects.map((project, index) => (
+            <Link
+              key={project.id}
+              href={project.href}
+              data-project-id={project.id}
+              ref={(el) => {
+                if (el) projectRefs.current.set(project.id, el);
+              }}
+              className={`block group transition-all duration-700 ${
+                visibleProjects.has(project.id)
+                  ? 'opacity-100 blur-0 translate-y-0'
+                  : 'opacity-0 blur-sm translate-y-4'
+              }`}
+            >
+              <article className={`grid gap-8 ${
+                index % 2 === 0 ? 'md:grid-cols-[1.5fr,1fr]' : 'md:grid-cols-[1fr,1.5fr]'
+              }`}>
+                {/* Image - alternating left/right */}
+                <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                  {project.image ? (
+                    <div className="relative aspect-[4/3] w-full bg-ink/5">
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative aspect-[4/3] w-full bg-ink/5 flex items-center justify-center border border-ink/20">
+                      <span className="text-ink/40 text-sm font-body">Image coming soon</span>
+                    </div>
+                  )}
+                </div>
 
-        {/* Art & Performance */}
-        <div className="mb-16">
-          <h3 className="text-sm uppercase tracking-widest font-body text-ink/60 mb-8">
-            Art & Performance
-          </h3>
-          <div className="space-y-12">
-            {artProjects.map((project) => (
-              <Link
-                key={project.id}
-                href={project.href}
-                data-project-id={project.id}
-                ref={(el) => {
-                  if (el) projectRefs.current.set(project.id, el);
-                }}
-                className={`block group transition-all duration-700 ${
-                  visibleProjects.has(project.id)
-                    ? 'opacity-100 blur-0 translate-y-0'
-                    : 'opacity-0 blur-sm translate-y-4'
-                }`}
-              >
-                <article className="py-8 border-t border-b border-ink/20 transition-all duration-300 hover:border-accent-ink">
+                {/* Content */}
+                <div className={`flex flex-col justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
                   <span className="text-xs uppercase tracking-widest font-body text-accent-ink block mb-3">
                     {project.tag}
                   </span>
-                  <h4 className="text-2xl md:text-3xl font-display tracking-tight mb-3 transition-colors duration-300 group-hover:text-accent-ink">
+                  <h3 className="text-3xl md:text-4xl font-display tracking-tight mb-4 transition-colors duration-300 group-hover:text-accent-ink">
                     {project.title}
-                  </h4>
-                  <p className="text-ink/80 leading-relaxed">
+                  </h3>
+                  <p className="text-ink/80 leading-relaxed text-lg">
                     {project.description}
                   </p>
-                </article>
-              </Link>
-            ))}
-          </div>
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
 
         {/* CTA link */}
-        <p className="text-center">
+        <div className="mt-24 text-center">
           <Link
             href="/projects"
-            className="text-ink/80 transition-colors duration-300 hover:text-accent-ink font-medium"
+            className="text-ink/80 transition-colors duration-300 hover:text-accent-ink font-medium text-lg"
           >
             Browse the full project library →
           </Link>
-        </p>
+        </div>
       </div>
     </section>
   );
