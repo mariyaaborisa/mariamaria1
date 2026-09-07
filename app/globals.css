@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-brown-600 text-bone font-body;
+    @apply bg-ground text-ink font-body;
   }
 
   h1, h2 {

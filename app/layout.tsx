@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Newsreader, Work_Sans } from "next/font/google";
+import { Bodoni_Moda, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
-const newsreader = Newsreader({
+const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-newsreader",
+  weight: ["900"],
+  style: ["italic"],
+  variable: "--font-bodoni",
   display: "swap",
 });
 
-const workSans = Work_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-work-sans",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${workSans.variable}`}>
+    <html lang="en" className={`${bodoniModa.variable} ${inter.variable}`}>
       <body>
         <Nav />
         {children}

@@ -7,13 +7,13 @@ export default function Nav() {
     <nav className="fixed top-8 right-8 z-50 flex gap-3">
       <Link
         href="/about"
-        className="px-4 py-2 text-sm font-body uppercase tracking-wider border border-brown-200/10 bg-brown-600/80 backdrop-blur-xl text-brown-100 transition-all duration-300 hover:text-accent hover:border-accent"
+        className="px-4 py-2 text-sm font-body uppercase tracking-wider border border-ink/20 bg-ground/90 backdrop-blur-xl text-ink transition-all duration-300 hover:text-accent-ink hover:border-accent-ink"
       >
         Resume
       </Link>
       <Link
         href="/projects"
-        className="px-4 py-2 text-sm font-body uppercase tracking-wider border border-brown-200/10 bg-brown-600/80 backdrop-blur-xl text-brown-100 transition-all duration-300 hover:text-accent hover:border-accent"
+        className="px-4 py-2 text-sm font-body uppercase tracking-wider border border-ink/20 bg-ground/90 backdrop-blur-xl text-ink transition-all duration-300 hover:text-accent-ink hover:border-accent-ink"
       >
         Projects
       </Link>

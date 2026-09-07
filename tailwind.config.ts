@@ -9,27 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brown: {
-          50: '#F5F0EB',
-          100: '#D4CFC9',
-          200: '#9A9590',
-          300: '#6B5F56',
-          400: '#4D423A',
-          500: '#3B2921',
-          600: '#2B1D14',
-          700: '#1F150E',
-          800: '#140D08',
-          900: '#0A0503',
-        },
+        ground: '#6C9BB8',
+        ink: '#2B1D14',
         accent: {
-          DEFAULT: '#88C0DD',
-          surface: '#2D5876',
+          ink: '#4C2410',
+          fill: '#C36522',
         },
-        bone: '#F5F0EB',
       },
       fontFamily: {
-        display: ['var(--font-newsreader)', 'serif'],
-        body: ['var(--font-work-sans)', 'sans-serif'],
+        display: ['var(--font-bodoni)', 'serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
       },
       borderRadius: {
         none: '0',

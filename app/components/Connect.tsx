@@ -12,7 +12,7 @@ export default function Connect() {
         if (target) {
           (window as any).calendar.schedulingButton.load({
             url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true',
-            color: '#2A6F2A',
+            color: '#C36522',
             label: 'Schedule a conversation',
             target,
           });
@@ -40,7 +40,7 @@ export default function Connect() {
             if (target) {
               (window as any).calendar.schedulingButton.load({
                 url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ247n1Ktc4V-cvE5iPgrfZFxX-4vIGLM5Qxn5_7rD3o-48qqW_FDCxxQtXdU1iSRLBtN-MUi7GX?gv=true',
-                color: '#2A6F2A',
+                color: '#C36522',
                 label: 'Schedule a conversation',
                 target,
               });
@@ -49,19 +49,19 @@ export default function Connect() {
         }}
       />
 
-      <section className="bg-accent-surface py-16 md:py-24 px-8 md:px-16 text-center" id="connect">
+      <section className="bg-accent-fill py-16 md:py-24 px-8 md:px-16 text-center" id="connect">
         <div className="container mx-auto max-w-3xl">
-          <div className="text-sm uppercase tracking-widest font-body text-bone/60 mb-6">
+          <div className="text-sm uppercase tracking-widest font-body text-ink/60 mb-6">
             Let's Connect
           </div>
 
-          <p className="text-lg md:text-xl text-bone leading-relaxed mb-8">
-            <strong className="font-semibold text-bone">
+          <p className="text-lg md:text-xl text-ink leading-relaxed mb-8">
+            <strong className="font-semibold text-ink">
               Available for mission-aligned roles, collaborations, and research opportunities
             </strong>{' '}
             across AI safety, public-interest technology, digital infrastructure, and community-centered design.
             <br />
-            <span className="text-bone/90">
+            <span className="text-ink/90">
               West Coast (PNW, California) · Remote, hybrid, or in-person · Open to US, Mexico, Canada, and EU contexts · Bilingual (English/Spanish)
             </span>
           </p>
