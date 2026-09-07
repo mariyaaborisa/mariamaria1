@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Ballet, Cardo } from "next/font/google";
+import { Ballet, Bebas_Neue, Cardo } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -16,6 +16,13 @@ const cardo = Cardo({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   variable: "--font-cardo",
+  display: "swap",
+});
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-bebas",
   display: "swap",
 });
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ballet.variable} ${cardo.variable}`}>
+    <html lang="en" className={`${ballet.variable} ${bebas.variable} ${cardo.variable}`}>
       <body>
         <Nav />
         {children}

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ground: '#6C9BB8',
+        ground: '#B8D1E0',
         ink: '#2B1D14',
         accent: {
           ink: '#4C2410',
@@ -17,7 +17,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-ballet)', 'cursive'],
+        ballet: ['var(--font-ballet)', 'cursive'],
+        display: ['var(--font-bebas)', 'sans-serif'],
         body: ['var(--font-cardo)', 'serif'],
       },
       borderRadius: {
