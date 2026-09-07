@@ -4,13 +4,13 @@ import { useEffect, useRef } from 'react';
 import ScrambleText from './ScrambleText';
 
 const exhibitions = [
-  { name: "Women's Biennial", year: '2020' },
-  { name: "Mount Saint Mary's University", location: 'Los Angeles' },
-  { name: 'The University of Memphis', year: '' },
-  { name: 'Phoenix Zine Fest', year: '2020' },
-  { name: 'Bay Area Queer Zine Fest', year: '2018' },
-  { name: 'Long Beach Zine Fest', year: '2018' },
-  { name: 'NY Latin Flair Fest', year: '2017' },
+  { name: "Women's Biennial" },
+  { name: "Mount Saint Mary's University" },
+  { name: 'The University of Memphis' },
+  { name: 'Phoenix Zine Fest' },
+  { name: 'Bay Area Queer Zine Fest' },
+  { name: 'Long Beach Zine Fest' },
+  { name: 'NY Latin Flair Fest' },
 ];
 
 export default function Hero() {
@@ -70,11 +70,6 @@ export default function Hero() {
                   <div className="text-2xl md:text-3xl font-display tracking-tight text-ink">
                     {exhibition.name}
                   </div>
-                  {(exhibition.year || exhibition.location) && (
-                    <div className="text-sm text-ink/60 mt-1 font-body">
-                      {exhibition.location || exhibition.year}
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
