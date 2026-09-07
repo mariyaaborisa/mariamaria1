@@ -3,6 +3,8 @@ import { Ballet, Bebas_Neue, Cardo } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import SmoothScroll from "./components/SmoothScroll";
+import GrainTexture from "./components/GrainTexture";
 
 const ballet = Ballet({
   subsets: ["latin"],
@@ -52,6 +54,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${ballet.variable} ${bebas.variable} ${cardo.variable}`}>
       <body>
+        <SmoothScroll />
+        <GrainTexture />
         <Nav />
         {children}
         <Footer />

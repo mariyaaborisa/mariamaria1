@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import ScrambleText from './ScrambleText';
 
 const exhibitions = [
   { name: "Women's Biennial", year: '2020' },
@@ -83,7 +84,7 @@ export default function Hero() {
           <div className="space-y-8 md:sticky md:top-32">
             <div>
               <h1 id="hero-heading" className="text-6xl md:text-8xl font-ballet tracking-tight leading-tight mb-6">
-                María-Teresa Carmier
+                <ScrambleText text="María-Teresa Carmier" delay={300} />
               </h1>
               <p className="text-xl md:text-2xl text-ink/90 font-body leading-relaxed">
                 Interdisciplinary Artist, Design Researcher, Technologist
