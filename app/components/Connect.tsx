@@ -56,10 +56,7 @@ export default function Connect() {
           </div>
 
           <p className="text-lg md:text-xl text-ink leading-relaxed mb-8">
-            <strong className="font-semibold text-ink">
-              Available for mission-aligned roles, collaborations, and research opportunities
-            </strong>{' '}
-            across AI safety, public-interest technology, digital infrastructure, and community-centered design.
+            Come find me where ecology, memory, and survival meet the work.
             <br />
             <span className="text-ink/90">
               West Coast (PNW, California) · Remote, hybrid, or in-person · Open to US, Mexico, Canada, and EU contexts · Bilingual (English/Spanish)
