@@ -138,12 +138,12 @@ export default function About() {
               Email
             </a>
             <a
-              href="https://linkedin.com/in/mtcarmier"
+              href="https://instagram.com/cyborg.bmstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink/80 transition-colors duration-300 hover:text-accent-ink-ink"
             >
-              LinkedIn
+              Instagram
             </a>
           </div>
         </section>

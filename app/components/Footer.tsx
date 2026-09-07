@@ -16,12 +16,12 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="https://linkedin.com/in/mtcarmier"
+            href="https://instagram.com/cyborg.bmstudio"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors duration-300 hover:text-accent-ink"
           >
-            LinkedIn
+            Instagram
           </a>
         </div>
       </div>
