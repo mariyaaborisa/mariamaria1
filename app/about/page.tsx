@@ -24,9 +24,14 @@ export default function About() {
             <h2 id="resume-heading" className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6">
               Artist CV / Resume
             </h2>
-            <p className="text-lg text-ink/80 mb-4">
-              Interdisciplinary Artist, Design Researcher, Technologist
-            </p>
+            <div className="text-lg text-ink/80 leading-relaxed space-y-4 mb-6 max-w-3xl">
+              <p>
+                Maria-Teresa Carmier (Cyborg Baby Mama) is a South Central Los Angeles–based artist, futures design engineer, and movement technologist working across performance, moving image, installation, speculative writing, and participatory design. Her work explores technology, ecology, memory, and the conditions of survival through trigueñanismo, her framework for a Black, Mexican Indigenous, and tri-cosmology; parenting; and community-rooted inquiry.
+              </p>
+              <p>
+                Cyborg Baby Mama holds a Master of Design Engineering with an emphasis in New Media from The University of California, Berkeley and has been an Arcus Social Justice Fellow and a College of Environmental Design Speculative Ecologies Lab resident. She is currently developing Cyborg Babymama, a performance work of poetry, movement, sound, and speculative world-building.
+              </p>
+            </div>
             <p className="text-ink/80">
               For project documentation and case studies, visit the{' '}
               <Link href="/projects" className="text-accent-ink hover:underline">
@@ -114,8 +119,8 @@ export default function About() {
                 Education
               </h3>
               <ul className="space-y-3 text-ink/80">
-                <li><strong className="text-ink">MDes, Master of Design Engineering</strong> — UC Berkeley, New Media & Human-Computer Interaction</li>
-                <li><strong className="text-ink">MIE, Master of Innovation and Entrepreneurship</strong> — UC Irvine</li>
+                <li><strong className="text-ink">Master of Design Engineering</strong> with an emphasis in New Media — The University of California, Berkeley</li>
+                <li><strong className="text-ink">Master of Innovation and Entrepreneurship</strong> — University of California, Irvine</li>
               </ul>
             </div>
           </div>

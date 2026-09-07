@@ -84,14 +84,14 @@ export default function Hero() {
           <div className="space-y-8 md:sticky md:top-32">
             <div>
               <h1 id="hero-heading" className="text-6xl md:text-8xl font-ballet tracking-tight leading-tight mb-6">
-                <ScrambleText text="María-Teresa Carmier" delay={300} />
+                <ScrambleText text="Maria-Teresa Carmier" delay={300} />
               </h1>
               <p className="text-xl md:text-2xl text-ink/90 font-body leading-relaxed">
-                Interdisciplinary Artist, Design Researcher, Technologist
+                Cyborg Baby Mama
               </p>
             </div>
             <p className="text-base md:text-lg text-ink/70 leading-relaxed font-body max-w-xl">
-              South Central Los Angeles–based artist, futures design engineer, and movement technologist working across performance, moving image, installation, speculative writing, and participatory design.
+              South Central Los Angeles–based artist, futures design engineer, and movement technologist working across performance, moving image, installation, speculative writing, and participatory design. Her work explores technology, ecology, memory, and the conditions of survival through trigueñanismo, her framework for a Black, Mexican Indigenous, and tri-cosmology.
             </p>
           </div>
         </div>
