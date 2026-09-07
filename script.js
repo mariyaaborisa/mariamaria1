@@ -518,3 +518,197 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/**
+ * Project Highlights Slider
+ * Vanilla JS horizontal slider with:
+ * - Pixel-based translateX transitions
+ * - Arrow navigation (desktop)
+ * - Dot navigation (mobile)
+ * - Keyboard support (← →)
+ * - 700ms ease-out transitions
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.projects-slider-track');
+    const cards = document.querySelectorAll('.projects-slider-card');
+    const prevBtn = document.querySelector('.slider-arrow-prev');
+    const nextBtn = document.querySelector('.slider-arrow-next');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    if (!slider || !cards.length) return;
+
+    let currentSlide = 0;
+    const totalSlides = cards.length;
+
+    /**
+     * Update slider position and UI states
+     */
+    const updateSlider = () => {
+        // Pixel-based translateX: -100% per slide
+        const translateX = -currentSlide * 100;
+        slider.style.transform = `translateX(${translateX}%)`;
+
+        // Update arrow states (disabled on bounds)
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        // Update active dot
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+            dot.setAttribute('aria-pressed', index === currentSlide ? 'true' : 'false');
+        });
+
+        // Announce to screen readers
+        const currentCard = cards[currentSlide];
+        const title = currentCard.querySelector('h3')?.textContent || '';
+        if (title) {
+            announceSlideChange(title, currentSlide + 1, totalSlides);
+        }
+    };
+
+    /**
+     * Navigate to specific slide (with bounds checking)
+     */
+    const goToSlide = (index) => {
+        const newSlide = Math.max(0, Math.min(index, totalSlides - 1));
+        if (newSlide !== currentSlide) {
+            currentSlide = newSlide;
+            updateSlider();
+        }
+    };
+
+    /**
+     * Announce slide change for screen readers
+     */
+    const announceSlideChange = (title, current, total) => {
+        const announcement = `Slide ${current} of ${total}: ${title}`;
+        const liveRegion = document.createElement('div');
+        liveRegion.setAttribute('role', 'status');
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.className = 'sr-only';
+        liveRegion.textContent = announcement;
+        document.body.appendChild(liveRegion);
+        setTimeout(() => liveRegion.remove(), 1000);
+    };
+
+    // Arrow button navigation
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+
+    // Keyboard navigation (global arrow keys)
+    const handleKeyboard = (e) => {
+        // Only handle if slider is in viewport
+        const sliderRect = slider.getBoundingClientRect();
+        const inViewport = sliderRect.top < window.innerHeight && sliderRect.bottom > 0;
+
+        if (!inViewport) return;
+
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goToSlide(currentSlide - 1);
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goToSlide(currentSlide + 1);
+        }
+    };
+
+    document.addEventListener('keydown', handleKeyboard);
+
+    // Optional: Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    const handleSwipe = () => {
+        const swipeDistance = touchStartX - touchEndX;
+        if (Math.abs(swipeDistance) < minSwipeDistance) return;
+
+        if (swipeDistance > 0) {
+            // Swipe left → next slide
+            goToSlide(currentSlide + 1);
+        } else {
+            // Swipe right → prev slide
+            goToSlide(currentSlide - 1);
+        }
+    };
+
+    // Initialize slider
+    updateSlider();
+});
+
+// Add screen-reader-only class to CSS if not present
+if (!document.querySelector('style[data-slider-sr]')) {
+    const srStyle = document.createElement('style');
+    srStyle.setAttribute('data-slider-sr', 'true');
+    srStyle.textContent = `
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    `;
+    document.head.appendChild(srStyle);
+}
+
+/**
+ * IntersectionObserver for entrance animations
+ * Triggers 700ms fade + blur on scroll into view
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Skip animations if user prefers reduced motion
+    if (prefersReducedMotion.matches) return;
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe major sections
+    const animatedSections = document.querySelectorAll(
+        '.expertise-section, .projects-section, .currently-section, .philosophy-section'
+    );
+
+    animatedSections.forEach(section => {
+        section.classList.add('fade-in-on-scroll');
+        observer.observe(section);
+    });
+});

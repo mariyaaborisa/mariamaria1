@@ -6,34 +6,34 @@
 }
 
 :root {
-    /* Warm Light Palette */
-    --bg: #F5F0EB;
-    --bg-secondary: #EDE8E2;
-    --surface: #E5DFD8;
-    --surface-elevated: #F5F0EB;
-    --text-primary: #1A1A18;
-    --text-secondary: #4A4A46;
-    --text-muted: #7A7A74;
-    --accent: #8B3A2A;
-    --accent-strong: #8B3A2A;
-    --accent-dim: rgba(139, 58, 42, 0.6);
-    --accent-coral: #8B3A2A;
-    --accent-fuchsia: #8B3A2A;
-    --accent-purple: #4A4A46;
-    --accent-peach: #1A1A18;
-    --accent-cyan: #1A1A18;
-    --accent-green: #4A4A46;
-    --border: rgba(26, 26, 24, 0.1);
-    --border-hover: rgba(26, 26, 24, 0.25);
+    /* Art-School-Museum Palette */
+    --bg: #3B2921;
+    --bg-secondary: #32241D;
+    --surface: #2A1E17;
+    --surface-elevated: #3B2921;
+    --text-primary: #F5F0EB;
+    --text-secondary: #D4CFC9;
+    --text-muted: #9A9590;
+    --accent: #BFD8C8;
+    --accent-strong: #BFD8C8;
+    --accent-dim: rgba(191, 216, 200, 0.6);
+    --accent-coral: #BFD8C8;
+    --accent-fuchsia: #BFD8C8;
+    --accent-purple: #D4CFC9;
+    --accent-peach: #F5F0EB;
+    --accent-cyan: #F5F0EB;
+    --accent-green: #D4CFC9;
+    --border: rgba(245, 240, 235, 0.1);
+    --border-hover: rgba(245, 240, 235, 0.25);
     --glow-pink: transparent;
     --glow-coral: transparent;
     --glow-purple: transparent;
     --glow-cyan: transparent;
     --glow-green: transparent;
-    --panel-bg: rgba(245, 240, 235, 0.95);
-    --panel-border: rgba(26, 26, 24, 0.1);
+    --panel-bg: rgba(59, 41, 33, 0.95);
+    --panel-border: rgba(245, 240, 235, 0.1);
     --panel-shadow: none;
-    --code-font: 'DM Sans', sans-serif;
+    --code-font: 'Inter', sans-serif;
 
     /* Spacing Scale */
     --space-xs: 0.5rem;
@@ -43,26 +43,26 @@
     --space-xl: 2.5rem;
     --space-2xl: 4rem;
 
-    /* Card Color Variants - warm neutral */
+    /* Card Color Variants - mint accents on dark */
     --card-blue-bg: transparent;
-    --card-blue-border: rgba(26, 26, 24, 0.1);
-    --card-blue-accent: #1A1A18;
+    --card-blue-border: rgba(245, 240, 235, 0.1);
+    --card-blue-accent: #F5F0EB;
 
     --card-cyan-bg: transparent;
-    --card-cyan-border: rgba(26, 26, 24, 0.1);
-    --card-cyan-accent: #1A1A18;
+    --card-cyan-border: rgba(245, 240, 235, 0.1);
+    --card-cyan-accent: #F5F0EB;
 
     --card-purple-bg: transparent;
-    --card-purple-border: rgba(26, 26, 24, 0.08);
-    --card-purple-accent: #4A4A46;
+    --card-purple-border: rgba(245, 240, 235, 0.08);
+    --card-purple-accent: #D4CFC9;
 
     --card-pink-bg: transparent;
-    --card-pink-border: rgba(26, 26, 24, 0.1);
-    --card-pink-accent: #1A1A18;
+    --card-pink-border: rgba(245, 240, 235, 0.1);
+    --card-pink-accent: #F5F0EB;
 
     --card-green-bg: transparent;
-    --card-green-border: rgba(26, 26, 24, 0.08);
-    --card-green-accent: #4A4A46;
+    --card-green-border: rgba(245, 240, 235, 0.08);
+    --card-green-accent: #D4CFC9;
 }
 
 html {
@@ -80,8 +80,21 @@ body {
 }
 
 h1, h2 {
-    font-family: 'DM Serif Display', serif;
-    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+/* Inter uppercase labels with wide tracking */
+.project-number,
+.nav-secondary-link,
+.meta-card span,
+.resume-meta,
+.footer-copy,
+.project-indicator {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 /* Timeline Navigation */
@@ -187,7 +200,7 @@ h1, h2 {
 .progress-dot {
     width: 6px;
     height: 6px;
-    border-radius: 50%;
+    border-radius: 0;
     background: rgba(26, 26, 24, 0.1);
     border: 1px solid rgba(26, 26, 24, 0.15);
     transition: all 0.3s ease;

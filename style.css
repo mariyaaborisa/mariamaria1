@@ -6,19 +6,19 @@
 }
 
 :root {
-    /* Warm Light Palette */
-    --bg-primary: #F5F0EB;
-    --bg-secondary: #EDE8E2;
-    --bg-tertiary: #E5DFD8;
-    --bg-elevated: #F5F0EB;
-    --text-primary: #1A1A18;
-    --text-secondary: #4A4A46;
-    --text-tertiary: #7A7A74;
-    --accent: #8B3A2A;
-    --accent-dim: rgba(139, 58, 42, 0.6);
-    --accent-muted: rgba(139, 58, 42, 0.15);
-    --border: rgba(26, 26, 24, 0.1);
-    --border-hover: rgba(26, 26, 24, 0.25);
+    /* Art-School-Museum Palette */
+    --bg-primary: #3B2921;
+    --bg-secondary: #32241D;
+    --bg-tertiary: #2A1E17;
+    --bg-elevated: #3B2921;
+    --text-primary: #F5F0EB;
+    --text-secondary: #D4CFC9;
+    --text-tertiary: #9A9590;
+    --accent: #BFD8C8;
+    --accent-dim: rgba(191, 216, 200, 0.6);
+    --accent-muted: rgba(191, 216, 200, 0.15);
+    --border: rgba(245, 240, 235, 0.1);
+    --border-hover: rgba(245, 240, 235, 0.25);
     --glow: transparent;
     --glow-strong: transparent;
 
@@ -32,9 +32,9 @@
     --space-3xl: 6rem;
 
     /* Typography */
-    --font-body: 'DM Sans', sans-serif;
-    --font-heading: 'DM Serif Display', serif;
-    --font-mono: 'DM Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Fraunces', serif;
+    --font-mono: 'Inter', sans-serif;
 }
 
 html {
@@ -52,7 +52,25 @@ body {
 
 h1, h2 {
     font-family: var(--font-heading);
-    font-weight: 400;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+/* Inter uppercase labels with wide tracking */
+.hero-label,
+.currently-label,
+.projects-preview-tag,
+.projects-card__tag,
+.about-link,
+.nav-secondary-link,
+.project-number,
+.footer-center,
+.meta-card span,
+.resume-meta,
+.skill-trigger {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 /* ============================================
@@ -159,7 +177,7 @@ h1, h2 {
     max-width: 320px;
     aspect-ratio: 1;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 0;
     border: 1px solid var(--border);
 }
 
@@ -678,6 +696,159 @@ h1, h2 {
 }
 
 /* ============================================
+   Project Highlights Slider
+   ============================================ */
+
+/* Header row with arrows */
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+/* Arrow controls (desktop only) */
+.slider-arrows {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.slider-arrow {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    font-family: var(--font-body);
+}
+
+.slider-arrow:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.slider-arrow:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* Slider container */
+.projects-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--space-xl);
+}
+
+.projects-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.projects-slider-track {
+    display: flex;
+    transition: transform 700ms ease-out;
+    gap: 0;
+}
+
+.projects-slider-card {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: inherit;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.projects-slider-card:hover {
+    padding-left: 1rem;
+}
+
+.projects-slider-card:hover h3 {
+    color: var(--accent);
+}
+
+.projects-slider-card h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.projects-slider-card p {
+    color: var(--text-secondary);
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+/* Dot navigation (mobile only) */
+.slider-dots {
+    display: none;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.slider-dot {
+    appearance: none;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.slider-dot:hover {
+    border-color: var(--border-hover);
+    background: rgba(245, 240, 235, 0.1);
+}
+
+.slider-dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Mobile breakpoint: hide arrows, show dots */
+@media (max-width: 767px) {
+    .slider-arrows {
+        display: none;
+    }
+
+    .slider-dots {
+        display: flex;
+    }
+
+    .section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+    .projects-slider-track {
+        transition: none;
+    }
+}
+
+/* ============================================
    Connect / Currently Section
    ============================================ */
 .currently-section {
@@ -744,6 +915,41 @@ h1, h2 {
     background: transparent !important;
     color: var(--accent) !important;
     border-color: var(--accent) !important;
+}
+
+/* ============================================
+   Let's Connect: Muted Mint Background
+   ============================================ */
+.currently-section.mint-bg {
+    background: #BFD8C8;
+    color: #3B2921;
+}
+
+.currently-section.mint-bg .currently-label {
+    color: rgba(59, 41, 33, 0.6);
+}
+
+.currently-section.mint-bg .currently-text {
+    color: #3B2921;
+}
+
+.currently-section.mint-bg .currently-text strong {
+    color: #2A1E17;
+}
+
+/* Ensure button maintains contrast on mint background */
+.currently-section.mint-bg .calendar-button-container button,
+.currently-section.mint-bg .calendar-button-container iframe button {
+    background: #3B2921 !important;
+    color: #BFD8C8 !important;
+    border-color: #3B2921 !important;
+}
+
+.currently-section.mint-bg .calendar-button-container button:hover,
+.currently-section.mint-bg .calendar-button-container iframe button:hover {
+    background: transparent !important;
+    color: #3B2921 !important;
+    border-color: #3B2921 !important;
 }
 
 /* ============================================
@@ -1289,4 +1495,32 @@ body.projects-page {
 /* Custom Cursor Effect */
 a, button {
     cursor: pointer;
+}
+
+/* ============================================
+   Entrance Animations (700ms fade + blur)
+   ============================================ */
+.fade-in-on-scroll {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+    transition: opacity 700ms ease-out,
+                filter 700ms ease-out,
+                transform 700ms ease-out;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-on-scroll {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+    }
 }

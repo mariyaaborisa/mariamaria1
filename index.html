@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -83,31 +83,49 @@
         </section>
 
         <section class="projects-section" aria-labelledby="projects-heading">
-            <h2 class="section-header" id="projects-heading">Project highlights</h2>
-            <p class="section-intro">Selected projects across child online safety, accountable AI, and justice-centered digital systems.</p>
-            <div class="projects-preview" role="list" aria-label="Featured projects">
-                <a href="show-me-your-colors.html" class="projects-preview-card" role="listitem">
-                    <span class="projects-preview-tag">Child safety</span>
-                    <h3>Show Me Your Colors</h3>
-                    <p>Co-created child safety and AI governance tools designed to protect K-12 learners from data exploitation and platform harm.</p>
-                </a>
-                <a href="responsible-ai.html" class="projects-preview-card" role="listitem">
-                    <span class="projects-preview-tag">Responsible AI</span>
-                    <h3>Responsible AI in the Humanities</h3>
-                    <p>Developed an accountable AI experience that translated responsible innovation principles into a public-facing humanities context.</p>
-                </a>
-                <a href="black-eco-feminisms.html" class="projects-preview-card" role="listitem">
-                    <span class="projects-preview-tag">Community resilience</span>
-                    <h3>Black Eco Feminisms</h3>
-                    <p>Built participatory research tools that supported collective knowledge-building, community resilience, and justice-centered collaboration.</p>
-                </a>
+            <div class="section-header-row">
+                <h2 class="section-header" id="projects-heading">Project highlights</h2>
+                <div class="slider-arrows" aria-label="Slider controls">
+                    <button class="slider-arrow slider-arrow-prev" aria-label="Previous slide">←</button>
+                    <button class="slider-arrow slider-arrow-next" aria-label="Next slide">→</button>
+                </div>
             </div>
+            <p class="section-intro">Selected projects across child online safety, accountable AI, and justice-centered digital systems.</p>
+
+            <div class="projects-slider-wrapper">
+                <div class="projects-slider" role="list" aria-label="Featured projects">
+                    <div class="projects-slider-track">
+                        <a href="show-me-your-colors.html" class="projects-slider-card" role="listitem">
+                            <span class="projects-preview-tag">Child safety</span>
+                            <h3>Show Me Your Colors</h3>
+                            <p>Co-created child safety and AI governance tools designed to protect K-12 learners from data exploitation and platform harm.</p>
+                        </a>
+                        <a href="responsible-ai.html" class="projects-slider-card" role="listitem">
+                            <span class="projects-preview-tag">Responsible AI</span>
+                            <h3>Responsible AI in the Humanities</h3>
+                            <p>Developed an accountable AI experience that translated responsible innovation principles into a public-facing humanities context.</p>
+                        </a>
+                        <a href="black-eco-feminisms.html" class="projects-slider-card" role="listitem">
+                            <span class="projects-preview-tag">Community resilience</span>
+                            <h3>Black Eco Feminisms</h3>
+                            <p>Built participatory research tools that supported collective knowledge-building, community resilience, and justice-centered collaboration.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="slider-dots" aria-label="Slide indicators">
+                    <button class="slider-dot active" aria-label="Go to slide 1" data-slide="0"></button>
+                    <button class="slider-dot" aria-label="Go to slide 2" data-slide="1"></button>
+                    <button class="slider-dot" aria-label="Go to slide 3" data-slide="2"></button>
+                </div>
+            </div>
+
             <p class="projects-preview-cta">
                 <a href="projects.html">Browse the full project library →</a>
             </p>
         </section>
 
-        <div class="currently-section" id="connect">
+        <div class="currently-section mint-bg" id="connect">
             <div class="currently-label">Let's Connect</div>
             <p class="currently-text">
                 <strong>Available for mission-aligned roles, collaborations, and research opportunities</strong> across AI safety, public-interest technology, digital infrastructure, and community-centered design.<br>
