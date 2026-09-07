@@ -21,6 +21,7 @@ const exhibitions = [
   { name: 'University of California, Irvine' },
   { name: 'Abode Press' },
   { name: 'Look What She Did' },
+  { name: 'LA Dept of Cultural Affairs' },
 ];
 
 export default function Hero() {
