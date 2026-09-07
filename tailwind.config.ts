@@ -12,8 +12,8 @@ const config: Config = {
         ground: '#B8D1E0',
         ink: '#2B1D14',
         accent: {
-          ink: '#4C2410',
-          fill: '#C36522',
+          ink: '#1B4D4D',
+          fill: '#2D7373',
         },
       },
       fontFamily: {
