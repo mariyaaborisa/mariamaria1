@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const basePath = '/mariamaria-resume1';
+
 const projects = [
   // Design Engineering, Strategy & AI - ordered most artistic → most tech per spec
   {
@@ -13,7 +15,7 @@ const projects = [
     title: 'Responsible AI in the Humanities',
     description: 'AI-driven interactive exhibit reviving the 19th-century poet George Moses Horton through spoken dialogue.',
     href: '/responsible-ai',
-    image: '/images/projects/george-moses-horton/museum-visitor.webp',
+    image: `${basePath}/images/projects/george-moses-horton/museum-visitor.webp`,
     imageAlt: 'Museum visitor interacting with George Moses Horton AI exhibit',
   },
   {
@@ -23,7 +25,7 @@ const projects = [
     title: 'ReBrew',
     description: 'Wetware for everyday healing: rehydratable papers infused with herbs and flowers.',
     href: '/rebrew',
-    image: '/images/projects/rebrew/hero.svg',
+    image: `${basePath}/images/projects/rebrew/hero.svg`,
     imageAlt: 'ReBrew rehydratable paper prototype',
   },
   {
@@ -33,7 +35,7 @@ const projects = [
     title: 'Black Eco Feminisms',
     description: 'Participatory research tools supporting collective knowledge-building and justice-centered collaboration.',
     href: '/black-eco-feminisms',
-    image: '/images/projects/black-eco-feminisms/hero.svg',
+    image: `${basePath}/images/projects/black-eco-feminisms/hero.svg`,
     imageAlt: 'Black Eco Feminisms research toolkit',
   },
   {
@@ -43,7 +45,7 @@ const projects = [
     title: "Juniper's Clompass",
     description: 'Analog-digital learning companion turning a vintage clock into a compass and storytelling tool.',
     href: '/junipers-clompass',
-    image: '/images/projects/junipers-clompass/final-prototype.webp',
+    image: `${basePath}/images/projects/junipers-clompass/final-prototype.webp`,
     imageAlt: "Juniper's Clompass final prototype",
   },
   {
@@ -53,7 +55,7 @@ const projects = [
     title: 'Show Me Your Colors',
     description: 'Co-created child safety and AI governance tools protecting K-12 learners from data exploitation.',
     href: '/show-me-your-colors',
-    image: '/images/projects/show-me-your-colors/hero.svg',
+    image: `${basePath}/images/projects/show-me-your-colors/hero.svg`,
     imageAlt: 'Show Me Your Colors workshop materials',
   },
 ];
