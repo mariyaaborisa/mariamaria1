@@ -11,6 +11,12 @@ const exhibitions = [
   { name: 'Bay Area Queer Zine Fest' },
   { name: 'Long Beach Zine Fest' },
   { name: 'NY Latin Flair Fest' },
+  { name: 'Arcus Social Justice Fellow' },
+  { name: 'Forthcoming Chapter AU Press' },
+  { name: 'SF Design Week' },
+  { name: 'Speculative Ecologies Lab' },
+  { name: 'Revolutionary Tech Lab' },
+  { name: 'Design Futures Alumni' },
 ];
 
 export default function Hero() {
