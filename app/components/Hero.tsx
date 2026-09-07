@@ -17,6 +17,10 @@ const exhibitions = [
   { name: 'Speculative Ecologies Lab' },
   { name: 'Revolutionary Tech Lab' },
   { name: 'Design Futures Alumni' },
+  { name: 'University of California, Berkeley' },
+  { name: 'University of California, Irvine' },
+  { name: 'Abode Press' },
+  { name: 'Look What She Did' },
 ];
 
 export default function Hero() {
