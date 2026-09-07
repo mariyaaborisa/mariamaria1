@@ -17,7 +17,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-bodoni)', 'serif'],
+        display: ['var(--font-ballet)', 'cursive'],
         body: ['var(--font-cardo)', 'serif'],
       },
       borderRadius: {
