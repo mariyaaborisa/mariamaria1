@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Inter } from "next/font/google";
+import { Bodoni_Moda, Cardo } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -12,9 +12,11 @@ const bodoniModa = Bodoni_Moda({
   display: "swap",
 });
 
-const inter = Inter({
+const cardo = Cardo({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cardo",
   display: "swap",
 });
 
@@ -42,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bodoniModa.variable} ${inter.variable}`}>
+    <html lang="en" className={`${bodoniModa.variable} ${cardo.variable}`}>
       <body>
         <Nav />
         {children}

@@ -18,7 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ['var(--font-bodoni)', 'serif'],
-        body: ['var(--font-inter)', 'sans-serif'],
+        body: ['var(--font-cardo)', 'serif'],
       },
       borderRadius: {
         none: '0',
