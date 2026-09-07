@@ -26,7 +26,7 @@ export default function About() {
             </h2>
             <div className="text-lg text-ink/80 leading-relaxed space-y-4 mb-6 max-w-3xl">
               <p>
-                Maria-Teresa Carmier (Cyborg Baby Mama) is a South Central Los Angeles–based artist, futures design engineer, and movement technologist working across performance, moving image, installation, speculative writing, and participatory design. Her work explores technology, ecology, memory, and the conditions of survival through trigueñanismo, her framework for a Black, Mexican Indigenous, and tri-cosmology; parenting; and community-rooted inquiry.
+                María-Teresa Carmier (Cyborg Baby Mama) is a South Central Los Angeles–based artist, futures design engineer, and movement technologist working across performance, moving image, installation, speculative writing, and participatory design. Her work explores technology, ecology, memory, and the conditions of survival through trigueñanismo, her framework for a Black, Mexican Indigenous, and tri-cosmology; parenting; and community-rooted inquiry.
               </p>
               <p>
                 Cyborg Baby Mama holds a Master of Design Engineering with an emphasis in New Media from The University of California, Berkeley and has been an Arcus Social Justice Fellow and a College of Environmental Design Speculative Ecologies Lab resident. She is currently developing Cyborg Babymama, a performance work of poetry, movement, sound, and speculative world-building.

@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="space-y-8 md:sticky md:top-32">
             <div>
               <h1 id="hero-heading" className="text-6xl md:text-8xl font-ballet tracking-tight leading-tight mb-6">
-                <ScrambleText text="Maria-Teresa Carmier" delay={300} />
+                <ScrambleText text="María-Teresa Carmier" delay={300} />
               </h1>
               <p className="text-xl md:text-2xl text-ink/90 font-body leading-relaxed">
                 Cyborg Baby Mama
